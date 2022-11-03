@@ -1,0 +1,660 @@
+@media all {
+    div,
+    h4,
+    span,
+    strong {
+        border: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    h4 {
+        font-family: inherit;
+        font-size: 100%;
+        font-style: inherit;
+        font-weight: inherit;
+    }
+
+    h4 {
+        font-size: 24px;
+    }
+
+    h4 {
+        margin-bottom: 20px;
+    }
+
+    strong {
+        font-weight: 700;
+    }
+
+    .using-mouse :focus {
+        outline: 0;
+    }
+
+    .using-mouse ::-moz-focus-inner {
+        border: 0;
+    }
+}
+
+h4 {
+    font-size: inherit;
+}
+
+@media all {
+
+    .elementor *,
+    .elementor :after,
+    .elementor :before {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .services-container {
+        -webkit-transition: background .3s, border .3s, -webkit-border-radius .3s, -webkit-box-shadow .3s;
+        transition: background .3s, border .3s, -webkit-border-radius .3s, -webkit-box-shadow .3s;
+        -o-transition: background .3s, border .3s, border-radius .3s, box-shadow .3s;
+        transition: background .3s, border .3s, border-radius .3s, box-shadow .3s;
+        transition: background .3s, border .3s, border-radius .3s, box-shadow .3s, -webkit-border-radius .3s, -webkit-box-shadow .3s;
+    }
+}
+
+@media all {
+    .services-container {
+        background-image: url("../img/hex-white-bg-new.svg");
+    }
+}
+
+@media all {
+    .service--container .services-container {
+        width: 900px;
+        height: 1240px;
+        margin: 0 auto;
+        background-position: 50% 0;
+        background-repeat: no-repeat;
+        background-size: 838px auto;
+        position: relative;
+    }
+
+    .service--block {
+        cursor: pointer;
+        position: absolute;
+        width: 170px;
+        height: 150px;
+        background: url("../img/hex-blue.svg") no-repeat 50% 50%;
+        background-size: 100%;
+        transition: all .2s .6s;
+        z-index: 0;
+    }
+
+    .service--block-01 {
+        left: 298px;
+        top: 81px;
+    }
+
+    .service--block-011 {
+        left: 164px;
+        top: 157px;
+    }
+
+    .service--block-02 {
+        left: 298px;
+        top: 235px;
+    }
+
+    .service--block-03 {
+        left: 433px;
+        top: 314px;
+    }
+
+    .service--block-031 {
+        left: 298px;
+        top: 389px;
+    }
+
+    .service--block-04 {
+        left: 433px;
+        top: 625px;
+    }
+
+    .service--block-05 {
+        left: 300px;
+        top: 703px;
+    }
+
+    .service--block-051 {
+        left: 164px;
+        top: 779px;
+    }
+
+    .service--block-06 {
+        left: 300px;
+        top: 858px;
+    }
+
+    .service--block-07 {
+        left: 433px;
+        top: 937px;
+    }
+
+    .service--block-08 {
+        left: 300px;
+        top: 1012px;
+    }
+
+    .service--block-09 {
+        left: 433px;
+        top: 1090px;
+    }
+
+    .service--block-inner {
+        background: url("../img/hex-blue-skew.svg") no-repeat 50% 100%;
+        background-size: 0;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: relative;
+        transition: all .2s .6s;
+    }
+
+    .service--block-inner:before,
+    .service--block-inner:after {
+        content: '';
+        position: absolute;
+        opacity: 0;
+    }
+
+    .service--block-inner:before {
+        background: url("../img/hex-white-skew.png") no-repeat 0 100%;
+        background-size: contain;
+        width: 180px;
+        height: 116px;
+        left: -6px;
+        bottom: 10px;
+        transform: translate3d(0, 17px, 0);
+        -webkit-transform: translate3d(0, 17px, 0);
+        transition: all .3s .4s;
+        z-index: 0;
+    }
+
+    .service--block-inner:after {
+        background: url("../img/hex-stroke.svg") no-repeat 0 100%;
+        background-size: contain;
+        width: 208px;
+        height: 134px;
+        bottom: 8px;
+        left: -20px;
+        transform: scale(0);
+        transition: all .3s .2s;
+        z-index: 1;
+    }
+
+    .service--title {
+        color: #fff;
+        font: 900 20px/1 "League Spartan", sans-serif;
+        align-self: center;
+        margin: 0 0 5px;
+        position: relative;
+        z-index: 2;
+        transition: color .7s;
+    }
+
+    .service--desc {
+        color: #4e4e4e;
+        font: 400 14px/1.28 "League Spartan", sans-serif;
+        position: absolute;
+        opacity: 0;
+        transition: opacity .1s .5s;
+    }
+
+    .service--desc span {
+        position: relative;
+        z-index: 2;
+    }
+
+    .service--desc.service--desc--left {
+        right: calc(100% - 40px);
+        padding-right: 50px;
+    }
+
+    .service--desc.service--desc--right {
+        padding-left: 70px;
+        left: calc(100% - 40px);
+    }
+
+    .service--desc:before {
+        content: '';
+        width: 0;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        height: 40px;
+        transition: width .5s 0s;
+        background-size: auto 100% !important;
+    }
+
+    .service--desc.stroke-right-top:before,
+    .service--desc.stroke-right-bottom:before {
+        left: 0;
+    }
+
+    .service--desc.stroke-left-top:before,
+    .service--desc.stroke-left-bottom:before {
+        right: 0;
+    }
+
+    .service--desc.stroke-right-top:before {
+        background: url(https://rapidapi.com/wp-content/uploads/2020/08/stroke-right-top.svg) no-repeat 0 0;
+    }
+
+    .service--desc.stroke-right-bottom:before {
+        background: url(https://rapidapi.com/wp-content/uploads/2020/08/stroke-right-bottom.svg) no-repeat 0 0;
+    }
+
+    .service--desc.stroke-left-top:before {
+        background: url(https://rapidapi.com/wp-content/uploads/2020/08/stroke-left-top.svg) no-repeat 100% 0;
+    }
+
+    .service--desc.stroke-left-bottom:before {
+        background: url(https://rapidapi.com/wp-content/uploads/2020/08/stroke-left-bottom.svg) no-repeat 100% 0;
+    }
+
+    .service--desc.stroke-right-bottom,
+    .service--desc.stroke-left-bottom {
+        padding-top: 50px;
+    }
+
+    .service--desc.stroke-left-bottom {
+        top: 140px;
+        width: 275px;
+        padding-left: 7px;
+    }
+
+    .service--desc.stroke-right-top {
+        width: 300px;
+        padding-top: 15px;
+        top: -15px;
+    }
+
+    .service--desc.stroke-right-bottom {
+        top: 145px;
+        width: 300px;
+    }
+
+    .service--desc.stroke-left-top {
+        width: 275px;
+        padding-left: 7px;
+        padding-top: 15px;
+        top: -15px;
+    }
+
+    .service--subtitle {
+        position: absolute;
+        left: -120px;
+        color: #004d93;
+        font: bold 24px/1 'League Spartan', sans-serif;
+    }
+
+    .service--subtitle.subtitle-top {
+        top: 210px;
+    }
+
+    .service--subtitle.subtitle-bottom {
+        top: 835px;
+    }
+
+    .no-touch .service--block:hover {
+        background-size: 0;
+        transition: all .2s 0s;
+        z-index: 1;
+    }
+
+    .no-touch .service--block:hover .service--block-inner {
+        background-size: 100%;
+        transition: all .2s 0s;
+    }
+
+    .no-touch .service--block:hover .service--block-inner:before {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
+        transition: all .3s .3s;
+    }
+
+    .no-touch .service--block:hover .service--block-inner:after {
+        opacity: 1;
+        transform: scale(1);
+        transition: all .3s .5s;
+    }
+
+    .no-touch .service--block:hover .service--title {
+        color: #1d4371;
+        transition: all .1s;
+        transform: translateY(7px) skew(-30deg, 10deg);
+    }
+
+    .no-touch .service--block:hover .service--desc {
+        opacity: 1;
+        transition: opacity .1s .7s;
+    }
+
+    .no-touch .service--block:hover .service--desc:before {
+        width: 100%;
+        transition: width .5s .7s;
+    }
+
+    @media only screen and (max-width:1199px) {
+        .service--subtitle {
+            left: 0;
+        }
+
+        .service--subtitle.subtitle-top {
+            top: 55px;
+        }
+
+        .service--subtitle.subtitle-bottom {
+            top: 630px;
+        }
+
+        .service--desc.stroke-left-top {
+            right: calc(100% - 60px);
+        }
+
+        .service--desc.stroke-left-bottom {
+            width: 250px;
+            padding-right: 30px;
+        }
+
+        .service--desc.stroke-right-top {
+            width: 260px;
+            padding-left: 60px;
+        }
+
+        .service--desc.stroke-right-bottom {
+            width: 260px;
+            padding-left: 50px;
+        }
+    }
+
+    @media only screen and (max-width:1024px) {
+        .service--container .services-container {
+            background-size: 100% auto;
+            width: 700px;
+            height: 1040px;
+            margin-left: 50px;
+        }
+
+        .service--block {
+            width: 141px;
+            height: 125px;
+        }
+
+        .service--block-inner:before {
+            width: 155px;
+            height: 100px;
+        }
+
+        .service--block-inner:after {
+            width: 175px;
+            height: 105px;
+            left: -15px;
+        }
+
+        .service--block-01 {
+            left: 223px;
+            top: 68px;
+        }
+
+        .service--block-011 {
+            left: 111px;
+            top: 132px;
+        }
+
+        .service--block-02 {
+            left: 225px;
+            top: 196px;
+        }
+
+        .service--block-03 {
+            left: 336px;
+            top: 262px;
+        }
+
+        .service--block-031 {
+            left: 225px;
+            top: 325px;
+        }
+
+        .service--block-04 {
+            left: 336px;
+            top: 520px;
+        }
+
+        .service--block-05 {
+            left: 225px;
+            top: 586px;
+        }
+
+        .service--block-051 {
+            left: 111px;
+            top: 650px;
+        }
+
+        .service--block-06 {
+            left: 225px;
+            top: 715px;
+        }
+
+        .service--block-07 {
+            left: 336px;
+            top: 780px;
+        }
+
+        .service--block-08 {
+            left: 225px;
+            top: 843px;
+        }
+
+        .service--block-09 {
+            left: 336px;
+            top: 908px;
+        }
+
+        .service--title {
+            font-size: 18px;
+        }
+
+        .service--desc {
+            font-size: 12px;
+        }
+
+        .service--desc:before {
+            height: 30px;
+        }
+
+        .service--desc.stroke-right-bottom,
+        .service--desc.stroke-left-bottom {
+            padding-top: 40px;
+        }
+
+        .service--desc.stroke-left-bottom {
+            top: 117px;
+            width: 215px;
+            right: calc(100% - 40px);
+        }
+
+        .service--desc.stroke-right-bottom {
+            top: 120px;
+            width: 210px;
+            padding-left: 35px;
+        }
+
+        .service--desc.stroke-left-top {
+            width: 205px;
+            padding-right: 30px;
+            right: calc(100% - 40px);
+        }
+
+        .service--desc.stroke-right-top {
+            width: 225px;
+        }
+
+        .service--subtitle.subtitle-bottom {
+            top: 525px;
+        }
+    }
+
+    @media only screen and (max-width:768px) {
+        .service--container .services-container {
+            width: 450px;
+            height: 700px;
+            margin: 0 auto;
+        }
+
+        .service--block {
+            width: 91px;
+            height: 80px;
+        }
+
+        .service--block-01 {
+            left: 144px;
+            top: 43px;
+        }
+
+        .service--block-011 {
+            left: 73px;
+            top: 85px;
+        }
+
+        .service--block-02 {
+            left: 144px;
+            top: 126px;
+        }
+
+        .service--block-03 {
+            left: 217px;
+            top: 168px;
+        }
+
+        .service--block-031 {
+            left: 144px;
+            top: 209px;
+        }
+
+        .service--block-04 {
+            left: 217px;
+            top: 335px;
+        }
+
+        .service--block-05 {
+            left: 144px;
+            top: 378px;
+        }
+
+        .service--block-051 {
+            left: 73px;
+            top: 419px;
+        }
+
+        .service--block-06 {
+            left: 144px;
+            top: 460px;
+        }
+
+        .service--block-07 {
+            left: 217px;
+            top: 503px;
+        }
+
+        .service--block-08 {
+            left: 144px;
+            top: 544px;
+        }
+
+        .service--block-09 {
+            left: 217px;
+            top: 586px;
+        }
+
+        .service--title {
+            font-size: 12px;
+        }
+
+        .service--block-inner:before {
+            width: 100px;
+            height: 65px;
+            bottom: 5px;
+        }
+
+        .service--block-inner:after {
+            width: 108px;
+            height: 65px;
+            left: -10px;
+        }
+
+        .service--desc:before {
+            height: 25px;
+        }
+
+        .service--desc {
+            top: -10px;
+            width: 150px;
+            font-size: 10px;
+            padding-top: 10px;
+        }
+
+        .service--desc.stroke-right-bottom,
+        .service--desc.stroke-left-bottom {
+            padding-top: 25px;
+        }
+
+        .service--desc.stroke-left-bottom {
+            top: 70px;
+            width: 140px;
+            padding-right: 15px;
+            padding-top: 30px;
+            right: calc(100% - 15px);
+        }
+
+        .service--desc.stroke-left-top {
+            width: 140px;
+            padding-top: 10px;
+            right: calc(100% - 30px);
+        }
+
+        .service--desc.stroke-right-bottom {
+            top: 80px;
+            width: 150px;
+            left: calc(100% - 60px);
+            padding-left: 20px;
+            padding-top: 30px;
+        }
+
+        .service--desc.stroke-right-top {
+            width: 160px;
+            padding-left: 50px;
+            padding-top: 10px;
+        }
+
+        .service--subtitle {
+            left: -40px;
+            font-size: 16px;
+        }
+
+        .service--subtitle.subtitle-bottom {
+            top: 345px;
+        }
+s
+        .service--subtitle.subtitle-top {
+            top: 110px;
+        }
+    }
+
+    @media only screen and (max-width:540px) {
+        .service--container .services-container {
+            transform: scale(.7);
+            -webkit-transform: scale(.7);
+            left: -70px;
+        }
+    }
+}
