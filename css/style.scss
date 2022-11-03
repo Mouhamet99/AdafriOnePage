@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-decoration: none;
+}
+
+html {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 14px;
+}
+
+body {
+    width: 100%;
+}
+
+header {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+
+    #logo {
+        max-width: 120px;
+        height: auto;
+    }
+    nav {
+        display: inline-block;
+        a{
+            padding: 10px 20px;
+            margin: 1rem;
+        }
+        #demo-btn{
+            color: rgb(113, 113, 113);
+            border-radius: 45px;
+            border: 1px solid #ccc;
+            background-color: #ffffff;
+           
+          }
+          #signin {
+            color: #ffffff;
+            border-radius: 45px;
+            background-color: #3B60BA;
+          }
+    }
+}
+
