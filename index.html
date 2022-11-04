@@ -29,11 +29,12 @@
         <section id="services">
         </section>
     </main>
-    <div class="service--container elementor-widget" >
-        <div class="services-container">
-            <strong class="service--subtitle subtitle-top">API Types</strong>
-            <strong class="service--subtitle subtitle-bottom">Advanced Capabilities</strong>
-            <div class="service--block service--block-01">
+    <div class="services-container" >
+        <div class="services-content">
+            <strong class="service--subtitle subtitle-automation">Automatisation</strong>
+            <strong class="service--subtitle subtitle-bottom">Offline</strong>
+            <strong class="service--subtitle subtitle-capture">Capture</strong>
+            <div class="service--block service--block-01 d-none">
                 <div class="service--block-inner">
                     <h4 class="service--title">GraphQL</h4>
                     <div class="service--desc service--desc--right stroke-right-top"><span>Use of
@@ -42,15 +43,32 @@
                     </div>
                 </div>
             </div>
-            <div class="service--block service--block-011">
+            <div class="service--block sms-marketing--block">
                 <div class="service--block-inner">
-                    <h4 class="service--title">REST</h4>
+                    <h4 class="service--title">SMS</h4>
+                    <div class="service--desc service--desc--right stroke-right-top"><span>Use of
+                            aggregating multiple data sources into one API. Popular APIs supported: GitHub, GitLab, Yelp,
+                            AniList, Shopify, and more</span>
+                    </div>
+                </div>
+            </div>
+            <div class="service--block meta-ads--block">
+                <div class="service--block-inner">
+                    <h4 class="service--title">Meta Ads</h4>
                     <div class="service--desc service--desc--left stroke-left-bottom"><span>Use this
                             popular API Type for web applications and projects that are flexible, scalable, and fast</span>
                     </div>
                 </div>
             </div>
-            <div class="service--block service--block-02">
+            <div class="service--block gads--block">
+                <div class="service--block-inner">
+                    <h4 class="service--title">Google ADS</h4>
+                    <div class="service--desc service--desc--left stroke-left-bottom"><span>Use this
+                            popular API Type for web applications and projects that are flexible, scalable, and fast</span>
+                    </div>
+                </div>
+            </div>
+            <div class="service--block service--block-02  d-none">
                 <div class="service--block-inner">
                     <h4 class="service--title">Kafka</h4>
                     <div class="service--desc service--desc--left stroke-left-bottom"><span>Use to
@@ -59,47 +77,56 @@
                     </div>
                 </div>
             </div>
-            <div class="service--block service--block-03">
+            <div class="service--block radio--block">
                 <div class="service--block-inner">
-                    <h4 class="service--title">RapidQL</h4>
+                    <h4 class="service--title">Radio</h4>
                     <div class="service--desc service--desc--right stroke-right-top"><span>Use to fetch,
                             combine, and aggregate data from multiple APIs and databases in a single call</span>
                     </div>
                 </div>
             </div>
-            <div class="service--block service--block-031">
+            <div class="service--block led--block">
                 <div class="service--block-inner">
-                    <h4 class="service--title">SOAP</h4>
-                    <div class="service--desc service--desc--left stroke-left-bottom"><span>Use for
+                    <h4 class="service--title">Ecran LED</h4>
+                    <div class="service--desc service--desc--right stroke-right-bottom"><span>Use for
                             transactions that involve multiple calls or applications</span>
                     </div>
                 </div>
             </div>
-            <div class="service--block service--block-04">
+            <div class="service--block television--block">
                 <div class="service--block-inner">
-                    <h4 class="service--title">Discovery</h4>
+                    <h4 class="service--title">Television</h4>
+                    <div class="service--desc service--desc--right stroke-right-top"><span>Use for
+                            transactions that involve multiple calls or applications</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service--block chatbot--block">
+                <div class="service--block-inner">
+                    <h4 class="service--title">ChatBot</h4>
+                    <div class="service--desc service--desc--right stroke-right-top"><span>Search for
+                            APIs, test APIs, and compare them based on latency, uptime, and popularity</span>
+                    </div>
+                </div>
+            </div>
+            <div class="service--block vocal-push--block">
+                <div class="service--block-inner">
+                    <h4 class="service--title">Push Vocal</h4>
                     <div class="service--desc service--desc--right stroke-right-bottom"><span>Search for
                             APIs, test APIs, and compare them based on latency, uptime, and popularity</span>
                     </div>
                 </div>
             </div>
-            <div class="service--block service--block-05">
+            <div class="service--block ussd-block">
                 <div class="service--block-inner">
-                    <h4 class="service--title">Security</h4>
-                    <div class="service--desc service--desc--left stroke-left-top">
-                        <span>Mitigates/Significantly reduces the OWASP Top 10 Security Risks</span>
-                    </div>
-                </div>
-            </div>
-            <div class="service--block service--block-051">
-                <div class="service--block-inner">
-                    <h4 class="service--title">Publishing</h4>
-                    <div class="service--desc service--desc--left stroke-left-top"><span>Support for all
+                    <h4 class="service--title">USSD</h4>
+                    <div class="service--desc service--desc--right stroke-right-bottom"><span>Support for all
                             standards and API types (OAS, GraphQL, etc.)</span>
                     </div>
                 </div>
             </div>
-            <div class="service--block service--block-06">
+            <div class="service--block service--block-06 d-none">
                 <div class="service--block-inner">
                     <h4 class="service--title">Governance</h4>
                     <div class="service--desc service--desc--left stroke-left-bottom">
@@ -107,7 +134,7 @@
                     </div>
                 </div>
             </div>
-            <div class="service--block service--block-07">
+            <div class="service--block service--block-07 d-none">
                 <div class="service--block-inner">
                     <h4 class="service--title">Permissioning</h4>
                     <div class="service--desc service--desc--right stroke-right-top"><span>Grant
@@ -115,7 +142,7 @@
                     </div>
                 </div>
             </div>
-            <div class="service--block service--block-08">
+            <div class="service--block service--block-08 d-none">
                 <div class="service--block-inner">
                     <h4 class="service--title">Testing</h4>
                     <div class="service--desc service--desc--left stroke-left-bottom"><span>View
@@ -123,7 +150,7 @@
                     </div>
                 </div>
             </div>
-            <div class="service--block service--block-09">
+            <div class="service--block service--block-09 d-none">
                 <div class="service--block-inner">
                     <h4 class="service--title">Customization</h4>
                     <div class="service--desc service--desc--right stroke-right-bottom"><span>Brand with

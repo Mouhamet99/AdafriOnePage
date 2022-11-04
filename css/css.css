@@ -1,4 +1,5 @@
 @media all {
+
     div,
     h4,
     span,
@@ -34,38 +35,26 @@
     .using-mouse ::-moz-focus-inner {
         border: 0;
     }
+
 }
 
 h4 {
     font-size: inherit;
 }
 
-@media all {
-
-    .elementor *,
-    .elementor :after,
-    .elementor :before {
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-    }
-
-    .services-container {
-        -webkit-transition: background .3s, border .3s, -webkit-border-radius .3s, -webkit-box-shadow .3s;
-        transition: background .3s, border .3s, -webkit-border-radius .3s, -webkit-box-shadow .3s;
-        -o-transition: background .3s, border .3s, border-radius .3s, box-shadow .3s;
-        transition: background .3s, border .3s, border-radius .3s, box-shadow .3s;
-        transition: background .3s, border .3s, border-radius .3s, box-shadow .3s, -webkit-border-radius .3s, -webkit-box-shadow .3s;
-    }
-}
 
 @media all {
     .services-container {
-        background-image: url("../img/hex-white-bg-new.svg");
+        width: 100%;
+        /* max-width: 1140px; */
+        background: #fff url("../img/home-diagram-bg.svg") no-repeat 50% 0;
+        background-size: auto 100%;
+        padding: 60px 20px 125px;
+        
     }
-}
 
-@media all {
-    .service--container .services-container {
+    .services-content {
+        background-image: url("../img/hex-white-bg-new-custom.svg");
         width: 900px;
         height: 1240px;
         margin: 0 auto;
@@ -73,6 +62,12 @@ h4 {
         background-repeat: no-repeat;
         background-size: 838px auto;
         position: relative;
+
+        -webkit-transition: background .3s, border .3s, -webkit-border-radius .3s, -webkit-box-shadow .3s;
+        transition: background .3s, border .3s, -webkit-border-radius .3s, -webkit-box-shadow .3s;
+        -o-transition: background .3s, border .3s, border-radius .3s, box-shadow .3s;
+        transition: background .3s, border .3s, border-radius .3s, box-shadow .3s;
+        transition: background .3s, border .3s, border-radius .3s, box-shadow .3s, -webkit-border-radius .3s, -webkit-box-shadow .3s;
     }
 
     .service--block {
@@ -91,9 +86,19 @@ h4 {
         top: 81px;
     }
 
-    .service--block-011 {
+    .sms-marketing--block {
         left: 164px;
-        top: 157px;
+        top: 5px;
+    }
+
+    .meta-ads--block {
+        left: 167px;
+        top: 160px;
+    }
+
+    .gads--block {
+        left: 32px;
+        top: 84px;
     }
 
     .service--block-02 {
@@ -101,19 +106,29 @@ h4 {
         top: 235px;
     }
 
-    .service--block-03 {
+    .radio--block {
         left: 433px;
         top: 314px;
     }
 
-    .service--block-031 {
-        left: 298px;
-        top: 389px;
+    .led--block {
+        left: 434px;
+        top: 471px;
     }
 
-    .service--block-04 {
-        left: 433px;
-        top: 625px;
+    .television--block {
+        left: 568px;
+        top: 394px;
+    }
+
+    .chatbot--block {
+        left: 31px;
+        top: 548px;
+    }
+
+    .vocal-push--block {
+        left: 31px;
+        top: 704px;
     }
 
     .service--block-05 {
@@ -121,9 +136,9 @@ h4 {
         top: 703px;
     }
 
-    .service--block-051 {
+    .ussd-block {
         left: 164px;
-        top: 779px;
+        top: 626px;
     }
 
     .service--block-06 {
@@ -190,6 +205,7 @@ h4 {
     }
 
     .service--title {
+        text-align: center;
         color: #fff;
         font: 900 20px/1 "League Spartan", sans-serif;
         align-self: center;
@@ -244,19 +260,19 @@ h4 {
     }
 
     .service--desc.stroke-right-top:before {
-        background: url(https://rapidapi.com/wp-content/uploads/2020/08/stroke-right-top.svg) no-repeat 0 0;
+        background: url("../img/stroke-right-top.svg") no-repeat 0 0;
     }
 
     .service--desc.stroke-right-bottom:before {
-        background: url(https://rapidapi.com/wp-content/uploads/2020/08/stroke-right-bottom.svg) no-repeat 0 0;
+        background: url("../img/stroke-right-bottom.svg") no-repeat 0 0;
     }
 
     .service--desc.stroke-left-top:before {
-        background: url(https://rapidapi.com/wp-content/uploads/2020/08/stroke-left-top.svg) no-repeat 100% 0;
+        background: url("../img/stroke-left-top.svg") no-repeat 100% 0;
     }
 
     .service--desc.stroke-left-bottom:before {
-        background: url(https://rapidapi.com/wp-content/uploads/2020/08/stroke-left-bottom.svg) no-repeat 100% 0;
+        background: url("../img/stroke-left-bottom.svg") no-repeat 100% 0;
     }
 
     .service--desc.stroke-right-bottom,
@@ -293,14 +309,23 @@ h4 {
         left: -120px;
         color: #004d93;
         font: bold 24px/1 'League Spartan', sans-serif;
+        
+        z-index: 100;
+        border: 1px dashed #004d93;
+        padding:10px;
+        border-radius: 10px;
     }
 
-    .service--subtitle.subtitle-top {
-        top: 210px;
+    .service--subtitle.subtitle-automation {
+        top: 17px;
     }
 
     .service--subtitle.subtitle-bottom {
-        top: 835px;
+        top: 535px;
+    }
+    .service--subtitle.subtitle-capture {
+        top: 309px;
+        left: 620px;
     }
 
     .no-touch .service--block:hover {
@@ -348,12 +373,17 @@ h4 {
             left: 0;
         }
 
-        .service--subtitle.subtitle-top {
-            top: 55px;
+        .service--subtitle.subtitle-automation {
+            top: 0;
         }
 
         .service--subtitle.subtitle-bottom {
-            top: 630px;
+            left: -22px;
+            top: 501px;
+        }
+        .service--subtitle.subtitle-capture {
+            top: 297px;
+            left: 617px;
         }
 
         .service--desc.stroke-left-top {
@@ -377,7 +407,7 @@ h4 {
     }
 
     @media only screen and (max-width:1024px) {
-        .service--container .services-container {
+        .services-content {
             background-size: 100% auto;
             width: 700px;
             height: 1040px;
@@ -405,9 +435,19 @@ h4 {
             top: 68px;
         }
 
-        .service--block-011 {
+        .sms-marketing--block {
+            left: 112px;
+            top: 5px;
+        }
+
+        .meta-ads--block {
             left: 111px;
             top: 132px;
+        }
+
+        .gads--block {
+            left: 1px;
+            top: 71px;
         }
 
         .service--block-02 {
@@ -415,19 +455,29 @@ h4 {
             top: 196px;
         }
 
-        .service--block-03 {
+        .radio--block {
             left: 336px;
             top: 262px;
         }
 
-        .service--block-031 {
-            left: 225px;
-            top: 325px;
+        .led--block {
+            left: 337px;
+            top: 394px;
         }
 
-        .service--block-04 {
-            left: 336px;
-            top: 520px;
+        .television--block {
+            left: 449px;
+            top: 329px;
+        }
+
+        .chatbot--block {
+            left: 1px;
+            top: 458px;
+        }
+
+        .vocal-push--block {
+            left: 1px;
+            top: 587px;
         }
 
         .service--block-05 {
@@ -435,9 +485,9 @@ h4 {
             top: 586px;
         }
 
-        .service--block-051 {
-            left: 111px;
-            top: 650px;
+        .ussd-block {
+            left: 112px;
+            top: 523px;
         }
 
         .service--block-06 {
@@ -500,12 +550,17 @@ h4 {
         }
 
         .service--subtitle.subtitle-bottom {
-            top: 525px;
+            top: 411px;
+            left: -31px;
+        }
+        .service--subtitle.subtitle-capture {
+            top: 264px;
+            left: 521px;
         }
     }
 
     @media only screen and (max-width:768px) {
-        .service--container .services-container {
+        .services-content {
             width: 450px;
             height: 700px;
             margin: 0 auto;
@@ -521,29 +576,50 @@ h4 {
             top: 43px;
         }
 
-        .service--block-011 {
+        .sms-marketing--block {
+            left: 72px;
+            top: 4px;
+        }
+
+        .meta-ads--block {
             left: 73px;
             top: 85px;
         }
+
+        .gads--block {
+            left: 1px;
+            top: 46px;
+        }
+
 
         .service--block-02 {
             left: 144px;
             top: 126px;
         }
 
-        .service--block-03 {
+        .radio--block {
             left: 217px;
             top: 168px;
         }
 
-        .service--block-031 {
-            left: 144px;
-            top: 209px;
+        .led--block {
+            left: 217px;
+            top: 254px;
         }
 
-        .service--block-04 {
-            left: 217px;
-            top: 335px;
+        .television--block {
+            left: 289px;
+            top: 212px;
+        }
+
+        .chatbot--block {
+            left: 0px;
+            top: 294px;
+        }
+
+        .vocal-push--block {
+            left: 0px;
+            top: 378px;
         }
 
         .service--block-05 {
@@ -551,9 +627,9 @@ h4 {
             top: 378px;
         }
 
-        .service--block-051 {
-            left: 73px;
-            top: 419px;
+        .ussd-block {
+            left: 72px;
+            top: 336px;
         }
 
         .service--block-06 {
@@ -642,16 +718,21 @@ h4 {
         }
 
         .service--subtitle.subtitle-bottom {
-            top: 345px;
+            top: 251px;
+            left: 0;
         }
-s
-        .service--subtitle.subtitle-top {
-            top: 110px;
+        .service--subtitle.subtitle-capture {
+            top: 158px;
+            left: 329px;
+        }
+
+        .service--subtitle.subtitle-automation {
+            top: 0;
         }
     }
 
     @media only screen and (max-width:540px) {
-        .service--container .services-container {
+        .services-content {
             transform: scale(.7);
             -webkit-transform: scale(.7);
             left: -70px;
