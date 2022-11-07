@@ -56,7 +56,7 @@ h4 {
     .services-content {
         background-image: url("../img/hex-white-bg-new-custom.svg");
         width: 900px;
-        height: 900px;
+        height: 1100px;
         margin: 0 auto;
         background-position: 50% 0;
         background-repeat: no-repeat;
@@ -107,13 +107,13 @@ h4 {
     }
 
     .radio--block {
-        left: 433px;
-        top: 314px;
+        left: 701px;
+        top: 471px;
     }
 
     .led--block {
-        left: 434px;
-        top: 471px;
+        left: 568px;
+        top: 550px;
     }
 
     .television--block {
@@ -123,12 +123,12 @@ h4 {
 
     .chatbot--block {
         left: 31px;
-        top: 548px;
+        top: 858px;
     }
 
     .vocal-push--block {
-        left: 31px;
-        top: 704px;
+        left: 166px;
+        top: 936px;
     }
 
     .service--block-05 {
@@ -138,7 +138,7 @@ h4 {
 
     .ussd-block {
         left: 164px;
-        top: 626px;
+        top: 782px;
     }
 
     .service--block-06 {
@@ -456,13 +456,13 @@ h4 {
         }
 
         .radio--block {
-            left: 336px;
-            top: 262px;
+            left: 561px;
+            top: 394px;
         }
 
         .led--block {
-            left: 337px;
-            top: 394px;
+            left: 448px;
+            top: 459px;
         }
 
         .television--block {
@@ -472,12 +472,12 @@ h4 {
 
         .chatbot--block {
             left: 1px;
-            top: 458px;
+            top: 717px;
         }
 
         .vocal-push--block {
-            left: 1px;
-            top: 587px;
+            left: 112px;
+            top: 782px;
         }
 
         .service--block-05 {
@@ -487,7 +487,7 @@ h4 {
 
         .ussd-block {
             left: 112px;
-            top: 523px;
+            top: 652px;
         }
 
         .service--block-06 {
@@ -598,13 +598,13 @@ h4 {
         }
 
         .radio--block {
-            left: 217px;
-            top: 168px;
+            left: 360px;
+            top: 253px;
         }
 
         .led--block {
-            left: 217px;
-            top: 254px;
+            left: 288px;
+            top: 295px;
         }
 
         .television--block {
@@ -614,12 +614,12 @@ h4 {
 
         .chatbot--block {
             left: 0px;
-            top: 294px;
+            top: 461px;
         }
 
         .vocal-push--block {
-            left: 0px;
-            top: 378px;
+            left: 72px;
+            top: 503px;
         }
 
         .service--block-05 {
@@ -629,7 +629,7 @@ h4 {
 
         .ussd-block {
             left: 72px;
-            top: 336px;
+            top: 420px;
         }
 
         .service--block-06 {
