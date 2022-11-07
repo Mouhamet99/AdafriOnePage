@@ -320,10 +320,10 @@ h4 {
         top: 17px;
     }
 
-    .service--subtitle.subtitle-bottom {
-        top: 535px;
-    }
     .service--subtitle.subtitle-capture {
+        top: 900px;
+    }
+    .service--subtitle.subtitle-offline {
         top: 309px;
         left: 620px;
     }
@@ -377,11 +377,11 @@ h4 {
             top: 0;
         }
 
-        .service--subtitle.subtitle-bottom {
-            left: -22px;
-            top: 501px;
-        }
         .service--subtitle.subtitle-capture {
+            left: 0;
+            top: 801px;
+        }
+        .service--subtitle.subtitle-offline {
             top: 297px;
             left: 617px;
         }
@@ -411,7 +411,7 @@ h4 {
             background-size: 100% auto;
             width: 700px;
             height: 1040px;
-            margin-left: 50px;
+            margin:0 auto;
         }
 
         .service--block {
@@ -549,11 +549,11 @@ h4 {
             width: 225px;
         }
 
-        .service--subtitle.subtitle-bottom {
-            top: 411px;
+        .service--subtitle.subtitle-capture {
+            top: 651px;
             left: -31px;
         }
-        .service--subtitle.subtitle-capture {
+        .service--subtitle.subtitle-offline {
             top: 264px;
             left: 521px;
         }
@@ -717,11 +717,11 @@ h4 {
             font-size: 16px;
         }
 
-        .service--subtitle.subtitle-bottom {
-            top: 251px;
-            left: 0;
-        }
         .service--subtitle.subtitle-capture {
+            top: 401px;
+            left: -15px;
+        }
+        .service--subtitle.subtitle-offline {
             top: 158px;
             left: 329px;
         }
