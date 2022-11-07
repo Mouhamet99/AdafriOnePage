@@ -3,6 +3,9 @@ module.exports = {
     media: false, // or 'media' or 'class'
     theme: {
         extend: {
+            backgroundImage: {
+                'free-money': "url('/img/annonceurs/free.png')",
+              },
             width: {
                 '1/13': '7.69230769%',
                 '2/13': '15.3846153%',
