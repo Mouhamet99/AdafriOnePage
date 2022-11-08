@@ -15,6 +15,8 @@
         content="Outil de publicité sur l'Afrique.Prenez le contrôle de plusieurs régies publicitaire facilement sur une seule plateforme, et communiquez sur toute l'Afrique.">
     <link rel="icon" href="https://adafri.com/wp-content/uploads/2022/03/cropped-Icone-32x32.png" sizes="32x32">
     <link rel="icon" href="https://adafri.com/wp-content/uploads/2022/03/cropped-Icone-192x192.png" sizes="192x192">
+    <!-- Animate CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
@@ -25,54 +27,85 @@
 </head>
 
 <body class="w-full">
-    <nav class="relative w-full flex flex-wrap items-center justify-between py-4 bg-gradient-light-blue shadow-lg">
+    <nav
+        class="d-none relative w-full flex flex-wrap items-center justify-between py-4 bg-gradient-light-blue shadow-lg">
         <div class="container-fluid md:container md:mx-auto w-full flex flex-wrap items-center justify-between px-6">
-            <a href="">
+            <a href="/">
                 <img src="./img/adafriWhiteLogo.png" style="height: 20px" alt="" loading="lazy" />
             </a>
-        <a href="" class="bg-yellow-400 px-4 py-2 rounded-3xl text-blue-900 font-bold hover:scale-105 transform duration-75">Connexion</a>
+            <a href="https://app.adafri.com/"
+                class="bg-yellow-400 px-4 py-2 rounded-3xl text-blue-900 font-bold hover:scale-105 transform duration-75">Connexion</a>
         </div>
-      </nav>
-    
+    </nav>
+
     <header class="d-none">
         <a href="/" id="logo-container">
             <img id="logo" src="./img/Logo-ADAFRI.png" width="100" alt="logo adafri">
         </a>
         <nav>
             <a href="" id="demo-btn">Demander demo</a>
-            <a href="" id="signin">Connexion</a>
+            <a href="https://app.adafri.com/" id="signin">Connexion</a>
         </nav>
     </header>
     <main>
         <section id="banner"
-            class="relative flex flex-col justify-between items-center  min-h-screen h-[1000px] text-3xl bg-gradient-blue">
-            
-            <div class="w-full flex flex-col items-center mt-10 space-y-10 md:w-2/3 text-center ">
-                <span class="block  my-[30px] rounded-3xl text-white text-xl bg-[#7EA5D345] px-5 py-2">La PUB +
+            class="relative flex flex-col justify-between items-center  min-h-screen  text-3xl bg-gradient-blue">
+            <nav class="relative w-full flex flex-wrap items-center justify-between py-4">
+                <div
+                    class="container-fluid md:container md:mx-auto w-full flex flex-wrap items-center justify-between px-6">
+                    <a href="/">
+                        <img src="./img/adafriWhiteLogo.png" class="h-6" alt="" loading="lazy" />
+                    </a>
+                    <a href="https://app.adafri.com/"
+                        class="bg-yellow-400 px-4 py-2 rounded-3xl text-lg text-blue-900 font-bold hover:scale-105 transform duration-75">Connexion</a>
+                </div>
+            </nav>
+            <div class="w-full flex flex-col items-center md:w-2/3 text-center ">
+                <span
+                    class="block  my-[30px] rounded-3xl text-white text-xl bg-[#7EA5D345] px-5 py-2 animate__animated animate__fadeIn">La
+                    PUB +
                     facilement</span>
-                <h1 class="font-bold text-5xl  text-white ">Marketplace publicitaire</h1>
+                <h1 class="font-bold text-5xl  text-white animate__animated animate__fadeInDown animate__delay-1s">Marketplace
+                    publicitaire</h1>
+                    <h2 class="text-transparent text-[1px]">publicité en  Afrique</h2>
                 <div>
-                    <h2 class="text-white">Prenez le contrôle d’une <span class="text-yellow-400">plateforme
-                            intelligente</span>,</h2>
-                    <h2 class="text-white">Profitez de <span class="text-yellow-400">plusieurs canaux publicitaires sur
+                    <h2 class="text-yellow-400  animate__animated animate__fadeInDown animate__delay-1s">Prenez le contrôle d’une <span
+                            class="text-white">plateforme
+                            automatisé</span>,</h2>
+                    <h2 class="text-white  animate__animated animate__fadeInDown animate__delay-1s">Profitez de <span
+                            class="text-yellow-400">plusieurs canaux publicitaires sur
                             toute l’Afrique</span> </h2>
                 </div>
-                <div class="btn-call-to-action text-lg flex flex-col space-y-2">
+                <div class="btn-call-to-action text-lg flex flex-col space-y-2 my-10">
                     <div class=" flex space-x-10">
-
                         <a href="https://app.adafri.com/"
-                            class="bg-yellow-400 text-blue-900 font-semibold px-6 py-3 rounded-lg hover:bg-yellow-300 hover:scale-110 transform duration-100"
+                            class="bg-yellow-400 text-blue-900 font-semibold px-6 py-3 rounded-lg hover:bg-yellow-300 hover:scale-110 transform duration-100  animate__animated animate__fadeInLeft animate__delay-2s"
                             title="">Lancez-vous</a>
                         <a href="https://meetings-eu1.hubspot.com/dieuveille-goma/notre-1er-rendez-vous-"
-                            class="px-6 py-3 rounded-lg text-white ring-2 ring-white ring-inset hover:opacity-80 hover:scale-110 transform duration-100"
+                            class="px-6 py-3 rounded-lg text-white ring-2 ring-white ring-inset hover:opacity-80 hover:scale-110 transform duration-100 animate__animated animate__fadeInRight animate__delay-2s"
                             title="ask demo button">Demander Demo</a>
                     </div>
-                    <img class="w-36 object-fit self-center" src="./img/DVA.webp" alt="arrow image">
+                    <img class="w-36 object-fit self-center animate__animated animate__fadeIn animate__delay-3s " src="./img/DVA.webp"
+                        alt="arrow image">
                 </div>
             </div>
-            <img class="w-72 object-cover" src="./img/girl.webp" alt="african woman">
+            <img class="w-72 object-cover animate__animated animate__fadeInUp" src="./img/girl.webp"
+                alt="african woman">
         </section>
-        <section id="tesmonials" class="min-h-[300px] bg-white py-10 text-center">
+        <section id="our-clients" class="w-full text-center py-10">
+            <h1 class="font-semi-bold text-2xl md:text-5xl text-slate-400 px-10  text-center">Un Outil automatisé qui
+                regroupe plus de</h1>
+            <div class="w-9/12 flex justify-center mx-auto my-10 space-x-10">
+                <div class="flex flex-col items-center justify-center mx-4">
+                    <p class="font-bold text-9xl text-blue-900">492</p>
+                    <p class=" text-slate-500 text-4xl capitalize">annonceurs actifs</p>
+                </div>
+                <div class="w-1/2">
+                    <img class="w-full object-cintain" src="./img/annonceurs/Clients.webp" alt="">
+                </div>
+            </div>
+        </section>
+        <section id="tesmonials" class="d-none min-h-[300px] bg-white py-10 text-center">
             <h2 class="font-bold text-3xl md:text-5xl text-slate-400 px-10  text-center">Un Outil automatisé qui
                 regroupe plus de
                 <span
@@ -88,17 +121,22 @@
                 class="text-white  font-semibold bg-blue-900 px-6 py-3 inline-block rounded-lg hover:scale-105 transform duration-100 hover:bg-blue-800 "
                 title="">Prendre un Rendez-vous
             </a>
-            
+
         </section>
 
 
         <section class="services-container">
-            <div id="services-title" class="flex flex-col items-center space-y-10 my-[30px]">
-                <h2 class="font-bold text-5xl text-blue-900 text-center">Concevez, déployez et gérez</h2>
-                <p class="font-light text-3xl text-center"> Notre outil atteint vos objectifs de notoriété et de
-                    conversion. Devenez autonome dès aujourd’hui !</p>
+            <div id="services-title" class="flex flex-col items-center my-[30px]">
+                <h1 class="font-bold text-5xl text-blue-900 text-center">Gerer toute votre communication sur une seule et
+                    unique plateforme</h1>
+                    <h2 class="text-transparent text-[1px]">Le marketing à l'africaine</h2>
+                <p class="font-light text-3xl text-center my-6"> Concevez, déployez ,
+                    <strong class="font-bold">gérez et suivez</strong>
+                    à partir d'une plateforme intelligente, synchronisée à différents canauxs.<br> Devenez autonome dès
+                    aujourd’hui !
+                </p>
                 <a href="https://app.adafri.com/"
-                    class="text-white bg-blue-900 font-semibold px-6 py-3 rounded-lg hover:bg-blue-800 hover:scale-110 transform duration-100"
+                    class="text-white bg-emerald-500 font-semibold px-6 py-3 rounded-lg hover:bg-emerald-400 hover:scale-110 transform duration-100"
                     title="">Commencer maintenant</a>
             </div>
             <div class="services-content">
@@ -109,7 +147,7 @@
                     <div class="service--block-inner">
                         <h4 class="service--title">SMS</h4>
                         <div class="service--desc service--desc--right stroke-right-top"><span>Des campagnes marketing
-                                sms au nom de vote entreprise et personnaliséees pour chaque client</span>
+                                sms au nom de vote entreprise et personnaliséees pour chaque client dans 11 pays.</span>
                         </div>
                     </div>
                 </div>
@@ -226,8 +264,10 @@
             class="w-full md:w-4/5 lg:w-2/3 mx-auto md:my-20 min-h-fit flex flex-col md:flex-row bg-blue-100 rounded-lg shadow-sm overflow-hidden">
             <div class="flex flex-col space-y-8 items-start ml-10 my-10">
                 <span class="rounded-3xl text-blue-900 text-xl bg-[#7EA5D345] px-5 py-2"> Crédit publicitaire </span>
-                <h2 class="font-bold text-5xl text-blue-900">Une ligne de crédit
-                    minimale de $ 500</h2>
+                <h2 class="font-bold text-5xl text-blue-900">
+                    Une ligne de crédit minimale de $ 500
+                </h2>
+                <h2 class="text-transparent text-[1px]"> credit publicitaire en afrique</h2>
                 <p class="font-light text-xl">Évitez les tensions de trésorerie et les hésitations liées au budget de
                     communication. Bénéficiez d’un crédit à <strong>0% d’intérêt</strong>, payé avant échéance et
                     recevez même un
@@ -240,7 +280,7 @@
             <img class="w-full md:w-1/2 object-contain md:object-cover" src="./img/cashback.png" alt="">
         </section>
         <section id="mobilemoney"
-            class="w-full md:w-4/5 lg:w-2/3 mx-auto my-20 min-h-fit flex flex-col items-center sm:flex-row bg-white overflow-hidden">
+            class="w-full md:w-4/5 lg:w-2/3 mx-auto sm:my-20 min-h-fit flex flex-col items-center sm:flex-row bg-white overflow-hidden">
             <img class="w-1/4" src="./img/Africa.png" alt="">
             <div class="w-3/4">
                 <h2 class="font-bold text-5xl text-blue-900">
@@ -268,7 +308,7 @@
                     <a href="https://meetings-eu1.hubspot.com/sabrina-niang/sabrina"
                         class="rounded-md text-white text-sm bg-blue-900 px-5 py-2 hover:bg-blue-800 shadow-sm">Publicité
                         Google</a>
-                    <a href="https://meetings-eu1.hubspot.com/dieuveille-goma/notre-1er-rendez-vous-"
+                    <a href="https://meetings-eu1.hubspot.com/ndeye-khadijetou"
                         class="rounded-md text-white text-sm bg-gray-500 px-5 py-2 hover:bg-gray-600 shadow-sm">Publicité
                         Offline</a>
                     <a href="https://meetings-eu1.hubspot.com/sabrina-niang/sabrina"
@@ -283,29 +323,6 @@
     </main>
 
     <footer class="text-center lg:text-left text-white bg-gradient-blue">
-        <div class="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300">
-            <div class="mr-12 hidden lg:block">
-                <span class="text-xl">Rejoignez-nous sur les réseaux sociaux :</span>
-            </div>
-            <div class="flex justify-center">
-                <a href="#!" class="mr-6 hover:scale-150">
-                    <i class="fa-brands fa-facebook"></i>
-                </a>
-                <a href="#!" class="mr-6 hover:scale-150">
-                    <i class="fa-brands fa-twitter"></i>
-                </a>
-                <a href="#!" class="mr-6 hover:scale-150">
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
-                <a href="#!" class="mr-6 hover:scale-150">
-                    <i class="fa-brands fa-youtube"></i>
-
-                </a>
-                <a href="#!" class="mr-6 hover:scale-150">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-            </div>
-        </div>
         <div class="mx-6 py-10 text-center text-xl md:text-left">
             <div class="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="">
@@ -376,15 +393,14 @@
                 </div>
             </div>
         </div>
-        <div class="text-center p-6 bg-blue-800 text-white">
+        <div class="text-center p-6">
             <span>© 2022 Copyright:</span>
             <a class="font-semibold" href="https://adafri.com/">Adafri</a>
         </div>
     </footer>
+<script type="text/javascript">
 
-
-
-
+</script>
 </body>
 
 </html>

@@ -45,7 +45,8 @@ module.exports = {
         fontFamily: {
             // 'title': ['"Roboto Mono"', 'ui-monospace'],
             // 'paragraph': ['Poppins', 'sans-serif'],
-        }
+        },
+        
     },
     variants: {
         extend: {
