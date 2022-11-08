@@ -65,12 +65,13 @@
                     class="block  my-[30px] rounded-3xl text-white text-xl bg-[#7EA5D345] px-5 py-2 animate__animated animate__fadeIn">La
                     PUB +
                     facilement</span>
-                <h1 class="font-bold text-5xl  text-white animate__animated animate__fadeInDown animate__delay-1s">Marketplace
+                <h1 class="font-bold text-5xl  text-white animate__animated animate__fadeInDown animate__delay-1s">
+                    Marketplace
                     publicitaire</h1>
-                    <h2 class="text-transparent text-[1px]">publicité en  Afrique</h2>
+                <h2 class="text-transparent text-[1px]">publicité en Afrique</h2>
                 <div>
-                    <h2 class="text-yellow-400  animate__animated animate__fadeInDown animate__delay-1s">Prenez le contrôle d’une <span
-                            class="text-white">plateforme
+                    <h2 class="text-yellow-400  animate__animated animate__fadeInDown animate__delay-1s">Prenez le
+                        contrôle d’une <span class="text-white">plateforme
                             automatisé</span>,</h2>
                     <h2 class="text-white  animate__animated animate__fadeInDown animate__delay-1s">Profitez de <span
                             class="text-yellow-400">plusieurs canaux publicitaires sur
@@ -85,8 +86,8 @@
                             class="px-6 py-3 rounded-lg text-white ring-2 ring-white ring-inset hover:opacity-80 hover:scale-110 transform duration-100 animate__animated animate__fadeInRight animate__delay-2s"
                             title="ask demo button">Demander Demo</a>
                     </div>
-                    <img class="w-36 object-fit self-center animate__animated animate__fadeIn animate__delay-3s " src="./img/DVA.webp"
-                        alt="arrow image">
+                    <img class="w-36 object-fit self-center animate__animated animate__fadeIn animate__delay-3s "
+                        src="./img/DVA.webp" alt="arrow image">
                 </div>
             </div>
             <img class="w-72 object-cover animate__animated animate__fadeInUp" src="./img/girl.webp"
@@ -127,9 +128,10 @@
 
         <section class="services-container">
             <div id="services-title" class="flex flex-col items-center my-[30px]">
-                <h1 class="font-bold text-5xl text-blue-900 text-center">Gerer toute votre communication sur une seule et
+                <h1 class="font-bold text-5xl text-blue-900 text-center">Gerer toute votre communication sur une seule
+                    et
                     unique plateforme</h1>
-                    <h2 class="text-transparent text-[1px]">Le marketing à l'africaine</h2>
+                <h2 class="text-transparent text-[1px]">Le marketing à l'africaine</h2>
                 <p class="font-light text-3xl text-center my-6"> Concevez, déployez ,
                     <strong class="font-bold">gérez et suivez</strong>
                     à partir d'une plateforme intelligente, synchronisée à différents canauxs.<br> Devenez autonome dès
@@ -395,12 +397,20 @@
         </div>
         <div class="text-center p-6">
             <span>© 2022 Copyright:</span>
-            <a class="font-semibold" href="https://adafri.com/">Adafri</a>
+            <a class="font-semibold " href="https://adafri.com/">Adafri</a>
         </div>
     </footer>
-<script type="text/javascript">
+    <script type="text/javascript">
+        window.onload = function () {
+            var animatedElements = document.querySelectorAll(".animate__animated")
+            setTimeout(() => {
+                animatedElements.forEach(function (item) {
+                    item.classList.remove('animate__animated');
+                })
+            }, 3000)
 
-</script>
+        }
+    </script>
 </body>
 
 </html>
