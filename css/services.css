@@ -27,7 +27,7 @@
         transition: background .3s, border .3s, border-radius .3s, box-shadow .3s, -webkit-border-radius .3s, -webkit-box-shadow .3s;
     }
 
-    .service--block {
+    .service-block {
         cursor: pointer;
         position: absolute;
         width: 170px;
@@ -40,82 +40,57 @@
 
    
 
-    .sms-marketing--block {
+    .sms-marketing-block {
         left: 164px;
         top: 5px;
     }
 
-    .meta-ads--block {
+    .meta-ads-block {
         left: 167px;
         top: 160px;
     }
 
-    .gads--block {
+    .gads-block {
         left: 32px;
         top: 84px;
     }
 
-    .service--block-02 {
-        left: 298px;
-        top: 235px;
-    }
 
-    .radio--block {
+    .radio-block {
         left: 701px;
         top: 471px;
     }
 
-    .led--block {
+    .led-block {
         left: 568px;
         top: 550px;
     }
 
-    .television--block {
+    .television-block {
         left: 568px;
         top: 394px;
     }
 
-    .chatbot--block {
+    .chatbot-block {
         left: 31px;
         top: 858px;
     }
 
-    .vocal-push--block {
+    .vocal-push-block {
         left: 166px;
         top: 936px;
     }
 
-    .service--block-05 {
-        left: 300px;
-        top: 703px;
-    }
+ 
 
     .ussd-block {
         left: 164px;
         top: 782px;
     }
 
-    .service--block-06 {
-        left: 300px;
-        top: 858px;
-    }
+    
 
-    .service--block-07 {
-        left: 433px;
-        top: 937px;
-    }
-
-    .service--block-08 {
-        left: 300px;
-        top: 1012px;
-    }
-
-    .service--block-09 {
-        left: 433px;
-        top: 1090px;
-    }
-
-    .service--block-inner {
+    .service-block-inner {
         background: url("../img/hex-blue-skew.svg") no-repeat 50% 100%;
         background-size: 0;
         display: flex;
@@ -126,14 +101,14 @@
         transition: all .2s .6s;
     }
 
-    .service--block-inner:before,
-    .service--block-inner:after {
+    .service-block-inner:before,
+    .service-block-inner:after {
         content: '';
         position: absolute;
         opacity: 0;
     }
 
-    .service--block-inner:before {
+    .service-block-inner:before {
         background: url("../img/hex-white-skew.png") no-repeat 0 100%;
         background-size: contain;
         width: 180px;
@@ -146,7 +121,7 @@
         z-index: 0;
     }
 
-    .service--block-inner:after {
+    .service-block-inner:after {
         background: url("../img/hex-stroke.svg") no-repeat 0 100%;
         background-size: contain;
         width: 208px;
@@ -158,7 +133,7 @@
         z-index: 1;
     }
 
-    .service--title {
+    .service-title {
         text-align: center;
         color: #fff;
         font: 900 20px/1 "League Spartan", sans-serif;
@@ -169,7 +144,7 @@
         transition: color .7s;
     }
 
-    .service--desc {
+    .service-desc {
         color: #4e4e4e;
         font: 400 14px/1.28 "League Spartan", sans-serif;
         position: absolute;
@@ -177,22 +152,22 @@
         transition: opacity .1s .5s;
     }
 
-    .service--desc span {
+    .service-desc span {
         position: relative;
         z-index: 2;
     }
 
-    .service--desc.service--desc--left {
+    .service-desc.service-desc-left {
         right: calc(100% - 40px);
         padding-right: 50px;
     }
 
-    .service--desc.service--desc--right {
+    .service-desc.service-desc-right {
         padding-left: 70px;
         left: calc(100% - 40px);
     }
 
-    .service--desc:before {
+    .service-desc:before {
         content: '';
         width: 0;
         position: absolute;
@@ -203,62 +178,62 @@
         background-size: auto 100% !important;
     }
 
-    .service--desc.stroke-right-top:before,
-    .service--desc.stroke-right-bottom:before {
+    .service-desc.stroke-right-top:before,
+    .service-desc.stroke-right-bottom:before {
         left: 0;
     }
 
-    .service--desc.stroke-left-top:before,
-    .service--desc.stroke-left-bottom:before {
+    .service-desc.stroke-left-top:before,
+    .service-desc.stroke-left-bottom:before {
         right: 0;
     }
 
-    .service--desc.stroke-right-top:before {
+    .service-desc.stroke-right-top:before {
         background: url("../img/stroke-right-top.svg") no-repeat 0 0;
     }
 
-    .service--desc.stroke-right-bottom:before {
+    .service-desc.stroke-right-bottom:before {
         background: url("../img/stroke-right-bottom.svg") no-repeat 0 0;
     }
 
-    .service--desc.stroke-left-top:before {
+    .service-desc.stroke-left-top:before {
         background: url("../img/stroke-left-top.svg") no-repeat 100% 0;
     }
 
-    .service--desc.stroke-left-bottom:before {
+    .service-desc.stroke-left-bottom:before {
         background: url("../img/stroke-left-bottom.svg") no-repeat 100% 0;
     }
 
-    .service--desc.stroke-right-bottom,
-    .service--desc.stroke-left-bottom {
+    .service-desc.stroke-right-bottom,
+    .service-desc.stroke-left-bottom {
         padding-top: 50px;
     }
 
-    .service--desc.stroke-left-bottom {
+    .service-desc.stroke-left-bottom {
         top: 140px;
         width: 275px;
         padding-left: 7px;
     }
 
-    .service--desc.stroke-right-top {
+    .service-desc.stroke-right-top {
         width: 300px;
         padding-top: 15px;
         top: -15px;
     }
 
-    .service--desc.stroke-right-bottom {
+    .service-desc.stroke-right-bottom {
         top: 145px;
         width: 300px;
     }
 
-    .service--desc.stroke-left-top {
+    .service-desc.stroke-left-top {
         width: 275px;
         padding-left: 7px;
         padding-top: 15px;
         top: -15px;
     }
 
-    .service--subtitle {
+    .service-subtitle {
         position: absolute;
         left: -120px;
         color: #004d93;
@@ -270,91 +245,91 @@
         border-radius: 10px;
     }
 
-    .service--subtitle.subtitle-automation {
+    .service-subtitle.subtitle-automation {
         top: 17px;
     }
 
-    .service--subtitle.subtitle-capture {
+    .service-subtitle.subtitle-capture {
         top: 900px;
     }
-    .service--subtitle.subtitle-offline {
+    .service-subtitle.subtitle-offline {
         top: 309px;
         left: 620px;
     }
 
-    .no-touch .service--block:hover {
+    .service-block:hover , .service-block.active  , .service-block:active {
         background-size: 0;
         transition: all .2s 0s;
         z-index: 1;
     }
 
-    .no-touch .service--block:hover .service--block-inner {
+    .service-block:hover .service-block-inner , .service-block.active  .service-block-inner , .service-block:active .service-block-inner {
         background-size: 100%;
         transition: all .2s 0s;
     }
 
-    .no-touch .service--block:hover .service--block-inner:before {
+    .service-block:hover .service-block-inner:before , .service-block.active  .service-block-inner:before , .service-block:active .service-block-inner:before {
         opacity: 1;
         transform: translate3d(0, 0, 0);
         -webkit-transform: translate3d(0, 0, 0);
         transition: all .3s .3s;
     }
 
-    .no-touch .service--block:hover .service--block-inner:after {
+    .service-block:hover  .service-block-inner:after , .service-block.active  .service-block-inner:after , .service-block:active .service-block-inner:after {
         opacity: 1;
         transform: scale(1);
         transition: all .3s .5s;
     }
 
-    .no-touch .service--block:hover .service--title {
+    .service-block:hover .service-title  , .service-block.active  .service-title , .service-block:active .service-title {
         color: #1d4371;
         transition: all .1s;
         transform: translateY(7px) skew(-30deg, 10deg);
     }
 
-    .no-touch .service--block:hover .service--desc {
+    .service-block:hover .service-desc, .service-block.active  .service-desc , .service-block:active .service-desc {
         opacity: 1;
         transition: opacity .1s .7s;
     }
 
-    .no-touch .service--block:hover .service--desc:before {
+    .service-block:hover .service-desc:before , .service-block.active  .service-desc:before , .service-block:active .service-desc:before {
         width: 100%;
         transition: width .5s .7s;
     }
 
     @media only screen and (max-width:1199px) {
-        .service--subtitle {
+        .service-subtitle {
             left: 0;
         }
 
-        .service--subtitle.subtitle-automation {
+        .service-subtitle.subtitle-automation {
             top: 0;
         }
 
-        .service--subtitle.subtitle-capture {
+        .service-subtitle.subtitle-capture {
             left: 0;
             top: 801px;
         }
-        .service--subtitle.subtitle-offline {
+        .service-subtitle.subtitle-offline {
             top: 297px;
             left: 617px;
         }
 
-        .service--desc.stroke-left-top {
+        .service-desc.stroke-left-top {
             right: calc(100% - 60px);
         }
 
-        .service--desc.stroke-left-bottom {
+        .service-desc.stroke-left-bottom {
             width: 250px;
             padding-right: 30px;
         }
 
-        .service--desc.stroke-right-top {
+        .service-desc.stroke-right-top {
             width: 260px;
             padding-left: 60px;
         }
 
-        .service--desc.stroke-right-bottom {
+        .service-desc.stroke-right-bottom {
             width: 260px;
             padding-left: 50px;
         }
@@ -368,17 +343,17 @@
             margin:0 auto;
         }
 
-        .service--block {
+        .service-block {
             width: 141px;
             height: 125px;
         }
 
-        .service--block-inner:before {
+        .service-block-inner:before {
             width: 155px;
             height: 100px;
         }
 
-        .service--block-inner:after {
+        .service-block-inner:after {
             width: 175px;
             height: 105px;
             left: -15px;
@@ -386,125 +361,99 @@
 
      
 
-        .sms-marketing--block {
+        .sms-marketing-block {
             left: 112px;
             top: 5px;
         }
 
-        .meta-ads--block {
+        .meta-ads-block {
             left: 111px;
             top: 132px;
         }
 
-        .gads--block {
+        .gads-block {
             left: 1px;
             top: 71px;
         }
 
-        .service--block-02 {
-            left: 225px;
-            top: 196px;
-        }
+        
 
-        .radio--block {
+        .radio-block {
             left: 561px;
             top: 394px;
         }
 
-        .led--block {
+        .led-block {
             left: 448px;
             top: 459px;
         }
 
-        .television--block {
+        .television-block {
             left: 449px;
             top: 329px;
         }
 
-        .chatbot--block {
+        .chatbot-block {
             left: 1px;
             top: 717px;
         }
 
-        .vocal-push--block {
+        .vocal-push-block {
             left: 112px;
             top: 782px;
         }
 
-        .service--block-05 {
-            left: 225px;
-            top: 586px;
-        }
+    
 
         .ussd-block {
             left: 112px;
             top: 652px;
         }
 
-        .service--block-06 {
-            left: 225px;
-            top: 715px;
-        }
-
-        .service--block-07 {
-            left: 336px;
-            top: 780px;
-        }
-
-        .service--block-08 {
-            left: 225px;
-            top: 843px;
-        }
-
-        .service--block-09 {
-            left: 336px;
-            top: 908px;
-        }
-
-        .service--title {
+        .service-title {
             font-size: 18px;
         }
 
-        .service--desc {
+        .service-desc {
             font-size: 12px;
         }
 
-        .service--desc:before {
+        .service-desc:before {
             height: 30px;
         }
 
-        .service--desc.stroke-right-bottom,
-        .service--desc.stroke-left-bottom {
+        .service-desc.stroke-right-bottom,
+        .service-desc.stroke-left-bottom {
             padding-top: 40px;
         }
 
-        .service--desc.stroke-left-bottom {
+        .service-desc.stroke-left-bottom {
             top: 117px;
             width: 215px;
             right: calc(100% - 40px);
         }
 
-        .service--desc.stroke-right-bottom {
+        .service-desc.stroke-right-bottom {
             top: 120px;
             width: 210px;
             padding-left: 35px;
         }
 
-        .service--desc.stroke-left-top {
+        .service-desc.stroke-left-top {
             width: 205px;
             padding-right: 30px;
             right: calc(100% - 40px);
         }
 
-        .service--desc.stroke-right-top {
+        .service-desc.stroke-right-top {
             width: 225px;
         }
 
-        .service--subtitle.subtitle-capture {
+        .service-subtitle.subtitle-capture {
             top: 651px;
             left: -31px;
         }
-        .service--subtitle.subtitle-offline {
+        .service-subtitle.subtitle-offline {
             top: 264px;
             left: 521px;
         }
@@ -517,122 +466,94 @@
             margin: 0 auto;
         }
 
-        .service--block {
+        .service-block {
             width: 91px;
             height: 80px;
         }
 
      
 
-        .sms-marketing--block {
+        .sms-marketing-block {
             left: 72px;
             top: 4px;
         }
 
-        .meta-ads--block {
+        .meta-ads-block {
             left: 73px;
             top: 85px;
         }
 
-        .gads--block {
+        .gads-block {
             left: 1px;
             top: 46px;
         }
 
-
-        .service--block-02 {
-            left: 144px;
-            top: 126px;
-        }
-
-        .radio--block {
+        .radio-block {
             left: 360px;
             top: 253px;
         }
 
-        .led--block {
+        .led-block {
             left: 288px;
             top: 295px;
         }
 
-        .television--block {
+        .television-block {
             left: 289px;
             top: 212px;
         }
 
-        .chatbot--block {
+        .chatbot-block {
             left: 0px;
             top: 461px;
         }
 
-        .vocal-push--block {
+        .vocal-push-block {
             left: 72px;
             top: 503px;
         }
 
-        .service--block-05 {
-            left: 144px;
-            top: 378px;
-        }
+    
 
         .ussd-block {
             left: 72px;
             top: 420px;
         }
 
-        .service--block-06 {
-            left: 144px;
-            top: 460px;
-        }
 
-        .service--block-07 {
-            left: 217px;
-            top: 503px;
-        }
-
-        .service--block-08 {
-            left: 144px;
-            top: 544px;
-        }
-
-        .service--block-09 {
-            left: 217px;
-            top: 586px;
-        }
-
-        .service--title {
+        .service-title {
             font-size: 12px;
         }
 
-        .service--block-inner:before {
+        .service-block-inner:before {
             width: 100px;
             height: 65px;
             bottom: 5px;
         }
 
-        .service--block-inner:after {
+        .service-block-inner:after {
             width: 108px;
             height: 65px;
             left: -10px;
         }
 
-        .service--desc:before {
+        .service-desc:before {
             height: 25px;
         }
 
-        .service--desc {
+        .service-desc {
             top: -10px;
             width: 150px;
             font-size: 10px;
             padding-top: 10px;
         }
 
-        .service--desc.stroke-right-bottom,
-        .service--desc.stroke-left-bottom {
+        .service-desc.stroke-right-bottom,
+        .service-desc.stroke-left-bottom {
             padding-top: 25px;
         }
 
-        .service--desc.stroke-left-bottom {
+        .service-desc.stroke-left-bottom {
             top: 70px;
             width: 140px;
             padding-right: 15px;
@@ -640,13 +561,13 @@
             right: calc(100% - 15px);
         }
 
-        .service--desc.stroke-left-top {
+        .service-desc.stroke-left-top {
             width: 140px;
             padding-top: 10px;
             right: calc(100% - 30px);
         }
 
-        .service--desc.stroke-right-bottom {
+        .service-desc.stroke-right-bottom {
             top: 80px;
             width: 150px;
             left: calc(100% - 60px);
@@ -654,27 +575,27 @@
             padding-top: 30px;
         }
 
-        .service--desc.stroke-right-top {
+        .service-desc.stroke-right-top {
             width: 160px;
             padding-left: 50px;
             padding-top: 10px;
         }
 
-        .service--subtitle {
+        .service-subtitle {
             left: -40px;
             font-size: 16px;
         }
 
-        .service--subtitle.subtitle-capture {
+        .service-subtitle.subtitle-capture {
             top: 401px;
             left: -15px;
         }
-        .service--subtitle.subtitle-offline {
+        .service-subtitle.subtitle-offline {
             top: 158px;
             left: 329px;
         }
 
-        .service--subtitle.subtitle-automation {
+        .service-subtitle.subtitle-automation {
             top: 0;
         }
     }
