@@ -1,8 +1,10 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
     content: ['./index.html',],
     media: false, // or 'media' or 'class'
     theme: {
         extend: {
+            
             backgroundImage: {
                 'free-money': "url('/img/annonceurs/free.png')",
               },
