@@ -23,6 +23,9 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./dist/output.css">
     <link rel="stylesheet" href="./src/css/style.css">
+    <!-- Dev Mode  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 
 <body class="w-full">
@@ -43,46 +46,47 @@
                 </div>
             </div>
         </nav>
-             <!-- Chatbot Section -->
-             <section class=" bg-[#FCFAFF] min-h-[300px] py-10 bg-[url('img/cashback.png')]" id="chatbot">
-                <h1 class="font-bold text-2xl md:text-6xl text-blue-800 px-10  text-center mb-10">
-                    Créez facilement des automatisations
-                </h1>
-                <div class="flex flex-col md:flex-row items-center w-9/12 mx-auto md:space-x-20">
-                    <div class="order-last md:order-first">
-                        <h2 class="font-bold text-5xl text-blue-800">
-                            Restez synchrone avec vos
-                            clients grace à Votre bot whatsapp
-                        </h2>
-                        <h2 class="d-none font-bold text-5xl text-blue-800">
-                            Augmentez vos ventes avec notre e-commerce intégré
-                        </h2>
-                        <p class="font-light text-xl my-10">
-                            Les marques doivent être capables de fournir en temps réel une assistance, des informations, des
-                            solutions, des délais de réponse rapide. Le consommateur est de plus en plus volatil et des
-                            réponses immédiates sont indispensables.
-                        </p>
-                        <p>
-                            <input type="text">
-                        </p>
-                        <a class="text-lg text-blue-800 font-bold bg-yellow-400 px-6 py-3 my-6 rounded-lg hover:bg-yellow-300 hover:scale-105 transform duration-100"
-                            href="" id="start_conversation">
-                            Demarrer une conversation
-                        </a>
-                    </div>
-                    <video class="d-none w-3/5 aspect-video" src="./src/video/chatbotdemo.mp4" autoplay loop=""
-                        playsinline="" muted="" title="" poster="chatbot-app.png"></video>
-    
-                    <video class="md:w-1/3" src="./src/video/BotAnimationLightgray.mp4" autoplay loop="" playsinline=""
-                        muted="" title="Chatbot interaction demo" poster="chatbot-app.png"></video>
+
+        <!-- Chatbot Section -->
+        <section class=" bg-[#FCFAFF] min-h-[300px] py-10 " id="chatbot">
+            <h1 class="font-bold text-2xl md:text-6xl text-blue-800 px-10  text-center mb-10">
+                Créez facilement des automatisations
+            </h1>
+            <div class="flex flex-col md:flex-row items-center w-9/12 mx-auto md:space-x-20">
+                <div class="order-last md:order-first">
+                    <h2 class="font-bold text-5xl text-blue-800">
+                        Restez synchrone avec vos
+                        clients grace à Votre bot whatsapp
+                    </h2>
+                    <h2 class="d-none font-bold text-5xl text-blue-800">
+                        Augmentez vos ventes avec notre e-commerce intégré
+                    </h2>
+                    <p class="font-light text-xl my-10">
+                        Les marques doivent être capables de fournir en temps réel une assistance, des informations, des
+                        solutions, des délais de réponse rapide. Le consommateur est de plus en plus volatil et des
+                        réponses immédiates sont indispensables.
+                    </p>
+                    <p>
+                        <input type="text">
+                    </p>
+                    <a class="text-lg text-blue-800 font-bold bg-yellow-400 px-6 py-3 my-6 rounded-lg hover:bg-yellow-300 hover:scale-105 transform duration-100"
+                        href="" id="start_conversation">
+                        Demarrer une conversation
+                    </a>
                 </div>
-            </section>
+                <video class="d-none w-3/5 aspect-video" src="./src/video/chatbotdemo.mp4" autoplay loop=""
+                    playsinline="" muted="" title=""></video>
 
-        <!-- Banner -->
-        <section id="banner" class="w-full min-h-screen flex flex-col justify-center items-center space-y-10">
+                <video class="md:w-1/3" src="./src/video/BotAnimationLightgray.mp4" autoplay loop="" playsinline=""
+                    muted="" title="Chatbot interaction demo"></video>
+            </div>
+        </section>
 
+        <!-- customer experience -->
+        <section id="customer-experience"
+            class="w-full min-h-screen flex flex-col justify-center items-center space-y-10">
             <h1 class="text-7xl text-blue-800 text-center">
-                Offrez une meilleure expérience client.s
+                Offrez une meilleure expérience client
             </h1>
             <p class="w-2/3 text-center text-3xl">
                 Entrez dans le « commerce conversationnel », où les entreprises et les acheteurs se connectent et
@@ -94,13 +98,14 @@
                 <a class="bg-blue-800 text-white text-lg font-bold px-8 py-4 rounded-lg  border border-solid border-blue-400 hover:scale-110 transform duration-100"
                     href="">Contactez notre support</a>
             </p>
-            <img  class="max-w-md object-contain justify-self-start" src="./src/img/bot/bannerbotimage.png" alt="">
+            <img class="max-w-md object-contain justify-self-start" src="./src/img/bot/bannerbotimage.png" alt="">
 
         </section>
 
-        <!--  -->
-        <section id=""
+        <!-- Communiquer avec vos clients  -->
+        <section id="commication-with-clients"
             class="min-h-[200px] flex flex-col md:flex-row items-center md:justify-center bg-blue-100 py-10  md:px-10">
+            <img class="w-3/4 md:w-1/2 lg:w-1/3 " src="./src/img/bot/servicesClientelles.png" alt="">
             <div class="w-3/4 md:w-1/2  flex flex-col space-y-8 items-start">
                 <span class="rounded-3xl text-blue-900 text-xl bg-[#7EA5D345] px-5 py-2">Place au bot</span>
                 <h2 class="font-bold text-5xl text-blue-900">Communiquer instantanément
@@ -113,7 +118,6 @@
                         href="https://bot.adafri.com/">Commencer Maintenant</a>
                 </div>
             </div>
-            <img class="w-3/4 md:w-1/2 lg:w-1/3 " src="./src/img/nosConseillers.webp" alt="">
 
         </section>
 
@@ -129,11 +133,93 @@
             <img class=" w-full md:w-1/2 lg:w-1/3 object-contain" src="./src/img/bot/botWhatApp.png" alt="">
 
         </section>
-   
 
 
+        <!-- From tailwind -->
+        <section id="whatsapp-automatisation" class="w-full">
+            <h2 class="text-center text-7xl text-blue-800 font-bold">
+                Automatisation WhatsApp
+
+            </h2>
+            <p class="mx-auto py-4 text-3xl text-center w-2/3 pt-6 pb-20">
+                Créez des campagnes de marketing conversationnel, engagez les clients existants et fournissez un
+                excellent service client, le tout dans WhatsApp.
+            </p>
+
+        </section>
+        <div class="mx-auto w-full max-w-container px-4 py-10 sm:px-6 lg:px-8">
+            <div
+                class="mx-auto grid lg:grid-rows-[repeat(5,200px)] lg:grid-flow-col-dense grid-cols-1 items-start gap-8 sm:max-w-lg lg:max-w-[70rem] lg:grid-cols-2">
+
+                <div
+                    class="row-span-2  bg-blue-800 h-full relative z-20 -mx-4 shadow-lg ring-1 ring-slate-900/10 sm:mx-0 sm:rounded-3xl">
+
+                    <!-- <div class="relative p-5 py-10 sm:rounded-3xl sm:px-10">
+                    </div> -->
+                    <div
+                        class=" h-full p-5 py-10  sm:px-10 flex flex-col justify-around relative -mx-5 ring-1 ring-slate-900/5 sm:mx-0 sm:rounded-2xl">
+                        <p class="text-[2rem] leading-none  text-white">
+                            Construisez votre premier chatbot en quelques minutes, aucun codage requis
+                        </p>
+                        <div class="relative flex flex-col bg-white py-8 px-5 sm:rounded-2xl">
+                            La fonctionnalité de commerce électronique d'UChat permet aux clients de passer des
+                            commandes sur tous les canaux que nous prenons en charge. Votre client peut facilement
+                            rechercher vos produits et UChat rationalise le processus de paiement pour vous.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div
+                    class="row-span-2 bg-white h-full relative z-20 -mx-4 shadow-lg ring-1 ring-blue-700 sm:mx-0 sm:rounded-3xl">
+                    <div class="relative  p-5 py-10 sm:rounded-3xl sm:px-10">
+                        <p class="text-[2rem] font-bold leading-none text-blue-800">
+                            Concevez & déployez votre chatbot Visuellement
+                        </p>
+                        <div class="relative -mx-5  ring-1 ring-slate-900/5 sm:mx-0 sm:rounded-2xl">
+                            <div class="relative flex flex-col bg-slate-50 py-8 px-5 sm:rounded-2xl">
+                                <p class="flex items-center justify-center">
+                                    <img src="./src/img/bot/drag.gif" alt="Drag and Drog builder">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="row-span-2 bg-white h-full relative z-20 -mx-4 shadow-lg ring-1 ring-yellow-400 sm:mx-0 sm:rounded-3xl">
+                    <div class="relative  p-5 py-10 sm:rounded-3xl sm:px-10">
+                        <p class="text-[2rem] font-bold leading-none text-yellow-400">
+                            Accélérez vos ventes avec notre e-commerce intégré
+                        </p>
+                        <div class="relative -mx-5  ring-1 ring-slate-900/5 sm:mx-0 sm:rounded-2xl">
+                            <div class="relative flex flex-col bg-slate-50 py-8 px-5 sm:rounded-2xl">
+                                <p class="flex items-center justify-center">
+                                    <img src="/src/img/bot/add-product.gif" alt=" Demo Ecommerce ">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="-mx-4 bg-yellow-400 flex flex-col h-full justify-around px-5 py-10 relative row-span-2 shadow-lg sm:mx-0 sm:px-10 sm:rounded-3xl z-10">
+                    <p class="text-[2rem]  leading-none text-white">
+                        Accélérez vos ventes avec notre e-commerce intégré
+                    </p>
+                    <div class="relative -mx-5 bg-white py-8 px-5  sm:mx-0 sm:rounded-2xl">
+                        Réduction du personnel nécessaire.
+                        Automatisation des services d'assistance après-vente.
+                        Personnalisation de l'expérience d'achat du client.
+                        Gain de temps et d'argent.
+                        Disponibilité 24/7/365.
+                        Possibilité de servir plusieurs clients à la fois.
+                        Collecte de données plus facile.
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </main>
-
     <footer class="text-center lg:text-left text-white bg-gradient-blue">
         <div class="mx-6 py-10 text-center text-xl md:text-left">
             <div class="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
