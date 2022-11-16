@@ -1,4 +1,4 @@
-# Iezz
+# ADAFRI LANDING PAGE🚀
 
 ## install dependancies
 

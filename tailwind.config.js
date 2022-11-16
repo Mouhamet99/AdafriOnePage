@@ -29,24 +29,11 @@ module.exports = {
                 '6/8' : '75.000%',
                 '7/8' : '87.500%',
             },
-            gridTemplateColumns: {
-                // Simple 16 column grid
-                '13': 'repeat(13, minmax(0, 1fr))',
-            },
-            gridColumnStart: {
-                '13': '13',
-            },
-            gridColumnEnd: {
-                '13': '14',
-            },
             gridColumn: {
                 'span-16': 'span 13 / span 13',
             }
         },
-        fontFamily: {
-            // 'title': ['"Roboto Mono"', 'ui-monospace'],
-            // 'paragraph': ['Poppins', 'sans-serif'],
-        },
+      
         
     },
     variants: {

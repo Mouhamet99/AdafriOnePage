@@ -10,7 +10,10 @@ const app = express();
 app.use(express.json());
 
 app.use(cors());
-app.use('/', express.static(__dirname + '/'))
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+
+// app.use('/', express.static(__dirname + '/'))
 app.get("/", (req: Request, res: Response) => {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
@@ -18,6 +21,7 @@ app.get("/", (req: Request, res: Response) => {
 app.get("/chatbot", (req: Request, res: Response) => {
     res.sendFile(path.join(__dirname + '/chatbot.html'));
 });
+
 
 app.get("/message", async (req: Request, res: Response) => {
     const id: string = req.query.transaction_id as string ?? "";
