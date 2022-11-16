@@ -13,7 +13,7 @@ app.use(cors());
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
-// app.use('/', express.static(__dirname + '/'))
+app.use('/', express.static(__dirname + '/'))
 app.get("/", (req: Request, res: Response) => {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
