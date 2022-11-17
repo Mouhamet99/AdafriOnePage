@@ -37,6 +37,10 @@
         transition: all .2s .6s;
         z-index: 0;
     }
+    .service-block-beta {
+        background: url("../img/hex-blue-beta.svg") no-repeat 50% 50%;
+      
+    }
 
    
 
