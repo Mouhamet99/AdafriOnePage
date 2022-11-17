@@ -47,8 +47,47 @@
 
 <body class="w-full">
     <main>
+        <section id="banner" class="relative flex flex-col justify-between items-center  min-h-screen  text-3xl bg-gradient-blue">
+            <nav class="relative w-full flex flex-wrap justify-between py-3">
+                <div class="container-fluid md:container md:mx-auto w-full flex flex-wrap items-center justify-between px-6">
+                    <a target="_blank" href="/">
+                        <img src="./src/img/adafriWhiteLogo.png" class="w-56" width="196" height="57" alt="Logo adafri "
+                        loading="lazy" />
+                    </a>
+                    <div class="flex space-x-3">
+                        <a target="_blank" href="https://app.adafri.com/" class="bg-yellow-400 px-4 py-2 rounded-lg text-lg text-blue-900 font-bold hover:scale-105 transform duration-75">
+                            Connexion
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            <div class="w-full flex items-center md:w-2/3 text-center">
+                <div><img class="w-full object-cover animate__animated animate__fadeInUp" src="./src/img/Ciblage.webp" alt="african woman"></div>
+
+                <div>
+                    <h2 class="text-white">Ciblez par
+                        <span class="text-yellow-400 font-bold animate__animated animate__fadeIn animate__delay">commune, </span>
+                        <span class="text-yellow-400 font-bold animate__animated animate__bounceIn animate__delay-1s">âge, </span>
+                        <span class="text-yellow-400 font-bold animate__animated animate__bounceIn animate__delay-2s">genre, </span>
+                        <span class="text-yellow-400 font-bold animate__animated animate__bounceIn animate__delay-3s">centres d'intérêt, </span>
+                        <span class="text-yellow-400 font-bold animate__animated animate__bounceIn animate__delay-4s">applications installées </span>
+                        <span class="text-yellow-400 font-bold animate__animated animate__bounceIn animate__delay-5s"> et types d'appareils .</span>
+
+                    </h2>
+                    <div class="btn-call-to-action text-xl flex space-x-5 my-1">
+                        <a target="_blank" href="https://adafri.com/download/1811/" class=" text-white text-center object-center text-xl font-bold bg-emerald-500 px-6 py-3 inline-block rounded-lg hover:scale-105 transform duration-100 hover:bg-yellow-400 title=" "">Téléchargez le guide
+                    </a>
+                        <a target="_blank " href="https://adafri.com/download/1720/" class="text-blue-900 text-center object-center text-xl font-bold bg-yellow-400 px-6 py-3 inline-block rounded-lg hover:scale-105 transform duration-100 hover:bg-white
+                        title=" " ">Téléchargez la taille des annonces
+                    </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
         <section id="banner"
-            class="relative flex flex-col justify-between items-center  min-h-screen  text-3xl bg-gradient-blue">
+            class="d-none relative flex flex-col justify-between items-center  min-h-screen  text-3xl bg-gradient-blue">
             <nav class="relative w-full flex flex-wrap justify-between py-3">
                 <div
                     class="container-fluid md:container md:mx-auto w-full flex flex-wrap items-center justify-between px-6">
@@ -59,6 +98,7 @@
                     <div class="flex space-x-3">
 
                         <a target="_blank" href="https://app.adafri.com/"
+                        title="connexion"
                             class="bg-yellow-400 px-4 py-2 rounded-lg text-lg text-blue-900 font-bold hover:scale-105 transform duration-75">
                             Connexion
                         </a>
@@ -170,28 +210,8 @@
             </div>
         </section>
 
-        <br> <br><br>
 
-
-
-
-        <section class="w-10/12 flex space-x-10 mx-auto justify-center">
-
-            <div id="accordion-arrow-icon" data-accordion="open">
-                <h1 class="text-blue-900 text-2xl font-bold">Les pavés</h1>
-                <br>
-                <p class="text-xl text-justify">Les formats dits “carrés ou rectangles”</p>
-                <br>
-            </div>
-
-            <div>
-                <h1 class="text-blue-900 text-2xl font-bold">Les paysages</h1>
-                <br>
-                <p class="text-xl text-justify">Les formats dits “horizontaux”</p>
-        </section>
-        <br> <br>
-
-        <section id="contact-us" class="w-full lg:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 p-10">
+        <section id="contact-us" class="my-20 w-full lg:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 p-10">
             <div class=" bg-blue-100 rounded-xl p-10 flex justify-between items-center mx-3">
                 <div class="flex flex-col items-start">
                     <h2 class="text-blue-700 text-2xl font-bold">Commencez l'aventure ADAFRI</h2>

@@ -1,5 +1,11 @@
 # ADAFRI LANDING PAGE🚀
 
+## clone project
+
+```sh
+git clone https://github.com/Mouhamet99/AdafriOnePage.git
+```
+
 ## install dependancies
 
 ```sh
