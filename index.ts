@@ -10,8 +10,6 @@ const app = express();
 app.use(express.json());
 
 app.use(cors());
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
 
 app.use('/', express.static(__dirname + '/'))
 app.get("/", (req: Request, res: Response) => {

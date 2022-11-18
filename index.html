@@ -56,7 +56,7 @@
                 <div
                     class="container-fluid md:container md:mx-auto w-full flex flex-wrap items-center justify-between px-6">
                     <a href="./">
-                        <img src="./src/img/adafriWhiteLogo.png" class="w-56" width="196" height="57" alt="Logo adafri "
+                        <img src="./src/img/adafriWhiteLogo.png" class="w-40 md:w-56" width="196" height="57" alt="Logo adafri "
                             loading="lazy" />
                     </a>
                     <div class="flex space-x-4">
@@ -105,20 +105,20 @@
                 alt="african woman">
         </section>
         <section id="our-clients" class="w-full text-center py-10">
-            <h1 class="font-semi-bold text-2xl md:text-5xl text-blue-800 font-bold px-10  text-center">Un outil
+            <h1 class="font-semi-bold text-4xl md:text-5xl text-blue-800 font-bold px-10  text-center">Un outil
                 automatisé qui regroupe plus de</h1>
-            <div class="w-9/12 flex justify-center mx-auto my-10 space-x-10">
+            <div class="w-11/12 md:w-9/12 flex flex-col md:flex-row justify-center items-center mx-auto my-10 md:space-x-10">
                 <div class="flex flex-col items-center justify-center mx-4">
                     <p class="font-bold text-9xl text-blue-900 ">492</p>
                     <p class=" text-slate-500 text-4xl capitalize">annonceurs actifs</p>
                 </div>
-                <div class="w-1/2">
+                <div class="md:w-1/2">
                     <img class="w-full object-cintain" src="./src/img/annonceurs/Clients.webp" width="960" height="475"
                         alt="Nos clients">
                 </div>
             </div>
         </section>
-s
+
         <section class="services-container">
             <div id="services-title" class="flex flex-col items-center my-[30px]">
                 <h1 class="font-bold text-5xl text-blue-900 text-center">Gérez toute votre communication sur une seule
@@ -134,10 +134,10 @@ s
                     title="">Commencez maintenant</a>
             </div>
             <div class="services-content">
-                <strong class="service-subtitle subtitle-automation uppercase">Automatisation</strong>
-                <strong class="service-subtitle subtitle-capture uppercase"> Capture</strong>
-                <strong class="service-subtitle subtitle-offline uppercase">Offline</strong>
-                <div class="service-block sms-marketing-block">
+                <strong class="service-subtitle shadow-lg subtitle-automation uppercase">Automatisation</strong>
+                <strong class="service-subtitle shadow-lg subtitle-capture uppercase"> Capture</strong>
+                <strong class="service-subtitle shadow-lg subtitle-offline uppercase">Offline</strong>
+                <div class="service-block sms-marketing-block automatisation-group">
                     <div class="service-block-inner">
                         <h4 class="service-title">SMS</h4>
                         <div class="service-desc service-desc-right stroke-right-top"><span>Des campagnes marketing
@@ -145,7 +145,7 @@ s
                         </div>
                     </div>
                 </div>
-                <div class="service-block service-block-beta meta-ads-block">
+                <div class="service-block service-block-beta meta-ads-block automatisation-group">
                     <div class="service-block-inner">
                         <h4 class="service-title">Meta Ads</h4>
                         <div class="service-desc service-desc-left stroke-left-bottom"><span>Liez vos pages et
@@ -153,7 +153,7 @@ s
                         </div>
                     </div>
                 </div>
-                <div class="service-block gads-block">
+                <div class="service-block gads-block automatisation-group">
                     <div class="service-block-inner">
                         <h4 class="service-title">Google ADS</h4>
                         <div class="service-desc service-desc-left stroke-left-bottom"><span>Publicités display sur
@@ -162,7 +162,7 @@ s
                         </div>
                     </div>
                 </div>
-                <div class="service-block radio-block">
+                <div class="service-block radio-block offline-group">
                     <div class="service-block-inner">
                         <h4 class="service-title">Radio</h4>
                         <div class="service-desc service-desc-right stroke-right-top"><span>Profitez de régies
@@ -170,7 +170,7 @@ s
                         </div>
                     </div>
                 </div>
-                <div class="service-block led-block">
+                <div class="service-block led-block offline-group">
                     <div class="service-block-inner">
                         <h4 class="service-title">Ecran LED</h4>
                         <div class="service-desc service-desc-right stroke-right-bottom"><span>5000M2 d'écrans
@@ -179,16 +179,16 @@ s
                         </div>
                     </div>
                 </div>
-                <div class="service-block television-block">
+                <div class="service-block television-block offline-group">
                     <div class="service-block-inner">
                         <h4 class="service-title">Télévision</h4>
-                        <div class="service-desc service-desc-right stroke-right-top"><span class="text-lg"> On arrive
+                        <div class="service-desc service-desc-right stroke-right-top"><span class=""> On arrive
                                 avec ! </span>
                         </div>
                     </div>
                 </div>
 
-                <div class="service-block chatbot-block">
+                <div class="service-block chatbot-block capture-group">
                     <div class="service-block-inner">
                         <h4 class="service-title">ChatBot</h4>
                         <div class="service-desc service-desc-left stroke-left-bottom"><span>Construisez un parcours
@@ -197,7 +197,7 @@ s
                         </div>
                     </div>
                 </div>
-                <div class="service-block vocal-push-block">
+                <div class="service-block vocal-push-block capture-group">
                     <div class="service-block-inner">
                         <h4 class="service-title">Push vocal</h4>
                         <div class="service-desc service-desc-right stroke-right-bottom"><span>Envoyez un audio de
@@ -205,7 +205,7 @@ s
                         </div>
                     </div>
                 </div>
-                <div class="service-block ussd-block">
+                <div class="service-block ussd-block capture-group">
                     <div class="service-block-inner">
                         <h4 class="service-title">USSD</h4>
                         <div class="service-desc service-desc-right stroke-right-top"><span>Une techno
@@ -215,14 +215,14 @@ s
                 </div>
             </div>
         </section>
-        <h2 class="font-bold text-5xl text-center text-blue-900 mt-20">
+        <h2 class="font-bold text-5xl text-center text-blue-900 sm:mt-20">
             Lancez votre pub, payez
             <span class="text-emerald-500">après !</span>
         </h2>
         <section id=""
             class="w-full md:w-4/5 lg:w-2/3 mx-auto md:my-20 min-h-fit flex flex-col md:flex-row bg-blue-100 rounded-lg shadow-sm overflow-hidden">
 
-            <div class="flex flex-col space-y-8 items-start ml-10 my-10">
+            <div class="flex flex-col space-y-8 items-start md:ml-10 px-4 my-10">
                 <span class="rounded-3xl text-blue-900 text-xl bg-[#7EA5D345] px-5 py-2"> Crédit publicitaire </span>
                 <h2 class="font-bold text-5xl text-blue-900">
                     Une ligne de crédit minimale de $500.
@@ -239,8 +239,8 @@ s
                 height="853" alt="cashback adafri">
         </section>
         <section id="mobilemoney"
-            class="w-full md:w-4/5 lg:w-2/3 mx-auto sm:my-20 min-h-fit flex flex-col items-center sm:flex-row bg-white overflow-hidden">
-            <img class="w-1/4" src="./src/img/Africa.png" width="427" height="427" alt="AFRICA">
+            class="w-full md:w-4/5 lg:w-2/3 mx-auto py-10 sm:my-20 min-h-fit flex flex-col items-center sm:flex-row bg-white overflow-hidden">
+            <img class="w-1/2 md:w-1/4" src="./src/img/Africa.png" width="427" height="427" alt="AFRICA">
             <div class="w-3/4">
                 <h2 class="font-bold text-5xl text-blue-900">
                     Plus besoin de cartes bancaires !
@@ -265,15 +265,19 @@ s
                 <h2 class="font-bold text-5xl text-blue-900">Prenez rendez-vous avec un de nos conseillers</h2>
                 <p class="font-light text-xl">Nous sommes un outil dédié à toute activité commerciale, la bonne
                     nouvelle, c’est que vous pouvez y accéder.</p>
-                <div class="flex  space-x-4">
+                <div class="w-full flex  flex-col md:flex-row  space-y-4  md:space-x-4">
+                   
                     <a target="_blank" href="https://meetings-eu1.hubspot.com/sabrina-niang/sabrina"
-                        class="rounded-md text-white text-sm bg-blue-900 px-5 py-2 hover:bg-blue-800 shadow-sm">Publicité
-                        Google</a>
+                        class="text-center rounded-md text-white text-sm bg-blue-900 px-5 py-2 hover:bg-blue-800 shadow-sm">
+                        Publicité Google
+                    </a>
                     <a target="_blank" href="https://meetings-eu1.hubspot.com/ndeye-khadijetou"
-                        class="rounded-md text-white text-sm bg-gray-500 px-5 py-2 hover:bg-gray-600 shadow-sm">Publicité
-                        Offline</a>
+                        class="text-center rounded-md text-white text-sm bg-gray-500 px-5 py-2 hover:bg-gray-600 shadow-sm">
+                        Publicité
+                        Offline
+                    </a>
                     <a target="_blank" href="https://meetings-eu1.hubspot.com/sabrina-niang/sabrina"
-                        class="rounded-md text-blue-900 text-sm bg-yellow-400 px-5 py-2 hover:bg-yellow-300 shadow-sm">Crédit
+                        class="text-center rounded-md text-blue-900 text-sm bg-yellow-400 px-5 py-2 hover:bg-yellow-300 shadow-sm">Crédit
                         Publicitaire</a>
                 </div>
             </div>
@@ -352,7 +356,7 @@ s
     <footer class="text-center lg:text-left text-white bg-gradient-blue">
         <div class="mx-6 py-10 text-center text-xl md:text-left">
             <div class="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="">
+                <div class="flex flex-col items-center md:inline-block">
                     <img class="w-1/2 object-contain" src="./src/img/adafriWhiteLogo.png" width="285" height="82"
                         alt="logo Adafri">
                     <p class="text-xl font-semibold">
@@ -446,15 +450,59 @@ s
             const services = document.querySelectorAll(".service-block")
             services.forEach(function (service) {
                 service.addEventListener("click", (e) => {
-                    console.log(e);
-                    console.log("this", this);
                     services.forEach(function (s) {
                         s.classList.remove('active')
                     })
-                    s.classList.add('active')
+                    e.target.classList.add('active')
                 })
             })
 
+            let isMobile = window.matchMedia('(max-width:768px)');
+            if(isMobile.matches) {
+                let gadsDetailBloc = document.querySelector(".gads-block .service-block-inner .service-desc-left")
+                
+                gadsDetailBloc.classList.remove("service-desc-left")
+                gadsDetailBloc.classList.remove("stroke-left-bottom")
+                gadsDetailBloc.classList.add("service-desc-right")
+                gadsDetailBloc.classList.add("stroke-right-top")
+               
+                let metaDetailBloc = document.querySelector(".meta-ads-block  .service-block-inner .service-desc-left")
+                
+                metaDetailBloc.classList.remove("service-desc-left")
+                metaDetailBloc.classList.remove("stroke-left-bottom")
+                metaDetailBloc.classList.add("service-desc-right")
+                metaDetailBloc.classList.add("stroke-right-bottom")
+
+               
+                let radioDetailBloc = document.querySelector(".radio-block .service-block-inner .service-desc-right")
+                radioDetailBloc.classList.remove("service-desc-right")
+                radioDetailBloc.classList.remove("stroke-right-top")
+                radioDetailBloc.classList.add("service-desc-left")
+                radioDetailBloc.classList.add("stroke-left-bottom")
+                
+                let tvBloc = document.querySelector(".television-block .service-block-inner .service-desc-right")
+                tvBloc.classList.remove("service-desc-right")
+                tvBloc.classList.remove("stroke-right-top")
+                tvBloc.classList.add("service-desc-left")
+                tvBloc.classList.add("stroke-left-top")
+                
+                let ledBloc = document.querySelector(".led-block .service-block-inner .service-desc-right")
+                ledBloc.classList.remove("service-desc-right")
+                ledBloc.classList.remove("stroke-right-bottom")
+                ledBloc.classList.add("service-desc-left")
+                ledBloc.classList.add("stroke-left-bottom")
+
+                let chatbotBloc = document.querySelector(".chatbot-block .service-block-inner .service-desc-left")
+                
+                chatbotBloc.classList.remove("service-desc-left")
+                chatbotBloc.classList.remove("stroke-left-bottom")
+                chatbotBloc.classList.add("service-desc-right")
+                chatbotBloc.classList.add("stroke-right-top")
+
+            } else {
+                console.log("no");
+            }
+            
         }
     </script>
     <script type="text/javascript">

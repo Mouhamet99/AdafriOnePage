@@ -304,10 +304,12 @@
     @media only screen and (max-width:1199px) {
         .service-subtitle {
             left: 0;
+            font-size: 1.2rem;
         }
 
         .service-subtitle.subtitle-automation {
-            top: 0;
+            top: 105px;
+            left: -59px;
         }
 
         .service-subtitle.subtitle-capture {
@@ -376,14 +378,14 @@
         }
 
         .gads-block {
-            left: 1px;
+            left: 226px;
             top: 71px;
         }
 
         
 
         .radio-block {
-            left: 561px;
+            left: 337px;
             top: 394px;
         }
 
@@ -398,7 +400,7 @@
         }
 
         .chatbot-block {
-            left: 1px;
+            left: 220px;
             top: 717px;
         }
 
@@ -488,12 +490,12 @@
         }
 
         .gads-block {
-            left: 1px;
+            left: 144px;
             top: 46px;
         }
 
         .radio-block {
-            left: 360px;
+            left: 215px;
             top: 253px;
         }
 
@@ -508,7 +510,7 @@
         }
 
         .chatbot-block {
-            left: 0px;
+            left: 143px;
             top: 461px;
         }
 
@@ -580,27 +582,29 @@
         }
 
         .service-desc.stroke-right-top {
-            width: 160px;
+            width: 200px;
             padding-left: 50px;
             padding-top: 10px;
         }
 
         .service-subtitle {
             left: -40px;
-            font-size: 16px;
+            font-size: 14px;
         }
 
         .service-subtitle.subtitle-capture {
-            top: 401px;
-            left: -15px;
+            top: 478px;
+            left: -9px;
         }
         .service-subtitle.subtitle-offline {
-            top: 158px;
-            left: 329px;
+            top: 274px;
+            left: 362px;
         }
 
         .service-subtitle.subtitle-automation {
             top: 0;
+            left: 158px;
+            
         }
     }
 
