@@ -456,8 +456,8 @@
         }
 
         .service-subtitle.subtitle-capture {
-            top: 651px;
-            left: -31px;
+            top: 753px;
+            left: 0px;
         }
         .service-subtitle.subtitle-offline {
             top: 264px;
@@ -467,7 +467,7 @@
 
     @media only screen and (max-width:768px) {
         .services-content {
-            width: 450px;
+            width: 440px;
             height: 700px;
             margin: 0 auto;
         }
