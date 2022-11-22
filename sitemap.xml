@@ -1,0 +1,61 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>https://adafri.com/</loc>
+  <lastmod>2022-11-22T11:23:16+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://adafri.com/src/document/etat-des-lieux-de-la-PUB-au-Senegal.pdf</loc>
+  <lastmod>2022-11-22T11:21:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://adafri.com/chatbot.html</loc>
+  <lastmod>2022-11-22T11:19:47+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://adafri.com/publicites_sur_les_sites_web.html</loc>
+  <lastmod>2022-11-22T11:19:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://adafri.com/publicites_sur_les_moteurs_de_recherche.html</loc>
+  <lastmod>2022-11-22T11:19:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://adafri.com/campagne_sms.html</loc>
+  <lastmod>2022-11-22T11:19:46+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://adafri.com/conditions_generales_utilisation.html</loc>
+  <lastmod>2022-11-22T11:19:47+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://adafri.com/politique_de_confidentialite.html</loc>
+  <lastmod>2022-11-22T11:19:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://adafri.com/src/document/Guide-Campagne-publicitaire-Adafri.pdf</loc>
+  <lastmod>2022-11-22T11:21:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://adafri.com/src/document/Guide-Campagne-SMS.pdf</loc>
+  <lastmod>2022-11-22T11:21:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>

@@ -1,0 +1,22 @@
+User-agent: Googlebot
+User-agent: AdsBot-Google
+Disallow: /.env
+Disallow: /.gitignore
+Disallow: /node_modules
+Disallow: /package-lock.json
+Disallow: /404.html
+Disallow: /index.ts
+Disallow: /.htaccess
+Disallow: /404.html
+
+User-agent: *
+Disallow: /.env
+Disallow: /.gitignore
+Disallow: /node_modules
+Disallow: /package-lock.json
+Disallow: /404.html
+Disallow: /index.ts
+Disallow: /.htaccess
+Disallow: /404.html
+
+Sitemap: https://adafri.com/sitemap.xml
