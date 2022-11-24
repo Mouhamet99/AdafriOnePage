@@ -49,11 +49,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./dist/output.css">
     <link rel="stylesheet" href="./src/css/style.css">
-    
+
     <!-- international Telephone Input-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
@@ -93,19 +93,21 @@
                         solutions, des délais de réponse rapide. Le consommateur est de plus en plus volatil et des
                         réponses immédiates sont indispensables.
                     </p>
-
-                    <div class="flex items-stretch mt-12">
-                        <input
-                            class=" h-full rounded-lg rounded-r-none bg-gray-100 text-lg leading-none text-gray-800 p-5 border border-transparent focus:outline-none focus:border-blue-900"
-                            type="tel" id="phonenumber" placeholder="221774495925" />
-                        <button id="get_started"
-                            class="rounded-l-none hover:bg-blue-800 bg-blue-900 rounded text-base font-medium leading-none text-white p-5 uppercase focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700">Demarrer
-                            Conversation</button>
+                    <div class=" mt-12">
+                        <div class="flex items-stretch">
+                            <input
+                                class="ring-inset h-full rounded-lg rounded-r-none bg-gray-100 text-lg leading-none text-gray-800 p-5 border border-transparent focus:outline-none focus:border-blue-900"
+                                type="tel" id="phonenumber" />
+                            <button id="get_started"
+                                class=" rounded-l-none hover:bg-blue-800 bg-blue-900 rounded text-base font-medium leading-none text-white p-5 uppercase focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700">
+                                Demarrer Conversation
+                            </button>
+                        </div>
+                        <span class="text-red-500 hidden" id="error-msg">
+                            Message error
+                        </span>
                     </div>
                 </div>
-                <video class="d-none w-3/5 aspect-video" src="./src/video/chatbot.htmldemo.mp4" autoplay loop=""
-                    playsinline="" muted="" title="" width="326" height="450"></video>
-
                 <video class="md:w-1/3" src="./src/video/BotAnimationLightgray.mp4" autoplay loop="" playsinline=""
                     muted="" title="Chatbot interaction demo"></video>
             </div>
@@ -216,7 +218,7 @@
         </section>
 
 
-        <section id="contact-us" class="w-full lg:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+        <section id="contact-us" class="w-full lg:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 my-20">
             <div class=" bg-blue-100 rounded-xl p-10 flex justify-between items-center mx-3">
                 <div class="flex flex-col items-start">
                     <h2 class="text-blue-700 text-2xl font-bold">Commencez l'aventure ADAFRI</h2>
@@ -250,8 +252,9 @@
 
     </main>
     <footer class="text-center lg:text-left text-white bg-gradient-blue">
-<h2 class="text-transparent text-[1px]">Annoncer sur Google Ads facilement au Senegal, au Cote d'ivoire, en guinée, au Mali, au Gabon et dans 10 autres 
-</h2>
+        <h2 class="text-transparent text-[1px]">Annoncer sur Google Ads facilement au Senegal, au Cote d'ivoire, en
+            guinée, au Mali, au Gabon et dans 10 autres
+        </h2>
         <div class="mx-6 py-10 text-center text-xl md:text-left">
             <div class="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="flex flex-col items-center md:inline-block">
@@ -286,7 +289,8 @@
                     </p>
 
                     <p class="mb-4">
-                        <a href="./campagne_sms_marketing_en_afrique" class="hover:underline" title="campagne SMS">SMS Marketing</a>
+                        <a href="./campagne_sms_marketing_en_afrique" class="hover:underline" title="campagne SMS">SMS
+                            Marketing</a>
                     </p>
                     <p class="mb-4">
                         <a href="https://blog.adafri.com/" target="_blank" class="hover:underline"
@@ -360,22 +364,71 @@
 
     <!-- international Telephone Input-->
     <script>
-        const phoneInputField = document.querySelector("#phonenumber");
-        const phoneInput = window.intlTelInput(phoneInputField, {
-            initialCountry: "sn",
-            separateDialCode: false,
-            nationalMode: false,
-            autoHideDialCode: false,
-            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-        });
-        document.querySelectorAll(".iti").forEach(function (el) {
-            el.classList.add("d-block");
-        });
+        window.onload = function () {
+            const phoneInputField = document.querySelector("#phonenumber");
+            const phoneInput = window.intlTelInput(phoneInputField, {
+                initialCountry: "sn",
+                separateDialCode: false,
+                nationalMode: false,
+                autoHideDialCode: false,
+                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+            });
 
-        document.querySelector("ul.iti__country-list").classList.add("w-fit")
-        var iti = window.intlTelInputGlobals.getInstance(phoneInputField);
-        var countryData = iti.getSelectedCountryData();
-        console.log(countryData.dialCode);
+            document.querySelectorAll(".iti").forEach(function (el) {
+                el.classList.add("d-block");
+            });
+
+
+            var iti = window.intlTelInputGlobals.getInstance(phoneInputField);
+            var countryData = iti.getSelectedCountryData();
+
+            var errorMsg = document.querySelector("#error-msg");
+            var errorMap = ["Numéro invalide", "Code pays invalide", "Trop court", "Trop long", "Numéro invalide"];;
+
+            var reset = function () {
+                phoneInputField.classList.remove("error");
+                errorMsg.innerHTML = "";
+                errorMsg.classList.add("hidden");
+                phoneInputField.classList.remove("ring-1");
+                phoneInputField.classList.remove("ring-red-400");
+                phoneInputField.classList.remove("ring-inset");
+            };
+
+          
+            // on change: validate
+            phoneInputField.addEventListener('keyup', function (e) {
+                reset();
+                phoneIsValid(phoneInputField.value)
+            });
+
+            function phoneIsValid(value) {
+                if (value.trim()) {
+                    if (!iti.isValidNumber()) {
+                        phoneInputField.classList.add("ring-1");
+                        phoneInputField.classList.add("ring-inset");
+                        phoneInputField.classList.add("ring-red-400");
+
+                        var errorCode = iti.getValidationError();
+                        errorMsg.innerHTML = errorMap[errorCode] ?? 'Veillez entrer un numero de telephone';
+                        errorMsg.classList.remove("hidden");
+
+                        return false
+                    } 
+
+                    phoneInputField.classList.remove("ring-1");
+                    
+                    return true
+                }
+            }
+
+            var startConversationBtn = document.getElementById('get_started')
+            startConversationBtn.addEventListener('click', function (event) {
+                if (phoneIsValid(phoneInputField.value))
+                    fetchGeneric(phoneInputField.value.toString().substring().substr(1))
+            })
+
+        }
+
     </script>
 
 </body>
