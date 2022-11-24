@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Chatbot | Adafri</title>
-<meta name="robots" content="index, follow, max-video-preview:-1, max-snippet:-1, max-image-preview:large">
+    <meta name="robots" content="index, follow, max-video-preview:-1, max-snippet:-1, max-image-preview:large">
 
-    
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146517321-1"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-146517321-1');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-146517321-1');
     </script>
-<!-- Meta Pixel Code -->
+    <!-- Meta Pixel Code -->
     <script>
         !function (f, b, e, v, n, t, s) {
             if (f.fbq) return; n = f.fbq = function () {
@@ -49,12 +49,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./dist/output.css">
     <link rel="stylesheet" href="./src/css/style.css">
-    <!-- Dev Mode  -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- international Telephone Input-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 
 </head>
 
@@ -68,7 +70,7 @@
                     <img src="./src/img/Logo-ADAFRI.png" class="w-40 md:w-56" width="196" height="57" alt="Logo adafri "
                         loading="lazy" />
                 </a>
-                
+
             </div>
         </nav>
 
@@ -94,10 +96,9 @@
 
                     <div class="flex items-stretch mt-12">
                         <input
-                            class="rounded-lg rounded-r-none dark:bg-gray-100 text-lg leading-none text-gray-800 p-5 w-4/5 border border-transparent focus:outline-none focus:border-blue-900"
-                            type="tel"id="phonenumber" placeholder="221774495925" />
-                        <button
-                        id="get_started"
+                            class=" h-full rounded-lg rounded-r-none bg-gray-100 text-lg leading-none text-gray-800 p-5 border border-transparent focus:outline-none focus:border-blue-900"
+                            type="tel" id="phonenumber" placeholder="221774495925" />
+                        <button id="get_started"
                             class="rounded-l-none hover:bg-blue-800 bg-blue-900 rounded text-base font-medium leading-none text-white p-5 uppercase focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700">Demarrer
                             Conversation</button>
                     </div>
@@ -215,7 +216,7 @@
         </section>
 
 
-        <section id="contact-us" class="w-full lg:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 p-10">
+        <section id="contact-us" class="w-full lg:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
             <div class=" bg-blue-100 rounded-xl p-10 flex justify-between items-center mx-3">
                 <div class="flex flex-col items-start">
                     <h2 class="text-blue-700 text-2xl font-bold">Commencez l'aventure ADAFRI</h2>
@@ -249,6 +250,8 @@
 
     </main>
     <footer class="text-center lg:text-left text-white bg-gradient-blue">
+<h2 class="text-transparent text-[1px]">Annoncer sur Google Ads facilement au Senegal, au Cote d'ivoire, en guinée, au Mali, au Gabon et dans 10 autres 
+</h2>
         <div class="mx-6 py-10 text-center text-xl md:text-left">
             <div class="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="flex flex-col items-center md:inline-block">
@@ -268,7 +271,7 @@
                         Nos solutions
                     </h6>
                     <p class="mb-4">
-                        <a href="./publicites_sur_les_sites_web" class="hover:underline"
+                        <a href="./google_ads_publicites_sur_les_sites_web" class="hover:underline"
                             title="Publicites sur les sites web">
                             Publicités sur les sites web</a>
                     </p>
@@ -283,7 +286,7 @@
                     </p>
 
                     <p class="mb-4">
-                        <a href="./campagne_sms" class="hover:underline" title="campagne SMS">SMS Marketing</a>
+                        <a href="./campagne_sms_marketing_en_afrique" class="hover:underline" title="campagne SMS">SMS Marketing</a>
                     </p>
                     <p class="mb-4">
                         <a href="https://blog.adafri.com/" target="_blank" class="hover:underline"
@@ -354,6 +357,26 @@
         <img height="1" width="1" style="display:none;" alt=""
             src="https://px.ads.linkedin.com/collect/?pid=3258137&fmt=gif" />
     </noscript>
+
+    <!-- international Telephone Input-->
+    <script>
+        const phoneInputField = document.querySelector("#phonenumber");
+        const phoneInput = window.intlTelInput(phoneInputField, {
+            initialCountry: "sn",
+            separateDialCode: false,
+            nationalMode: false,
+            autoHideDialCode: false,
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        });
+        document.querySelectorAll(".iti").forEach(function (el) {
+            el.classList.add("d-block");
+        });
+
+        document.querySelector("ul.iti__country-list").classList.add("w-fit")
+        var iti = window.intlTelInputGlobals.getInstance(phoneInputField);
+        var countryData = iti.getSelectedCountryData();
+        console.log(countryData.dialCode);
+    </script>
 
 </body>
 
