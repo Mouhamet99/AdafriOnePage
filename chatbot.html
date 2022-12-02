@@ -29,8 +29,10 @@
         fbq('init', '558148598825846');
         fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=558148598825846&ev=PageView&noscript=1" /></noscript>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=558148598825846&ev=PageView&noscript=1" />
+    </noscript>
     <!-- End Meta Pixel Code -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,25 +47,84 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./dist/output.css">
     <link rel="stylesheet" href="./src/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <!-- international Telephone Input-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <link rel="stylesheet" href="/dist/output.css">
 
 </head>
 
 
-<body class="w-full">
+<body class="w-full h-full relative">
+    <!-- End Send Message Result -->
+    <div class="w-full h-screen fixed bg-[#7EA5D345] z-[100] modal-container hidden" id="">
+        <div class="-translate-x-1/2 -translate-y-1/2 absolute bg-white border left-1/2 p-5 rounded-md shadow-lg top-1/2  transform z-50"
+            id="send-message-result">
+            <div class="mt-3 text-center hidden" id="send-message-result-succes">
+                <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
+                    <svg class="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                </div>
+                <h3 class="text-lg leading-6 font-medium text-gray-900" >
+                    Message envoyé !
+                </h3>
+                <div class="mt-2 px-7 py-3">
+                    <p class="text-sm text-gray-500">
+                        Merci de verifier votre fil de discussion WhatsApp !
+                    </p>
+                </div>
+                <div class="items-center px-4 py-3">
+                    <button
+                        class="ok-btn px-4 py-2 bg-green-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300">
+                        OK
+                    </button>
+                </div>
+            </div>
+            <div class="mt-3 text-center hidden" id="send-message-result-error">
+                <div class="bg-red-100 flex h-12 items-center justify-center mx-auto rounded-full w-12">
+                    <svg height="32" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" data-v-3c7e8221="">
+                        <defs data-v-3c7e8221="">
+                            <path id="a"
+                                d="M10 0C4.486 0 0 4.486 0 10s4.486 10 10 10 10-4.486 10-10S15.514 0 10 0m0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8m0-13a1 1 0 0 0-1 1v4a1 1 0 1 0 2 0V6a1 1 0 0 0-1-1m0 8a1 1 0 1 0 0 2 1 1 0 0 0 0-2"
+                                data-v-3c7e8221=""></path>
+                        </defs>
+                        <g fill="none" fill-rule="evenodd" data-v-3c7e8221="">
+                            <circle cx="16" cy="16" fill="#BF0711" opacity=".409" r="16" data-v-3c7e8221=""></circle>
+                            <g transform="translate(6 6)" data-v-3c7e8221="">
+                                <circle cx="10" cy="10" fill="#FFF" r="9" data-v-3c7e8221=""></circle>
+                                <use fill="#BF0711" xlink:href="#a" data-v-3c7e8221=""></use>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                <h3 class="text-lg leading-6 font-medium text-gray-900" id="result-status">Message non Envoye</h3>
+                <div class="mt-2 px-7 py-3">
+                    <p class="text-sm text-gray-500" >Une erreur s'est produite, merci de reessayer
+                    </p>
+                </div>
+                <div class="items-center px-4 py-3">
+                    <button
+                        class="ok-btn bg-red-500 focus:outline-none focus:ring-2 focus:ring-red-300 font-medium hover:bg-red-600 px-4 py-2 rounded-md shadow-sm text-base text-white w-full">
+                        OK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Send Message Result Modal -->
     <main>
         <div id="banner" class="relative flex flex-col justify-between items-center text-3xl bg-white">
             <nav class="relative w-full flex flex-wrap justify-between py-3">
                 <div
                     class="container-fluid md:container md:mx-auto w-full flex flex-wrap items-center justify-between px-6">
                     <a href="/">
-                        <img src="./src/img/Logo-ADAFRI.png" class="w-40 md:w-56" width="196" height="57" alt="Logo adafri "
-                        loading="lazy" />
+                        <img src="./src/img/Logo-ADAFRI.png" class="w-40 md:w-56" width="196" height="57"
+                            alt="Logo adafri " loading="lazy" />
                     </a>
                     <div class="flex space-x-3">
                         <a title="connexion" target="_blank" href="https://app.adafri.com/"
@@ -187,38 +248,38 @@
                 </div>
                 <br> <br>
             </section>
-    </main>
-    <section id="contact-us " class="w-full lg:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 p-10 ">
-        <div class=" bg-blue-100 rounded-xl p-10 flex justify-between items-center mx-3 ">
-            <div class="flex flex-col items-start ">
-                <h2 class="text-blue-700 text-2xl font-bold ">Commencez l'aventure ADAFRI</h2>
-                <p class="text-lg ">
-                    Profitez des services de notre outil marketing et faites grandir votre business.</p>
-                </p>
-                <div class="flex justify-center ">
-                    <a target="_blank "
-                        class="inline-block text-lg text-blue-900 font-bold bg-white px-6 py-2 my-6 rounded-lg hover:scale-105 transform duration-100 "
-                        href="https://app.adafri.com/ " id="start_conversation ">
-                        Lancez-vous
-                    </a>
+            <section id="contact-us " class="w-full lg:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 p-10 ">
+                <div class=" bg-blue-100 rounded-xl p-10 flex justify-between items-center mx-3 ">
+                    <div class="flex flex-col items-start ">
+                        <h2 class="text-blue-700 text-2xl font-bold ">Commencez l'aventure ADAFRI</h2>
+                        <p class="text-lg ">
+                            Profitez des services de notre outil marketing et faites grandir votre business.</p>
+                        </p>
+                        <div class="flex justify-center ">
+                            <a target="_blank "
+                                class="inline-block text-lg text-blue-900 font-bold bg-white px-6 py-2 my-6 rounded-lg hover:scale-105 transform duration-100 "
+                                href="https://app.adafri.com/ " id="start_conversation ">
+                                Lancez-vous
+                            </a>
+                        </div>
+                    </div>
+                    <img class="w-1/4 object-contain " src="./src/img/a_icon.png " alt="adafri logo ">
                 </div>
-            </div>
-            <img class="w-1/4 object-contain " src="./src/img/a_icon.png " alt="adafri logo ">
-        </div>
-        <div class="bg-emerald-50 rounded-xl p-10 flex justify-between items-center mx-auto ">
-            <div>
-                <h2 class="text-blue-700 text-2xl font-bold ">Joignez un de nos conseillers</h2>
-                <p class="text-lg ">
-                    Nous sommes à votre disposition pour toutes informations ou démo par rapport à notre outil.
-                </p>
-                <a target="_blank " href="https://meetings-eu1.hubspot.com/sabrina-niang/sabrina "
-                    class="inline-block text-lg text-blue-900 font-bold bg-white px-6 py-2 my-6 rounded-lg hover:scale-105 transform duration-100 ">
-                    Prendre rendez-vous
-                </a>
-            </div>
-            <img class="w-1/4 object-contain " src="./src/img/supportClient.webp " alt="prendre rendez-vous ">
-        </div>
-    </section>
+                <div class="bg-emerald-50 rounded-xl p-10 flex justify-between items-center mx-auto ">
+                    <div>
+                        <h2 class="text-blue-700 text-2xl font-bold ">Joignez un de nos conseillers</h2>
+                        <p class="text-lg ">
+                            Nous sommes à votre disposition pour toutes informations ou démo par rapport à notre outil.
+                        </p>
+                        <a target="_blank " href="https://meetings-eu1.hubspot.com/sabrina-niang/sabrina "
+                            class="inline-block text-lg text-blue-900 font-bold bg-white px-6 py-2 my-6 rounded-lg hover:scale-105 transform duration-100 ">
+                            Prendre rendez-vous
+                        </a>
+                    </div>
+                    <img class="w-1/4 object-contain " src="./src/img/supportClient.webp " alt="prendre rendez-vous ">
+                </div>
+            </section>
+    </main>
 
     <footer class="text-center lg:text-left text-white bg-gradient-blue">
         <h2 class="text-transparent text-[1px]">Annoncer sur Google Ads facilement au Senegal, au Cote d'ivoire, en
@@ -306,35 +367,23 @@
             <a class="font-semibold " href="https://adafri.com/" title="adafri">Adafri</a>
         </div>
     </footer>
-    <script type="text/javascript" src="./api.js" defer></script>
-    <script type="text/javascript">
-        _linkedin_partner_id = "3258137";
-        window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
-        window._linkedin_data_partner_ids.push(_linkedin_partner_id);
-    </script>
-    <script type="text/javascript">
-        (function (l) {
-            if (!l) {
-                window.lintrk = function (a, b) {
-                    window.lintrk.q.push([a, b])
-                };
-                window.lintrk.q = []
-            }
-            var s = document.getElementsByTagName("script")[0];
-            var b = document.createElement("script");
-            b.type = "text/javascript";
-            b.async = true;
-            b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-            s.parentNode.insertBefore(b, s);
-        })(window.lintrk);
-    </script>
-    <noscript>
-        <img height="1" width="1" style="display:none;" alt=""
-            src="https://px.ads.linkedin.com/collect/?pid=3258137&fmt=gif" />
-    </noscript>
+    <script type="text/javascript" src="./script.js" defer></script>
+
     <!-- international Telephone Input-->
     <script>
         window.onload = function () {
+
+            let modalContainer = document.querySelector('.modal-container')
+            let successContainerModal = document.getElementById('send-message-result-succes')
+            let errorContainerModal = document.getElementById('send-message-result-error')
+            let okBtns = document.querySelectorAll('button.ok-btn')
+
+            okBtns.forEach((btn) => {
+                btn.addEventListener('click', function (event) {
+                    modalContainer.classList.add("hidden")
+                })
+            })
+
             const phoneInputField = document.querySelector("#phonenumber");
             const phoneInput = window.intlTelInput(phoneInputField, {
                 initialCountry: "sn",
@@ -393,13 +442,31 @@
 
             var startConversationBtn = document.getElementById('get_started')
             startConversationBtn.addEventListener('click', function (event) {
-                if (phoneIsValid(phoneInputField.value))
-                    fetchGeneric(phoneInputField.value.toString().substring().substr(1))
+                if (phoneIsValid(phoneInputField.value)) {
+                    (
+                        async () => {
+                            await sendMessage(phoneInputField.value.toString().substring().substr(1)).then(response => {
+
+                                if (response == phoneInputField.value.toString().substring().substr(1)) {
+                                    successContainerModal.classList.remove('hidden')
+                                } else {
+                                    errorContainerModal.classList.remove('hidden')
+                                }
+                                modalContainer.classList.remove('hidden')
+
+                            })
+                        }
+                    )()
+                }
             })
+
+
 
         }
 
     </script>
+    <!--End international Telephone Input-->
+    <!-- Pricing Script  -->
     <script>
         const setup = () => {
             return {
@@ -409,7 +476,7 @@
 
                 plans: [{
                     name: 'Gratuit',
-                    discretion: 'Plan gratuit pour toujours, commencez avec les fonctionnalités de base, jusqu\'à 200 contacts.',
+                    discretion: 'Commencez avec les fonctionnalités de base, jusqu\'à 200 contacts.',
                     price: {
                         monthly: 0,
                         annually: 0 * 0 - 0,
@@ -435,6 +502,36 @@
             }
         }
     </script>
+    <!-- End Pricing -->
+
+    <!-- Linkedin Pixel Script -->
+    <script type="text/javascript">
+        _linkedin_partner_id = "3258137";
+        window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+        window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+        (function (l) {
+            if (!l) {
+                window.lintrk = function (a, b) {
+                    window.lintrk.q.push([a, b])
+                };
+                window.lintrk.q = []
+            }
+            var s = document.getElementsByTagName("script")[0];
+            var b = document.createElement("script");
+            b.type = "text/javascript";
+            b.async = true;
+            b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+            s.parentNode.insertBefore(b, s);
+        })(window.lintrk);
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none;" alt=""
+            src="https://px.ads.linkedin.com/collect/?pid=3258137&fmt=gif" />
+    </noscript>
+    <!-- End Linkedin Pixel Script -->
+
 
 </body>
 
