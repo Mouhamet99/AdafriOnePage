@@ -4,8 +4,26 @@ Disallow: /.env
 Disallow: /.gitignore
 Disallow: /node_modules
 Disallow: /package-lock.json
+Disallow: /404.html
+Disallow: /404/
 Disallow: /index.ts
-
+Disallow: /.htaccess
+Allow:  https://adafri.com/
+Allow:  https://adafri.com/src/document/etat-des-lieux-de-la-PUB-au-Senegal.pdf
+Allow:  https://adafri.com/chatbot.html
+Allow:  https://adafri.com/chatbot/
+Allow:  https://adafri.com/google_ads_publicites_sur_les_sites_web.html
+Allow:  https://adafri.com/google_ads_publicites_sur_les_sites_web/
+Allow:  https://adafri.com/publicites_sur_les_moteurs_de_recherche.html
+Allow:  https://adafri.com/publicites_sur_les_moteurs_de_recherche/
+Allow:  https://adafri.com/campagne_sms_marketing_en_afrique.html
+Allow:  https://adafri.com/campagne_sms_marketing_en_afrique/
+Allow:  https://adafri.com/conditions_generales_utilisation.html
+Allow:  https://adafri.com/conditions_generales_utilisation/
+Allow:  https://adafri.com/politique_de_confidentialite.html
+Allow:  https://adafri.com/politique_de_confidentialite/
+Allow:  https://adafri.com/src/document/Guide-Campagne-publicitaire-Adafri.pdf
+Allow:  https://adafri.com/src/document/Guide-Campagne-SMS.pdf
 
 User-agent: *
 Disallow: /.env
@@ -13,7 +31,25 @@ Disallow: /.gitignore
 Disallow: /node_modules
 Disallow: /package-lock.json
 Disallow: /404.html
+Disallow: /404/
 Disallow: /index.ts
+Disallow: /.htaccess
+Allow:  https://adafri.com/
+Allow:  https://adafri.com/src/document/etat-des-lieux-de-la-PUB-au-Senegal.pdf
+Allow:  https://adafri.com/chatbot.html
+Allow:  https://adafri.com/chatbot/
+Allow:  https://adafri.com/google_ads_publicites_sur_les_sites_web.html
+Allow:  https://adafri.com/google_ads_publicites_sur_les_sites_web/
+Allow:  https://adafri.com/publicites_sur_les_moteurs_de_recherche.html
+Allow:  https://adafri.com/publicites_sur_les_moteurs_de_recherche/
+Allow:  https://adafri.com/campagne_sms_marketing_en_afrique.html
+Allow:  https://adafri.com/campagne_sms_marketing_en_afrique/
+Allow:  https://adafri.com/conditions_generales_utilisation.html
+Allow:  https://adafri.com/conditions_generales_utilisation/
+Allow:  https://adafri.com/politique_de_confidentialite.html
+Allow:  https://adafri.com/politique_de_confidentialite/
+Allow:  https://adafri.com/src/document/Guide-Campagne-publicitaire-Adafri.pdf
+Allow:  https://adafri.com/src/document/Guide-Campagne-SMS.pdf
 
 Sitemap: https://adafri.com/sitemap.xml
 
