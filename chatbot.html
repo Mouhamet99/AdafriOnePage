@@ -59,9 +59,6 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./src/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <!-- international Telephone Input-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     <link rel="stylesheet" href="/dist/output.css">
     <meta name="google-site-verification" content="QmvElgdBlVA6iTVnoygA2VvuWFhEcVnlwvs9IhBUpoo" />
 
@@ -69,65 +66,10 @@
 
 
 <body class="w-full h-full relative">
-    <!-- End Send Message Result -->
-    <div class="w-full h-screen fixed bg-[#7EA5D345] z-[100] modal-container hidden" id="">
-        <div class="-translate-x-1/2 -translate-y-1/2 absolute bg-white border left-1/2 p-5 rounded-md shadow-lg top-1/2  transform z-50"
-            id="send-message-result">
-            <div class="mt-3 text-center hidden" id="send-message-result-succes">
-                <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
-                    <svg class="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                </div>
-                <h3 class="text-lg leading-6 font-medium text-gray-900">
-                    Message envoyé !
-                </h3>
-                <div class="mt-2 px-7 py-3">
-                    <p class="text-sm text-gray-500">
-                        Merci de verifier votre fil de discussion WhatsApp !
-                    </p>
-                </div>
-                <div class="items-center px-4 py-3">
-                    <button
-                        class="ok-btn px-4 py-2 bg-green-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300">
-                        OK
-                    </button>
-                </div>
-            </div>
-            <div class="mt-3 text-center hidden" id="send-message-result-error">
-                <div class="bg-red-100 flex h-12 items-center justify-center mx-auto rounded-full w-12">
-                    <svg height="32" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink" data-v-3c7e8221="">
-                        <defs data-v-3c7e8221="">
-                            <path id="a"
-                                d="M10 0C4.486 0 0 4.486 0 10s4.486 10 10 10 10-4.486 10-10S15.514 0 10 0m0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8m0-13a1 1 0 0 0-1 1v4a1 1 0 1 0 2 0V6a1 1 0 0 0-1-1m0 8a1 1 0 1 0 0 2 1 1 0 0 0 0-2"
-                                data-v-3c7e8221=""></path>
-                        </defs>
-                        <g fill="none" fill-rule="evenodd" data-v-3c7e8221="">
-                            <circle cx="16" cy="16" fill="#BF0711" opacity=".409" r="16" data-v-3c7e8221=""></circle>
-                            <g transform="translate(6 6)" data-v-3c7e8221="">
-                                <circle cx="10" cy="10" fill="#FFF" r="9" data-v-3c7e8221=""></circle>
-                                <use fill="#BF0711" xlink:href="#a" data-v-3c7e8221=""></use>
-                            </g>
-                        </g>
-                    </svg>
-                </div>
-                <h3 class="text-lg leading-6 font-medium text-gray-900" id="result-status">Message non Envoye</h3>
-                <div class="mt-2 px-7 py-3">
-                    <p class="text-sm text-gray-500">Une erreur s'est produite, merci de reessayer
-                    </p>
-                </div>
-                <div class="items-center px-4 py-3">
-                    <button
-                        class="ok-btn bg-red-500 focus:outline-none focus:ring-2 focus:ring-red-300 font-medium hover:bg-red-600 px-4 py-2 rounded-md shadow-sm text-base text-white w-full">
-                        OK
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Send Message Result Modal -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6PS79B" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <main>
         <div id="banner" class="relative flex flex-col justify-between items-center text-3xl bg-white">
             <nav class="relative w-full flex flex-wrap justify-between py-3">
@@ -152,7 +94,6 @@
         <section id="banner-section" class="w-full text-center py-10 mb-10">
             <h1 class="font-bold text-2xl md:text-5xl text-blue-900 px-10 text-center">
                 Construisez votre ChatBot sans aucune ligne de code
-
             </h1>
             <div class="w-9/12 flex justify-center mx-auto my-10 space-x-10 ">
                 <div class="flex flex-col items-center justify-center mx-3 ">
@@ -162,24 +103,11 @@
                         de fournir un excellent service dont vous avez besoin pour accélérer votre croissance, le tout
                         dans WhatsApp.
                     </p>
+                    <a target="_blank" href="https://wa.me/message/FUDBK5TFRP53F1"
+                        class="mt-10 mb-30 inline-block hover:bg-blue-800 bg-blue-900 rounded text-base font-medium leading-none text-white p-5 uppercase focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700">Demarrer
+                        Conversation</a>
                 </div>
             </div>
-
-            <div class="mt-12">
-                <div class="flex items-stretch justify-center">
-                    <input
-                        class="ring-inset h-full rounded-lg rounded-r-none bg-gray-100 text-lg leading-none text-gray-800 p-5 border border-transparent focus:outline-none focus:border-blue-900"
-                        type="tel" id="phonenumber" />
-                    <button id="get_started"
-                        class=" rounded-l-none hover:bg-blue-800 bg-blue-900 rounded text-base font-medium leading-none text-white p-5 uppercase focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700">
-                        Demarrer Conversation
-                    </button>
-                </div>
-                <span class="text-red-500 hidden" id="error-msg">
-                    Message error
-                </span>
-            </div>
-
         </section>
         <!-- Book An Appointment Section -->
         <section id="book-appointment"
@@ -195,7 +123,7 @@
                 <div class="w-full flex  flex-col md:flex-row space-y-4  md:space-y-0  md:space-x-4">
                     <a href="https://meetings-eu1.hubspot.com/ndeye-khadijetou"
                         class="text-center rounded-md text-white text-sm bg-blue-900 px-5 py-2 hover:bg-blue-800 shadow-sm">
-                       Prendre Rendez-vous
+                        Prendre Rendez-vous
                     </a>
                 </div>
             </div>
@@ -355,7 +283,8 @@
                     </p>
 
                     <p class="mb-4">
-                        <a href="./campagne_sms_marketing_en_afrique.html" class="hover:underline" title="campagne SMS">SMS
+                        <a href="./campagne_sms_marketing_en_afrique.html" class="hover:underline"
+                            title="campagne SMS">SMS
                             Marketing</a>
                     </p>
                     <p class="mb-4">
@@ -405,103 +334,7 @@
     </footer>
     <script type="text/javascript" src="./script.js" defer></script>
 
-    <!-- international Telephone Input-->
-    <script>
-        window.onload = function () {
 
-            let modalContainer = document.querySelector('.modal-container')
-            let successContainerModal = document.getElementById('send-message-result-succes')
-            let errorContainerModal = document.getElementById('send-message-result-error')
-            let okBtns = document.querySelectorAll('button.ok-btn')
-
-            okBtns.forEach((btn) => {
-                btn.addEventListener('click', function (event) {
-                    modalContainer.classList.add("hidden")
-                })
-            })
-
-            const phoneInputField = document.querySelector("#phonenumber");
-            const phoneInput = window.intlTelInput(phoneInputField, {
-                initialCountry: "sn",
-                separateDialCode: false,
-                nationalMode: false,
-                autoHideDialCode: false,
-                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-            });
-
-            document.querySelectorAll(".iti").forEach(function (el) {
-                el.classList.add("d-block");
-            });
-
-
-            var iti = window.intlTelInputGlobals.getInstance(phoneInputField);
-            var countryData = iti.getSelectedCountryData();
-
-            var errorMsg = document.querySelector("#error-msg");
-            var errorMap = ["Numéro invalide", "Code pays invalide", "Trop court", "Trop long", "Numéro invalide"];;
-
-            var reset = function () {
-                phoneInputField.classList.remove("error");
-                errorMsg.innerHTML = "";
-                errorMsg.classList.add("hidden");
-                phoneInputField.classList.remove("ring-1");
-                phoneInputField.classList.remove("ring-red-400");
-                phoneInputField.classList.remove("ring-inset");
-            };
-
-
-            // on change: validate
-            phoneInputField.addEventListener('keyup', function (e) {
-                reset();
-                phoneIsValid(phoneInputField.value)
-            });
-
-            function phoneIsValid(value) {
-                if (value.trim()) {
-                    if (!iti.isValidNumber()) {
-                        phoneInputField.classList.add("ring-1");
-                        phoneInputField.classList.add("ring-inset");
-                        phoneInputField.classList.add("ring-red-400");
-
-                        var errorCode = iti.getValidationError();
-                        errorMsg.innerHTML = errorMap[errorCode] ?? 'Veillez entrer un numero de telephone';
-                        errorMsg.classList.remove("hidden");
-
-                        return false
-                    }
-
-                    phoneInputField.classList.remove("ring-1");
-
-                    return true
-                }
-            }
-
-            var startConversationBtn = document.getElementById('get_started')
-            startConversationBtn.addEventListener('click', function (event) {
-                if (phoneIsValid(phoneInputField.value)) {
-                    (
-                        async () => {
-                            await sendMessage(phoneInputField.value.toString().substring().substr(1)).then(response => {
-
-                                if (response == phoneInputField.value.toString().substring().substr(1)) {
-                                    successContainerModal.classList.remove('hidden')
-                                } else {
-                                    errorContainerModal.classList.remove('hidden')
-                                }
-                                modalContainer.classList.remove('hidden')
-
-                            })
-                        }
-                    )()
-                }
-            })
-
-
-
-        }
-
-    </script>
-    <!--End international Telephone Input-->
     <!-- Pricing Script  -->
     <script>
         const setup = () => {
