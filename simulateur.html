@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulateur | Adafri</title>
+    <meta name="robots" content="index, follow, max-video-preview:-1, max-snippet:-1, max-image-preview:large">
+
+    <link rel="icon" href="./src/img/cropped-Icone-32x32.png" sizes="32x32">
+    <link rel="icon" href="./src/img/cropped-Icone-192x192.png" sizes="192x192">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Google Tag Manager -->
+
+    <!-- End Google Tag Manager -->
+    <meta name="description"
+        content="Outil de publicité sur l'Afrique.Prenez le contrôle de plusieurs régies publicitaire facilement sur une seule plateforme, et communiquez sur toute l'Afrique.">
+
+    <!-- Animate CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./dist/output.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+
+    <meta name="google-site-verification" content="QmvElgdBlVA6iTVnoygA2VvuWFhEcVnlwvs9IhBUpoo" />
+</head>
+
+<body class="w-full">
+
+    <!-- Google Tag Manager (noscript) -->
+
+    <!-- End Google Tag Manager (noscript) -->
+    <main>
+        <section class="w-full">
+            <div class="w-full md:w-3/4 mx-auto mt-20 ">
+                <h2 class="font-bold text-3xl text-blue-800">Selectionner le service de pub</h2>
+                <p class="text-gray-500">Choisisez le service dont vous souhaitez faire</p>
+                <article class="grid grid-cols-6 grid-flow-col gap-10 mt-5">
+                    <article class="pub-service active bg-slate-100 p-3 rounded-md shadow-sm border border-1 border-dashed border-blue-800 hover:shadow-md ">
+                        <img src="./src/img/3D/google.png" class="w-14 object-contain" alt="publicité google ads">
+                        <div class="content mt-10">
+                            <h3 class="text-lg font-bold text-blue-800">Publicité Google</h3>
+                            <p class="text-slate-400">$0.1/1000 vues</p>
+                        </div>
+                    </article>
+                    <article class="pub-service p-3 rounded-md shadow-sm border border-1 border-dashed border-gray-400 hover:shadow-md ">
+                        <img src="./src/img/3D/led.png" class="w-14 object-contain" alt="Let Outdoor">
+                        <div class="content mt-10">
+                            <h3 class="text-lg font-bold text-blue-800">LED OutDoor</h3>
+                            <p class="text-slate-400">$10/jr/Ecran</p>
+                        </div>
+                    </article>
+                    <article class="relative pub-service p-3 rounded-md shadow-sm border border-1 border-dashed border-gray-400 hover:shadow-md ">
+                            <img src="./src/img/favicon-auchan.ico" class="absolute right-0 mr-2 w-4 object-contain" alt="publicité google ads">
+                            <img src="./src/img/3D/led.png" class="w-14 object-contain" alt="LED Auchan">
+                        <div class="content mt-10">
+                            <h3 class="text-lg font-bold text-blue-800">LED Auchan</h3>
+                            <p class="text-slate-400">$17/jr/Auchan</p>
+                        </div>
+                    </article>
+                    <article class="pub-service p-3 rounded-md shadow-sm border border-1 border-dashed border-gray-400 hover:shadow-md ">
+                        <img src="./src/img/3D/sms.png" class="w-14 object-contain" alt="SMS">
+                        <div class="content mt-10">
+                            <h3 class="text-lg font-bold text-blue-800">SMS</h3>
+                            <p class="text-slate-400">$0.008/SMS</p>
+                        </div>
+                    </article>
+                    <article class="pub-service p-3 rounded-md shadow-sm border border-1 border-dashed border-gray-400 hover:shadow-md ">
+                        <img src="./src/img/3D/radio.png" class="w-14 object-contain" alt="radio">
+                        <div class="content mt-10">
+                            <h3 class="text-lg font-bold text-blue-800">Radio</h3>
+                            <p class="text-slate-400">$21/spot</p>
+                        </div>
+                    </article>
+                    <article class="pub-service p-3 rounded-md shadow-sm border border-1 border-dashed border-gray-400 hover:shadow-md ">
+                        <img src="./src/img/3D/push-vocal.png" class="w-14 object-contain" alt="push-vocal">
+                        <div class="content mt-10">
+                            <h3 class="text-lg font-bold text-blue-800">Push Vocal</h3>
+                            <p class="text-slate-400">$0.035/appel</p>
+                        </div>
+                    </article>
+                </article>
+            </div>
+        </section>
+    </main>
+
+<script type="text/javascript">
+
+    
+    window.onload=function(){
+
+        let pubServicesBloc = document.querySelectorAll('.pub-service');
+        pubServicesBloc.forEach(pubServiceBloc => {
+            pubServiceBloc.addEventListener('click', function (event) {
+                
+                pubServicesBloc.forEach(item => {
+                    item.classList.remove('bg-slate-100')
+                    item.classList.remove('border-blue-800')
+                    item.classList.add('border-gray-400')
+                });
+                
+                this.classList.add('bg-slate-100')
+                this.classList.add('active')
+                this.classList.add('border-gray-400')
+                this.classList.add('border-blue-800')
+            });
+        })
+    }
+</script>
+
+
+    <!-- Google tag (gtag.js) -->
+   
+    <!-- Meta Pixel Code -->
+   
+    <!-- End Meta Pixel Code -->
+    <!-- Linkedin Pixel Code -->
+   
+    <!-- End Linkedin Pixel Code -->
+
+
+
+</body>
+
+</html>
