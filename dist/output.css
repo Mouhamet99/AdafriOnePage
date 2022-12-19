@@ -1587,6 +1587,16 @@ video {
   right: 0px;
 }
 
+.after\:rounded-full::after {
+  content: var(--tw-content);
+  border-radius: 9999px;
+}
+
+.after\:rounded::after {
+  content: var(--tw-content);
+  border-radius: 0.25rem;
+}
+
 .after\:text-sm::after {
   content: var(--tw-content);
   font-size: 0.875rem;
