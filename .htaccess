@@ -1,8 +1,9 @@
 RewriteEngine On
 
 # Force HTTPS
-RewriteCond %{HTTPS} off 
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^adafri\.com$ [NC]
+RewriteRule ^(.*)$ https://www.adafri.com/$1 [L,R=301]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)\.html$ /$1 [NC]
@@ -10,4 +11,4 @@ RewriteRule ^(.*)\.html$ /$1 [NC]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
 
-ErrorDocument 404 https://adafri.com/
+ErrorDocument 404 https://www.adafri.com/
