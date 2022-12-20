@@ -19,9 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Google Tag Manager -->
-
-    <!-- End Google Tag Manager -->
+    
     <meta name="description"
         content="Outil de publicité sur l'Afrique.Prenez le contrôle de plusieurs régies publicitaire facilement sur une seule plateforme, et communiquez sur toute l'Afrique.">
 
@@ -126,8 +124,7 @@
             </div>
             <div class="w-full md:w-3/4 mt-20 px-20 md:mx-auto ">
                 <h2 class="font-bold text-3xl text-blue-800">Votre Budget</h2>
-                <p class="text-gray-500">Entrez le budget en dollard ($) dont vous disposez pour votre future campagne
-                    de pub</p>
+                <p class="text-gray-500">Entrez le budget en dollard ($) dont vous disposez pour votre future campagne de pub</p>
                 <!-- ** -->
                 <div class="relative mt-5 text-2xl">
                     <input
@@ -204,7 +201,7 @@
 
             <!-- SITES AUCHAN -->
             <div class="w-full md:w-3/4 mt-20 px-20 md:mx-auto d-none" id="auchanLedSitesContainer">
-                <h2 class="font-bold text-3xl text-blue-800">Les sites</h2>
+                <h2 class="font-bold text-3xl text-blue-800">Les magasins</h2>
                 <p class="text-gray-500">Selectionnez les magasins Auchan dont vous souhaitez faire passez votre pub</p>
 
                 <div class="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-dense gap-5 md:gap-10 ">
@@ -269,25 +266,25 @@
             <!-- END SITES AUCHAN -->
 
             <!-- RADIO -->
-            <div class="w-full md:w-3/4 mt-20 px-20 md:mx-auto text-gray-500" id="radioTypesContainer">
+            <div class="w-full md:w-3/4 mt-20 px-20 md:mx-auto text-gray-500 d-none" id="radioTypesContainer">
                 <h2 class="font-bold text-3xl text-blue-800">Les Radios</h2>
                 <p class="text-gray-500">Selectionnez le type radio dont vous souhaitez faire diffusé votre pub</p>
 
                 <div class="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-dense gap-5 md:gap-10 ">
                     <div class="border border-solid border-blue-800 rounded-md">
-                        <label class="block p-3 text-gray-500" for="radios-panaf">
+                        <label class="block p-3 text-gray-500" for="radios-locales">
                             <input
-                                class="radio-type appearance-none h-5 w-5 border border-solid border-gray-300 rounded-full bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white "
-                                type="radio" name="radio" value="radios-panaf" id="radios-panaf" checked>
-                            Radios Panaf
+                                class="radio-type appearance-none h-5 w-5 border border-solid border-gray-300 rounded-full bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white"
+                                type="radio" name="radio" value="radios-locales" id="radios-locales" checked>
+                            Radios Locales
                         </label>
                     </div>
                     <div class="border border-solid border-blue-800 rounded-md">
-                        <label class="block p-3 text-gray-500" for="radio-locales">
+                        <label class="block p-3 text-gray-500" for="radios-panaf">
                             <input
-                                class="radio-type appearance-none h-5 w-5 border border-solid border-gray-300 rounded-full bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white"
-                                type="radio" name="radio" value="radio-locales" id="radios-locales">
-                            Radios Locales
+                                class="radio-type appearance-none h-5 w-5 border border-solid border-gray-300 rounded-full bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white "
+                                type="radio" name="radio" value="radios-panaf" id="radios-panaf" >
+                            Radios Panaf
                         </label>
                     </div>
                     <div class="border border-solid border-blue-800 rounded-md">
@@ -346,7 +343,7 @@
             <div class="w-full md:w-2/5 mx-auto">
                 <div class="">
                     <span class="text-blue-800 text-lg views-counter-label">Nombre de vues : </span>
-                    <span class="p-4 text-3xl text-bold text-blue-800" id="views-counter">10.000 vues</span>
+                    <span class="p-4 text-3xl text-bold text-blue-800" id="views-counter">10 000 vues</span>
                 </div>
                 <div class="">
                     <span class="text-blue-800 text-lg days-counter-label">Nombre de jours LED: </span>
@@ -360,7 +357,6 @@
                     <span class="text-blue-800 text-lg radio-days-counter-label">Nombre de jours Radio : </span>
                     <span class="p-4 text-3xl text-bold text-blue-800" id="radio-days-counter">0</span>
                 </div>
-
 
                 <div class="d-none">
                     <p class="text-3xl text-bold text-blue-800">Panneau LED :</p>
@@ -424,6 +420,7 @@
                             break;
                         case "radio":
                             radioTypesContainer.classList.remove('d-none')
+                            getRadioNumberDays()
                             break;
                         default:
                             break;
@@ -461,7 +458,7 @@
                 let activeService = document.querySelector(".pub-service.active")
                 switch (activeService.id) {
                     case "gads":
-                        viewsCounter.textContent = `${(userBudget.value * 10000)} vues`
+                        viewsCounter.textContent = `${(userBudget.value * 10000).toLocaleString("fr-FR") } vues`
                         break;
                     case "ledOutDoor":
                         getLedNumberOfDays('ledOutdoor')
@@ -504,7 +501,10 @@
                 daysCounter.textContent = `${numberOfDays} jour(s)`
             }
 
-            function getRadioNumberDays(radioType = "radio-locales") {
+            function getRadioNumberDays(radioType = "radios-locales") {
+                if(userBudget.value <= 0){
+                    radioCounter.textContent = `0 jour`
+                }
                 let unitPrice;
                 switch (radioType) {
                     case "radios-panaf":
@@ -521,7 +521,7 @@
                         break;
                 }
 
-                radioCounter.textContent = `${Math.floor(userBudget.value / unitPrice)} jour(s)`
+                radioCounter.textContent = `${Math.floor(userBudget.value / unitPrice).toLocaleString("fr-FR") } jour(s)`
 
             }
             function getNumberOfSMS() {
@@ -535,15 +535,6 @@
         }
     </script>
 
-
-    <!-- Google tag (gtag.js) -->
-
-    <!-- Meta Pixel Code -->
-
-    <!-- End Meta Pixel Code -->
-    <!-- Linkedin Pixel Code -->
-
-    <!-- End Linkedin Pixel Code -->
 
 
 
