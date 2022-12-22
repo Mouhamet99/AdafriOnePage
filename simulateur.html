@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+
     <meta name="description"
         content="Outil de publicité sur l'Afrique.Prenez le contrôle de plusieurs régies publicitaire facilement sur une seule plateforme, et communiquez sur toute l'Afrique.">
 
@@ -65,6 +65,40 @@
             <div class="w-full md:w-3/4 mt-20 px-20 md:mx-auto ">
                 <h2 class="font-bold text-3xl text-blue-800">Votre Campagne publicitaire</h2>
                 <p class="text-gray-500">Choisissez le type de campagne dont vous souhaitez faire</p>
+                <article class="grid grid-cols-3 md:grid-cols-3 grid-flow-dense gap-5 md:gap-10 mt-5">
+                    <article class="active border border-1 border-blue-800 border-dashed cursor-pointer hover:shadow-md pub-service rounded-md shadow-sm" id="gads">
+                        <img src="./src/img/3D/google-min.png" class=" object-contain" alt="publicité google ads">
+                    </article>
+                    <article
+                        class="cursor-pointer pub-service rounded-md shadow-sm border border-1 border-dashed border-gray-400 hover:shadow-md"
+                        id="ledOutDoor">
+                        <img src="./src/img/3D/led-min.png" class="object-contain" alt="Let Outdoor">
+                    </article>
+                    <article
+                        class="relative cursor-pointer pub-service rounded-md shadow-sm border border-1 border-dashed border-gray-400 hover:shadow-md "
+                        id="ledAuchan">
+                        <img src="./src/img/favicon-auchan.ico"
+                            class="absolute right-0 bottom-0 mb-2 mr-2 w-4 object-contain" alt="logo auchan">
+                        <img src="./src/img/3D/led auchan-min.png" class="object-contain" alt="LED Auchan">
+                    </article>
+                    <article
+                        class="cursor-pointer pub-service rounded-md shadow-sm border border-1 border-dashed border-gray-400 hover:shadow-md "
+                        id="sms"><img src="./src/img/3D/sms-min.png" class="object-contain" alt="SMS">
+                    </article>
+                    <article
+                        class="cursor-pointer pub-service rounded-md shadow-sm border border-1 border-dashed border-gray-400 hover:shadow-md "
+                        id="radio"><img src="./src/img/3D/radio-min.png" class="object-contain" alt="radio">
+                    </article>
+                    <article
+                        class="cursor-pointer pub-service rounded-md shadow-sm border border-1 border-dashed border-gray-400 hover:shadow-md "
+                        id="push-vocal"><img src="./src/img/3D/push-min.png" class="object-contain"
+                            alt="push-vocal">
+                    </article>
+                </article>
+            </div>
+            <div class="w-full md:w-3/4 mt-20 px-20 md:mx-auto ">
+                <h2 class="font-bold text-3xl text-blue-800">Votre Campagne publicitaire</h2>
+                <p class="text-gray-500">Choisissez le type de campagne dont vous souhaitez faire</p>
                 <article class="grid grid-cols-3 md:grid-cols-6 grid-flow-dense gap-5 md:gap-10 mt-5">
                     <article
                         class="cursor-pointer pub-service p-3 active bg-slate-100 rounded-md shadow-sm border border-1 border-dashed border-blue-800 hover:shadow-md "
@@ -87,9 +121,9 @@
                     <article
                         class="relative cursor-pointer pub-service p-3 rounded-md shadow-sm border border-1 border-dashed border-gray-400 hover:shadow-md "
                         id="ledAuchan">
-                        <img src="./src/img/favicon-auchan.ico" class="absolute right-0 mr-2 w-4 object-contain"
-                            alt="logo auchan">
-                        <img src="./src/img/3D/led.png" class="w-14 object-contain" alt="LED Auchan">
+                        <img src="./src/img/favicon-auchan.ico"
+                            class="absolute right-0 bottom-0 mb-2 mr-2 w-4 object-contain" alt="logo auchan">
+                        <img src="./src/img/3D/led-auchan.png" class="w-14 object-contain" alt="LED Auchan">
                         <div class="content mt-10">
                             <h3 class="text-md md:text-lg font-bold text-blue-800">LED Auchan</h3>
                             <p class="text-slate-400 text-sm md:text-base">$17/jr/Auchan</p>
@@ -122,21 +156,47 @@
                     </article>
                 </article>
             </div>
-            <div class="w-full md:w-3/4 mt-20 px-20 md:mx-auto ">
-                <h2 class="font-bold text-3xl text-blue-800">Votre Budget</h2>
-                <p class="text-gray-500">Entrez le budget en dollard ($) dont vous disposez pour votre future campagne de pub</p>
-                <!-- ** -->
-                <div class="relative mt-5 text-2xl">
-                    <input
-                        class=" font-bold appearance border-2 border-solid pl-10 border-gray-300 hover:border-blue-800 transition-colors rounded-md w-full py-2 px-3 text-blue-800 leading-tight focus:outline-none focus:ring-blue-600 focus:border-blue-600 focus:shadow-outline"
-                        id="user-budget" type="number" min="0" value="100" />
-                    <div class="absolute left-0 inset-y-0 flex items-center">
-                        <span class="h-fit w-6 ml-3 font-bold text-blue-800 hover:text-blue-700">
-                            $
-                        </span>
+            <div class="w-full md:w-3/4 mt-20 px-20 md:mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-2">
+                <div>
+                    <h2 class="font-bold text-3xl text-blue-800">Votre Budget</h2>
+                    <p class="text-gray-500">Entrez le budget en dollard ($) dont vous disposez pour votre future
+                        campagne
+                        de pub</p>
+                    <!-- ** -->
+                    <div class="relative mt-5 text-2xl">
+                        <input
+                            class=" font-bold appearance border-2 border-solid pl-10 border-gray-300 hover:border-blue-800 transition-colors rounded-md w-full py-2 px-3 text-blue-800 leading-tight focus:outline-none focus:ring-blue-600 focus:border-blue-600 focus:shadow-outline"
+                            id="user-budget" type="number" min="0" value="100" />
+                        <div class="absolute left-0 inset-y-0 flex items-center">
+                            <span class="h-fit w-6 ml-3 font-bold text-blue-800 hover:text-blue-700">
+                                $
+                            </span>
+                        </div>
+                    </div>
+                    <!-- ** -->
+                </div>
+                <div class="flex items-end justify-end  text-blue-800">
+                    <div class="views-counter-element counter-item">
+                        <span class="font-bold text-7xl" id="views-counter">1000000</span>
+                        <span class="text-5xl">vue(s)</span>
+                    </div>
+                    <div class="days-counter-element counter-item d-none">
+                        <span class="font-bold text-7xl" id="days-counter">1000</span>
+                        <span class="text-5xl">jour(s)</span>
+                    </div>
+                    <div class="sms-counter-element counter-item d-none">
+                        <span class="font-bold text-7xl" id="sms-counter">1000</span>
+                        <span class="text-5xl">sms</span>
+                    </div>
+                    <div class="radio-counter-element counter-item d-none">
+                        <span class="font-bold text-7xl" id="radio-counter">1000</span>
+                        <span class="text-5xl">spot(s)</span>
+                    </div>
+                    <div class="call-counter-element counter-item d-none">
+                        <span class="font-bold text-7xl" id="call-counter">1000</span>
+                        <span class="text-5xl">push vocaux</span>
                     </div>
                 </div>
-                <!-- ** -->
 
 
             </div>
@@ -283,7 +343,7 @@
                         <label class="block p-3 text-gray-500" for="radios-panaf">
                             <input
                                 class="radio-type appearance-none h-5 w-5 border border-solid border-gray-300 rounded-full bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white "
-                                type="radio" name="radio" value="radios-panaf" id="radios-panaf" >
+                                type="radio" name="radio" value="radios-panaf" id="radios-panaf">
                             Radios Panaf
                         </label>
                     </div>
@@ -337,28 +397,33 @@
             </div>
 
         </section>
-        <!-- *** -->
-        <section class="w-11/12 px-5 md:w-3/5 mx-auto mt-10 border border-dashed border-gray-300 shadow-sm bg-slate-100"
+        <!-- PRDDUCT DETAILS -->
+        <section
+            class="min-h-[100px] w-11/12 p-5 md:w-3/5 mx-auto mt-10 d-flex items-start border border-dashed border-gray-300 shadow-sm bg-slate-100"
             id="result">
             <div class="w-full md:w-2/5 mx-auto">
-                <div class="">
+                <div class="views-counter-element counter-item">
                     <span class="text-blue-800 text-lg views-counter-label">Nombre de vues : </span>
                     <span class="p-4 text-3xl text-bold text-blue-800" id="views-counter">10 000 vues</span>
                 </div>
-                <div class="">
+                <div class="days-counter-element counter-item d-none">
                     <span class="text-blue-800 text-lg days-counter-label">Nombre de jours LED: </span>
                     <span class="p-4 text-3xl text-bold text-blue-800" id="days-counter">27 jours</span>
                 </div>
-                <div class="">
+                <div class="sms-counter-element counter-item d-none">
                     <span class="text-blue-800 text-lg sms-counter-label">Nombre de sms : </span>
                     <span class="p-4 text-3xl text-bold text-blue-800" id="sms-counter">0</span>
                 </div>
-                <div class="">
+                <div class="radio-counter-element counter-item d-none">
                     <span class="text-blue-800 text-lg radio-days-counter-label">Nombre de jours Radio : </span>
                     <span class="p-4 text-3xl text-bold text-blue-800" id="radio-days-counter">0</span>
                 </div>
+                <div class="call-counter-element counter-item d-none">
+                    <span class="text-blue-800 text-lg call-counter-label">Nombre d'appel vocal : </span>
+                    <span class="p-4 text-3xl text-bold text-blue-800" id="call-counter">0</span>
+                </div>
 
-                <div class="d-none">
+                <div class="">
                     <p class="text-3xl text-bold text-blue-800">Panneau LED :</p>
                     <ul class="list-disc text-blue-800 text-lg ">
                         <li>Possibilité d’utiliser la régie LED pour diffuser sa pub</li>
@@ -370,16 +435,65 @@
                     </ul>
                 </div>
             </div>
-
         </section>
-        <!-- *** -->
+        <!-- PRODUCT DETAILS -->
+        <!-- TABLE -->
+        <!-- TABLE -->
+        <div class="w-full md:w-3/4 mx-auto shadow-sm overflow-hidden my-8">
+            <table class="border-collapse w-full text-sm rounded-2xl bg-[#7EA5D345]">
+                <thead>
+                    <tr>
+                        <th
+                            class="border-bottom p-4 pl-8 pb-3 text-slate-500  text-left font-bold">
+                            Song</th>
+                        <th
+                            class="border-bottom p-4 pb-3 text-slate-500  text-left font-bold">
+                            Artist</th>
+                        <th
+                            class="border-bottom p-4 pr-8 pb-3 text-slate-500  text-left font-bold">
+                            Year</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white ">
+                    <tr>
+                        <td
+                            class="border-bottom border-slate-100  p-4 pl-8 text-slate-500 ">
+                            The Sliding Mr. Bones (Next Stop, Pottersville)</td>
+                        <td class="border-bottom border-slate-100  p-4 text-slate-500 ">
+                            Malcolm Lockyer</td>
+                        <td
+                            class="border-bottom border-slate-100  p-4 pr-8 text-slate-500 ">
+                            1961</td>
+                    </tr>
+                    <tr>
+                        <td
+                            class="border-bottom border-slate-100  p-4 pl-8 text-slate-500 ">
+                            Witchy Woman</td>
+                        <td class="border-bottom border-slate-100  p-4 text-slate-500 ">
+                            The Eagles</td>
+                        <td
+                            class="border-bottom border-slate-100  p-4 pr-8 text-slate-500 ">
+                            1972</td>
+                    </tr>
+                    <tr>
+                        <td
+                            class="border-bottom border-slate-200  p-4 pl-8 text-slate-500 ">
+                            Shining Star</td>
+                        <td class="border-bottom border-slate-200  p-4 text-slate-500 ">
+                            Earth, Wind, and Fire</td>
+                        <td
+                            class="border-bottom border-slate-200  p-4 pr-8 text-slate-500 ">
+                            1975</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </main>
 
     <script type="text/javascript">
 
 
         window.onload = function () {
-            //remove all elements in the documents with the class pub-service
 
             let pubServicesBloc = document.querySelectorAll('.pub-service');
             pubServicesBloc.forEach(pubServiceBloc => {
@@ -405,22 +519,36 @@
                     auchanSitesContainer.classList.add('d-none')
                     radioTypesContainer.classList.add('d-none')
 
+                    hideAllCounterElements()
+
                     switch (this.id) {
                         case "gads":
+                            getNumberOfViews()
                             ledOutDoorSitesContainer.classList.add('d-none')
+                            document.querySelector('.views-counter-element').classList.remove('d-none')
                             break;
                         case "ledOutDoor":
+                            getLedNumberOfDays('ledOutDoor')
                             ledOutDoorSitesContainer.classList.remove('d-none')
+                            document.querySelector('.days-counter-element').classList.remove('d-none')
                             break;
                         case "ledAuchan":
+                            getLedNumberOfDays('ledAuchan')
                             auchanSitesContainer.classList.remove('d-none')
+                            document.querySelector('.days-counter-element').classList.remove('d-none')
                             break;
                         case "sms":
                             getNumberOfSMS()
+                            document.querySelector('.sms-counter-element').classList.remove('d-none')
                             break;
                         case "radio":
-                            radioTypesContainer.classList.remove('d-none')
                             getRadioNumberDays()
+                            radioTypesContainer.classList.remove('d-none')
+                            document.querySelector('.radio-counter-element').classList.remove('d-none')
+                            break;
+                        case "push-vocal":
+                            getNumberOfCall()
+                            document.querySelector('.call-counter-element').classList.remove('d-none')
                             break;
                         default:
                             break;
@@ -429,10 +557,7 @@
             })
 
             let userBudget = document.getElementById('user-budget')
-            let viewsCounter = document.getElementById('views-counter')
-            let smsCounter = document.getElementById('sms-counter')
-            let daysCounter = document.getElementById('days-counter')
-            let radioCounter = document.getElementById('radio-days-counter')
+
             let ledSites = document.querySelectorAll('.led-sites')
             let auchanLedSites = document.querySelectorAll('.auchan-led-sites')
 
@@ -441,6 +566,7 @@
                     getLedNumberOfDays('ledOutDoor')
                 }
             }))
+
             auchanLedSites.forEach((siteCheckbox) => siteCheckbox.addEventListener('change', function (e) {
                 if (document.querySelector('#ledAuchan').classList.contains("active")) {
                     getLedNumberOfDays('ledAuchan')
@@ -458,7 +584,7 @@
                 let activeService = document.querySelector(".pub-service.active")
                 switch (activeService.id) {
                     case "gads":
-                        viewsCounter.textContent = `${(userBudget.value * 10000).toLocaleString("fr-FR") } vues`
+                        getNumberOfViews()
                         break;
                     case "ledOutDoor":
                         getLedNumberOfDays('ledOutdoor')
@@ -472,13 +598,23 @@
                     case "radio":
                         getRadioNumberDays()
                         break;
+                    case "push-vocal":
+                        getNumberOfCall()
+                        break;
 
                     default:
                         break;
                 }
             })
 
+            function getNumberOfViews() {
+                let viewsCounter = document.getElementById('views-counter')
+                viewsCounter.textContent = `${(userBudget.value * 10000).toLocaleString("fr-FR")}`
+            }
+
             function getLedNumberOfDays(ledType) {
+
+
                 let sitesCounter, unitPrice;
                 switch (ledType) {
                     case 'ledOutDoor':
@@ -498,12 +634,15 @@
                 if (sitesCounter > 0) {
                     numberOfDays = Math.floor(userBudget.value / (unitPrice * sitesCounter))
                 }
-                daysCounter.textContent = `${numberOfDays} jour(s)`
+
+                let daysCounter = document.getElementById('days-counter')
+                daysCounter.textContent = `${numberOfDays}`
             }
 
             function getRadioNumberDays(radioType = "radios-locales") {
-                if(userBudget.value <= 0){
-                    radioCounter.textContent = `0 jour`
+                let radioCounter = document.getElementById('radio-days-counter')
+                if (userBudget.value <= 0) {
+                    radioCounter.textContent = `0`
                 }
                 let unitPrice;
                 switch (radioType) {
@@ -521,16 +660,29 @@
                         break;
                 }
 
-                radioCounter.textContent = `${Math.floor(userBudget.value / unitPrice).toLocaleString("fr-FR") } jour(s)`
+                radioCounter.textContent = `${Math.floor(userBudget.value / unitPrice).toLocaleString("fr-FR")}`
 
             }
+
             function getNumberOfSMS() {
+                let smsCounter = document.getElementById('sms-counter')
                 let numberOfSMS = Math.floor(userBudget.value / 0.008)
-                smsCounter.textContent = `${numberOfSMS} sms`
+                smsCounter.textContent = `${numberOfSMS}`
             }
-            //function for format money string
+
+            function getNumberOfCall() {
+                let callCounter = document.getElementById('call-counter')
+                let numberOfCall = Math.floor(userBudget.value / 0.035)
+                callCounter.textContent = `${numberOfCall} `
+            }
+
             function formatMoney(number) {
                 return number.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+            }
+
+            function hideAllCounterElements() {
+                let counterItems = document.querySelectorAll('.counter-item')
+                counterItems.forEach(item => item.classList.add('d-none'))
             }
         }
     </script>
