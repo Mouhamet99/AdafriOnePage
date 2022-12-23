@@ -225,8 +225,8 @@
                                     <label class="block p-3 text-gray-500" for="place-independance">
                                         <input
                                             class="led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
-                                            type="checkbox" value="place-independance" id="place-independance">
-                                        Place del'indépendance
+                                            type="checkbox" value="place-independance" id="place-independance" checked>
+                                        Place de l'indépendance
                                     </label>
                                 </div>
                                 <div class="border border-solid border-blue-800 rounded-md">
@@ -285,7 +285,7 @@
                                     <label class="block p-3 text-gray-500" for="mermoz">
                                         <input
                                             class="auchan-led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
-                                            type="checkbox" value="mermoz" id="mermoz">
+                                            type="checkbox" value="mermoz" id="mermoz" checked>
                                         Mermoz
                                     </label>
                                 </div>
@@ -571,22 +571,16 @@
             let auchanLedSites = document.querySelectorAll('.auchan-led-sites')
 
             ledSites.forEach((siteCheckbox) => siteCheckbox.addEventListener('change', function (e) {
-                if (document.querySelector('#ledOutDoor').classList.contains("active")) {
                     getNumberOfDaysForOutDoorLed('ledOutDoor')
-                }
             }))
 
             auchanLedSites.forEach((siteCheckbox) => siteCheckbox.addEventListener('change', function (e) {
-                if (document.querySelector('#ledAuchan').classList.contains("active")) {
                     getNumberOfDaysForOutDoorLed('ledAuchan')
-                }
             }))
 
             let radioTypes = document.querySelectorAll('.radio-type')
             radioTypes.forEach((radioType) => radioType.addEventListener('change', function (e) {
-                if (document.querySelector('#radio').classList.contains("active")) {
-                    getNumberDaysForRadio(radioType.id)
-                }
+                    getSpotNumberForRadio(radioType.id)
             }))
             let userBudgets = document.querySelectorAll('.user-budget')
             userBudgets.forEach(userBudget => {
@@ -607,7 +601,7 @@
                     //         getNumberOfSMS()
                     //         break;
                     //     case "radio":
-                    //         getNumberDaysForRadio()
+                    //         getSpotNumberForRadio()
                     //         break;
                     //     case "push-vocal":
                     //         getNumberOfCall()
@@ -654,7 +648,7 @@
                 daysCounter.textContent = `${numberOfDays}`
             }
 
-            function getNumberDaysForRadio(radioType = "radios-locales") {
+            function getSpotNumberForRadio(radioType = "radios-locales") {
                 let radioSpotCounter = document.getElementById('spot-counter')
                 let userBudget = document.getElementById('user-radio-budget')
                 if (userBudget.value <= 0) {
@@ -733,7 +727,7 @@
                         document.querySelector('.sms-counter-element').classList.remove('d-none')
                         break;
                     case "radio":
-                        getNumberDaysForRadio()
+                        getSpotNumberForRadio()
                         radioTypesContainer.classList.remove('d-none')
                         document.querySelector('.spot-counter-element').classList.remove('d-none')
                         break;
