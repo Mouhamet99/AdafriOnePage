@@ -118,17 +118,23 @@
 
                                     <div class="mb-2 relative flex  w-full items-center">
                                         <div class="mr-2">
-                                            <div class="mb-3 pt-0">
-                                                <input placeholder="votre Budget" type="text"
-                                                    class="border-blueGray-300 px-3 py-2 text-sm  w-full placeholder-blueGray-200 text-black relative bg-white rounded-md outline-none focus:ring-1 ring-inset  border border-solid transition duration-200 "
-                                                    :class="{
-                                                        'focus:ring-yellow-400 focus:border-yellow-400': 1 === slide.id ,
-                                                        'focus:ring-red-600 focus:border-red-600': 2 === slide.id ,
-                                                        'focus:ring-green-600 focus:border-green-600': 3 === slide.id ,
-                                                        'focus:ring-teal-500 focus:border-teal-500': 4 === slide.id ,
-                                                        'focus:ring-violet-600 focus:border-violet-600': 5 === slide.id ,
-                                                         'focus:ring-cyan-400 focus:border-cyan-500': 6 === slide.id 
-                                                    }">
+                                            <div class="relative text-2xl">
+                                                <input
+                                                    class="user-budget text-sm font-bold appearance border-2 border-solid pl-10 border-gray-300 hover:border-blue-800 transition-colors rounded-md w-full py-2 px-3 text-blue-800 leading-tight focus:outline-none focus:ring-blue-600 focus:border-blue-600 focus:shadow-outline"
+                                                    type="number" min="0" value="100" :class="{
+                                                    'focus:ring-yellow-400 focus:border-yellow-400': 1 === slide.id ,
+                                                    'focus:ring-red-600 focus:border-red-600': 2 === slide.id ,
+                                                    'focus:ring-green-600 focus:border-green-600': 3 === slide.id ,
+                                                    'focus:ring-teal-500 focus:border-teal-500': 4 === slide.id ,
+                                                    'focus:ring-violet-600 focus:border-violet-600': 5 === slide.id ,
+                                                     'focus:ring-cyan-400 focus:border-cyan-500': 6 === slide.id 
+                                                }" :id="'user-'+slide.title+'-budget'">
+                                                <div class="absolute left-0 inset-y-0 flex items-center">
+                                                    <span
+                                                        class="h-fit w-6 ml-3 font-bold text-2xl text-blue-800 hover:text-blue-700">
+                                                        $
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="mb-0">
@@ -195,8 +201,8 @@
                                     <span class="font-bold text-7xl" id="sms-counter">8375</span>
                                     <span class="text-5xl">sms</span>
                                 </div>
-                                <div class="radio-counter-element counter-item d-none">
-                                    <span class="font-bold text-7xl" id="radio-counter">1000</span>
+                                <div class="spot-counter-element counter-item d-none">
+                                    <span class="font-bold text-7xl" id="spot-counter">1000</span>
                                     <span class="text-5xl">spot(s)</span>
                                 </div>
                                 <div class="call-counter-element counter-item d-none">
@@ -375,7 +381,7 @@
                 </div>
             </div>
             <!-- Cercle -->
-            <div class="w-1/4  m-5 rounded-lg border border-dashed border-gray-400 shadow-sm">
+            <div class="w-1/4  d-none m-5 rounded-lg border border-dashed border-gray-400 shadow-sm" id="result">
                 <div class="rounded-lg overflow-hidden">
                     <div class="py-3 px-5 bg-transparent text-center">Resultat</div>
                     <canvas class="p-10" id="chartDoughnut"></canvas>
@@ -438,9 +444,9 @@
 
                         var data = google.visualization.arrayToDataTable([
                             ['Label', 'Value'],
-                            ['Memory', 80],
-                            ['CPU', 55],
-                            ['Network', 68]
+                            ['Vues', 80],
+                            ['Vues', 55],
+                            ['Vues', 68]
                         ]);
 
                         var options = {
@@ -473,384 +479,12 @@
 
             </div>
 
-
             <!-- Cercle -->
         </div>
         <!--  -->
 
-        <section class="w-full mb-20">
-            <div class="w-full md:w-3/4 mt-20 px-20 md:mx-auto ">
-                <h2 class="font-bold text-5xl text-blue-800">Votre Campagne publicitaire</h2>
-                <p class="text-gray-500">Choisissez le type de campagne dont vous souhaitez faire</p>
-                <article class="grid grid-cols-3 md:grid-cols-6 grid-flow-dense gap-5 md:gap-5 mt-5">
-                    <article
-                        class="active border border-1 border-blue-800 border-dashed cursor-pointer hover:shadow-md pub-service rounded-xl shadow-sm"
-                        id="gads">
-                        <img src="./src/img/3D/google-min.png" class=" object-contain" alt="publicité google ads">
-                    </article>
-                    <article class="cursor-pointer pub-service rounded-xl overflow-hidden shadow-sm  hover:shadow-lg"
-                        id="ledOutDoor">
-                        <img src="./src/img/3D/led-min.png" class="object-contain" alt="Let Outdoor">
-                    </article>
-                    <article
-                        class="relative cursor-pointer pub-service rounded-xl overflow-hidden shadow-sm  hover:shadow-lg "
-                        id="ledAuchan">
-                        <img src="./src/img/favicon-auchan.ico"
-                            class="absolute right-0 bottom-0 mb-2 mr-2 w-4 object-contain" alt="logo auchan">
-                        <img src="./src/img/3D/led auchan-min.png" class="object-contain" alt="LED Auchan">
-                    </article>
-                    <article class="cursor-pointer pub-service rounded-xl overflow-hidden shadow-sm  hover:shadow-lg "
-                        id="sms"><img src="./src/img/3D/sms-min.png" class="object-contain" alt="SMS">
-                    </article>
-                    <article class="cursor-pointer pub-service rounded-xl overflow-hidden shadow-sm  hover:shadow-lg "
-                        id="radio"><img src="./src/img/3D/radio-min.png" class="object-contain" alt="radio">
-                    </article>
-                    <article class="cursor-pointer pub-service rounded-xl overflow-hidden shadow-sm  hover:shadow-lg "
-                        id="push-vocal"><img src="./src/img/3D/push-min.png" class="object-contain" alt="push-vocal">
-                    </article>
-                </article>
-            </div>
-            <div class="w-full md:w-3/4 mt-20 px-20 md:mx-auto d-none">
-                <h2 class="font-bold text-3xl text-blue-800">Votre Campagne publicitaire</h2>
-                <p class="text-gray-500">Choisissez le type de campagne dont vous souhaitez faire</p>
-                <article class="grid grid-cols-3 md:grid-cols-6 grid-flow-dense gap-5 md:gap-10 mt-5">
-                    <article
-                        class="cursor-pointer pub-service p-3 active bg-slate-100 rounded-md shadow-sm border border-1 border-dashed border-blue-800 hover:shadow-md "
-                        id="gads">
-                        <img src="./src/img/3D/google.png" class="w-14 object-contain" alt="publicité google ads">
-                        <div class="content mt-10">
-                            <h3 class="text-md md:text-lg font-bold text-blue-800">Publicité Google</h3>
-                            <p class="text-slate-400 text-sm md:text-base">$0.1/1000 vues</p>
-                        </div>
-                    </article>
-                    <article
-                        class="cursor-pointer pub-service p-3 rounded-md shadow-sm border border-1 border-dashed border-gray-400 hover:shadow-md"
-                        id="ledOutDoor">
-                        <img src="./src/img/3D/led.png" class="w-14 object-contain" alt="Let Outdoor">
-                        <div class="content mt-10">
-                            <h3 class="text-md md:text-lg font-bold text-blue-800">LED OutDoor</h3>
-                            <p class="text-slate-400 text-sm md:text-base">$10/jr/Ecran</p>
-                        </div>
-                    </article>
-                    <article
-                        class="relative cursor-pointer pub-service p-3 rounded-md shadow-sm border border-1 border-dashed border-gray-400 hover:shadow-md "
-                        id="ledAuchan">
-                        <img src="./src/img/favicon-auchan.ico"
-                            class="absolute right-0 bottom-0 mb-2 mr-2 w-4 object-contain" alt="logo auchan">
-                        <img src="./src/img/3D/led-auchan.png" class="w-14 object-contain" alt="LED Auchan">
-                        <div class="content mt-10">
-                            <h3 class="text-md md:text-lg font-bold text-blue-800">LED Auchan</h3>
-                            <p class="text-slate-400 text-sm md:text-base">$17/jr/Auchan</p>
-                        </div>
-                    </article>
-                    <article
-                        class="cursor-pointer pub-service p-3 rounded-md shadow-sm border border-1 border-dashed border-gray-400 hover:shadow-md "
-                        id="sms"><img src="./src/img/3D/sms.png" class="w-14 object-contain" alt="SMS">
-                        <div class="content mt-10">
-                            <h3 class="text-md md:text-lg font-bold text-blue-800">SMS</h3>
-                            <p class="text-slate-400 text-sm md:text-base">$0.008/SMS</p>
-                        </div>
-                    </article>
-                    <article
-                        class="cursor-pointer pub-service p-3 rounded-md shadow-sm border border-1 border-dashed border-gray-400 hover:shadow-md "
-                        id="radio"><img src="./src/img/3D/radio.png" class="w-14 object-contain" alt="radio">
-                        <div class="content mt-10">
-                            <h3 class="text-md md:text-lg font-bold text-blue-800">Radio</h3>
-                            <p class="text-slate-400 text-sm md:text-base">$21/spot</p>
-                        </div>
-                    </article>
-                    <article
-                        class="cursor-pointer pub-service p-3 rounded-md shadow-sm border border-1 border-dashed border-gray-400 hover:shadow-md "
-                        id="push-vocal"><img src="./src/img/3D/push-vocal.png" class="w-14 object-contain"
-                            alt="push-vocal">
-                        <div class="content mt-10">
-                            <h3 class="text-md md:text-lg font-bold text-blue-800">Push Vocal</h3>
-                            <p class="text-slate-400 text-sm md:text-base">$0.035/appel</p>
-                        </div>
-                    </article>
-                </article>
-            </div>
-            <div class="w-full md:w-3/4 mt-20 px-20 md:mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-2">
-                <div>
-                    <h2 class="font-bold text-3xl text-blue-800">Votre Budget</h2>
-                    <p class="text-gray-500">Entrez le budget en dollard ($) dont vous disposez pour votre future
-                        campagne
-                        de pub</p>
-                    <!-- ** -->
-                    <div class="relative mt-5 text-2xl">
-                        <input
-                            class=" font-bold appearance border-2 border-solid pl-10 border-gray-300 hover:border-blue-800 transition-colors rounded-md w-full py-2 px-3 text-blue-800 leading-tight focus:outline-none focus:ring-blue-600 focus:border-blue-600 focus:shadow-outline"
-                            id="user-budget" type="number" min="0" value="100" />
-                        <div class="absolute left-0 inset-y-0 flex items-center">
-                            <span class="h-fit w-6 ml-3 font-bold text-blue-800 hover:text-blue-700">
-                                $
-                            </span>
-                        </div>
-                    </div>
-                    <!-- ** -->
-                </div>
-                <div class="flex items-end justify-end  text-blue-800">
-                    <div class="views-counter-element counter-item">
-                        <span class="font-bold text-7xl" id="views-counter">1000000</span>
-                        <span class="text-5xl">vue(s)</span>
-                    </div>
-                    <div class="days-counter-element counter-item d-none">
-                        <span class="font-bold text-7xl" id="days-counter">1000</span>
-                        <span class="text-5xl">jour(s)</span>
-                    </div>
-                    <div class="sms-counter-element counter-item d-none">
-                        <span class="font-bold text-7xl" id="sms-counter">1000</span>
-                        <span class="text-5xl">sms</span>
-                    </div>
-                    <div class="radio-counter-element counter-item d-none">
-                        <span class="font-bold text-7xl" id="radio-counter">1000</span>
-                        <span class="text-5xl">spot(s)</span>
-                    </div>
-                    <div class="call-counter-element counter-item d-none">
-                        <span class="font-bold text-7xl" id="call-counter">1000</span>
-                        <span class="text-5xl">push vocaux</span>
-                    </div>
-                </div>
 
-
-            </div>
-
-            <!-- SITES OUTDDOOR -->
-            <div class="w-full md:w-3/4 mt-20 px-20 md:mx-auto text-gray-500 d-none " id="ledOutDoorSitesContainer">
-                <h2 class="font-bold text-3xl text-blue-800">Les sites</h2>
-                <p class="text-gray-500">Selectionnez les sites dont vous souhaitez faire passez votre pub</p>
-
-                <div class="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-dense gap-5 md:gap-10 ">
-                    <div class="border border-solid border-blue-800 rounded-md">
-                        <label class="block p-3 text-gray-500" for="place-independance">
-                            <input
-                                class="led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
-                                type="checkbox" value="place-independance" id="place-independance">
-                            Place de l'indépendance
-                        </label>
-                    </div>
-                    <div class="border border-solid border-blue-800 rounded-md">
-                        <label class="block p-3 text-gray-500" for="patte-d-oie">
-                            <input
-                                class="led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
-                                type="checkbox" value="patte-d-oie" id="patte-d-oie">
-                            Patte d’oie
-                        </label>
-                    </div>
-                    <div class="border border-solid border-blue-800 rounded-md">
-                        <label class="block p-3 text-gray-500" for="grand-theatre">
-                            <input
-                                class="led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
-                                type="checkbox" value="grand-theatre" id="grand-theatre">
-                            Grand théâtre
-                        </label>
-                    </div>
-                    <div class="border border-solid border-blue-800 rounded-md">
-                        <label class="block p-3 text-gray-500" for="relais">
-                            <input
-                                class="led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
-                                type="checkbox" value="relais" id="relais">
-                            Relais
-                        </label>
-                    </div>
-                    <div class="border border-solid border-blue-800 rounded-md">
-                        <label class="block p-3 text-gray-500" for="horizon">
-                            <input
-                                class="led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
-                                type="checkbox" value="horizon" id="horizon">
-                            Horizon
-                        </label>
-                    </div>
-                    <div class="border border-solid border-blue-800 rounded-md">
-                        <label class="block p-3 text-gray-500" for="almadies">
-                            <input
-                                class="led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
-                                type="checkbox" value="" id="almadies">
-                            Almadies
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <!-- END SITES OUTDDOOR -->
-
-            <!-- SITES AUCHAN -->
-            <div class="w-full md:w-3/4 mt-20 px-20 md:mx-auto d-none" id="auchanLedSitesContainer">
-                <h2 class="font-bold text-3xl text-blue-800">Les magasins</h2>
-                <p class="text-gray-500">Selectionnez les magasins Auchan dont vous souhaitez faire passez votre pub</p>
-
-                <div class="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-dense gap-5 md:gap-10 ">
-                    <div class="border border-solid border-blue-800 rounded-md">
-                        <label class="block p-3 text-gray-500" for="mermoz">
-                            <input
-                                class="auchan-led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
-                                type="checkbox" value="mermoz" id="mermoz">
-                            Mermoz
-                        </label>
-                    </div>
-                    <div class="border border-solid border-blue-800 rounded-md">
-                        <label class="block p-3 text-gray-500" for="sacre-cœur">
-                            <input
-                                class="auchan-led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
-                                type="checkbox" value=" sacre-cœur" id=" sacre-cœur">
-                            Sacre-cœur
-                        </label>
-                    </div>
-                    <div class="border border-solid border-blue-800 rounded-md">
-                        <label class="block p-3 text-gray-500" for="gibraltar">
-                            <input
-                                class="auchan-led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
-                                type="checkbox" value="gibraltar" id="gibraltar">
-                            Gibraltar
-                        </label>
-                    </div>
-                    <div class="border border-solid border-blue-800 rounded-md">
-                        <label class="block p-3 text-gray-500" for="yoff">
-                            <input
-                                class="auchan-led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
-                                type="checkbox" value="yoff" id="yoff">
-                            Yoff
-                        </label>
-                    </div>
-                    <div class="border border-solid border-blue-800 rounded-md">
-                        <label class="block p-3 text-gray-500" for="mairie-ville">
-                            <input
-                                class="auchan-led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
-                                type="checkbox" value="mairie-ville" id="mairie-ville">
-                            Mairie ville
-                        </label>
-                    </div>
-                    <div class="border border-solid border-blue-800 rounded-md">
-                        <label class="block p-3 text-gray-500" for="auchan-almadies">
-                            <input
-                                class="auchan-led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
-                                type="checkbox" value="auchan-almadies" id="auchan-almadies">
-                            Almadies
-                        </label>
-                    </div>
-                    <div class="border border-solid border-blue-800 rounded-md">
-                        <label class="block p-3 text-gray-500" for="fann-residence">
-                            <input
-                                class="auchan-led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
-                                type="checkbox" value="fann-residence" id="fann-residence">
-                            Fann résidence
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <!-- END SITES AUCHAN -->
-
-            <!-- RADIO -->
-            <div class="w-full md:w-3/4 mt-20 px-20 md:mx-auto text-gray-500 d-none" id="radioTypesContainer">
-                <h2 class="font-bold text-3xl text-blue-800">Les Radios</h2>
-                <p class="text-gray-500">Selectionnez le type radio dont vous souhaitez faire diffusé votre pub</p>
-
-                <div class="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-dense gap-5 md:gap-10 ">
-                    <div class="border border-solid border-blue-800 rounded-md">
-                        <label class="block p-3 text-gray-500" for="radios-locales">
-                            <input
-                                class="radio-type appearance-none h-5 w-5 border border-solid border-gray-300 rounded-full bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white"
-                                type="radio" name="radio" value="radios-locales" id="radios-locales" checked>
-                            Radios Locales
-                        </label>
-                    </div>
-                    <div class="border border-solid border-blue-800 rounded-md">
-                        <label class="block p-3 text-gray-500" for="radios-panaf">
-                            <input
-                                class="radio-type appearance-none h-5 w-5 border border-solid border-gray-300 rounded-full bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white "
-                                type="radio" name="radio" value="radios-panaf" id="radios-panaf">
-                            Radios Panaf
-                        </label>
-                    </div>
-                    <div class="border border-solid border-blue-800 rounded-md">
-                        <label class="block p-3 text-gray-500" for="radios-auchan">
-                            <input
-                                class="radio-type appearance-none h-5 w-5 border border-solid border-gray-300 rounded-full bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white"
-                                type="radio" name="radio" value="radios-auchan" id="radios-auchan">
-                            Radios Auchan
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <!-- END RADIO -->
-
-            <!-- *** -->
-            <div class="w-full md:w-3/4 mt-20 px-20  md:mx-auto mx-auto my-10 d-none ">
-                <div class="relative bg-slate-200">
-                    <div class="absolute w-full  h-1 flex items-center justify-between">
-                        <div class="bg-blue-700 h-6 w-6 rounded-full shadow relative">
-                            <span class="absolute -bottom-10 left-1/2 transform -translate-x-1/2">10</span>
-                        </div>
-                        <div class="bg-blue-700 h-6 w-6 rounded-full shadow relative">
-                            <span class="absolute -bottom-10">1.000.000</span>
-                        </div>
-                    </div>
-                    <div class="w-3/5  bg-blue-700 h-1 flex justify-end items-center">
-                        <div
-                            class="bg-white  h-6 w-6 rounded-full shadow-lg border border-dashed border-blue-700 flex items-center justify-center -mr-3 relative">
-                            <div class="h-3 w-3 bg-blue-700 rounded-full"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- *** -->
-            <div class="w-1/2 mx-auto my-10 d-none">
-                <input type="range" list="tickmarks" value="50" min="0" max="100" class="w-full bg-blue-800 ">
-                <datalist id="tickmarks">
-                    <option value="0"></option>
-                    <option value="10"></option>
-                    <option value="20"></option>
-                    <option value="30"></option>
-                    <option value="40"></option>
-                    <option value="50"></option>
-                    <option value="60"></option>
-                    <option value="70"></option>
-                    <option value="80"></option>
-                    <option value="90"></option>
-                    <option value="100"></option>
-                </datalist>
-            </div>
-
-        </section>
-        <!-- PRDDUCT DETAILS -->
-        <section
-            class="d-none min-h-[100px] w-11/12 p-5 md:w-3/5 mx-auto mt-10 d-flex items-start border border-dashed border-gray-300 shadow-sm bg-slate-100"
-            id="result">
-            <div class="w-full md:w-2/5 mx-auto">
-                <div class="views-counter-element counter-item">
-                    <span class="text-blue-800 text-lg views-counter-label">Nombre de vues : </span>
-                    <span class="p-4 text-3xl text-bold text-blue-800" id="views-counter">10 000 vues</span>
-                </div>
-                <div class="days-counter-element counter-item d-none">
-                    <span class="text-blue-800 text-lg days-counter-label">Nombre de jours LED: </span>
-                    <span class="p-4 text-3xl text-bold text-blue-800" id="days-counter">27 jours</span>
-                </div>
-                <div class="sms-counter-element counter-item d-none">
-                    <span class="text-blue-800 text-lg sms-counter-label">Nombre de sms : </span>
-                    <span class="p-4 text-3xl text-bold text-blue-800" id="sms-counter">0</span>
-                </div>
-                <div class="radio-counter-element counter-item d-none">
-                    <span class="text-blue-800 text-lg radio-days-counter-label">Nombre de jours Radio : </span>
-                    <span class="p-4 text-3xl text-bold text-blue-800" id="radio-days-counter">0</span>
-                </div>
-                <div class="call-counter-element counter-item d-none">
-                    <span class="text-blue-800 text-lg call-counter-label">Nombre d'appel vocal : </span>
-                    <span class="p-4 text-3xl text-bold text-blue-800" id="call-counter">0</span>
-                </div>
-
-                <div class="">
-                    <p class="text-3xl text-bold text-blue-800">Panneau LED :</p>
-                    <ul class="list-disc text-blue-800 text-lg ">
-                        <li>Possibilité d’utiliser la régie LED pour diffuser sa pub</li>
-                        <li>Résolution & dimension : 1280x720</li>
-                        <li>Durée de la vidéo : 10sec</li>
-                        <li>Prix : 10$ par jour</li>
-                        <li>Plages horaires : 8H-12H / 16H-20H</li>
-                        <li>indépendance, patte d’oie,Grand théâtre,relais, horizon, almadies</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <!-- PRODUCT DETAILS -->
+      
         <!-- TABLE -->
         <!-- TABLE -->
         <div class="w-full md:w-3/4 mx-auto shadow-sm overflow-hidden my-8 d-none">
@@ -903,12 +537,11 @@
 
         window.onload = function () {
             let arrowBtns = document.querySelectorAll('.arrow-btn')
-            
+
             arrowBtns.forEach(btn => {
                 btn.addEventListener('click', function () {
                     setTimeout(function (params) {
                         let currentService = document.querySelector('.pub-service-item.active')
-                        console.log(currentService);
                         generateResult(currentService.id)
                     }, 100)
                 })
@@ -933,74 +566,79 @@
                 });
             })
 
-            let userBudget = document.getElementById('user-budget')
 
             let ledSites = document.querySelectorAll('.led-sites')
             let auchanLedSites = document.querySelectorAll('.auchan-led-sites')
 
             ledSites.forEach((siteCheckbox) => siteCheckbox.addEventListener('change', function (e) {
                 if (document.querySelector('#ledOutDoor').classList.contains("active")) {
-                    getLedNumberOfDays('ledOutDoor')
+                    getNumberOfDaysForOutDoorLed('ledOutDoor')
                 }
             }))
 
             auchanLedSites.forEach((siteCheckbox) => siteCheckbox.addEventListener('change', function (e) {
                 if (document.querySelector('#ledAuchan').classList.contains("active")) {
-                    getLedNumberOfDays('ledAuchan')
+                    getNumberOfDaysForOutDoorLed('ledAuchan')
                 }
             }))
 
             let radioTypes = document.querySelectorAll('.radio-type')
             radioTypes.forEach((radioType) => radioType.addEventListener('change', function (e) {
                 if (document.querySelector('#radio').classList.contains("active")) {
-                    getRadioNumberDays(radioType.id)
+                    getNumberDaysForRadio(radioType.id)
                 }
             }))
+            let userBudgets = document.querySelectorAll('.user-budget')
+            userBudgets.forEach(userBudget => {
+                userBudget.addEventListener('input', function (event) {
+                    let currentService = document.querySelector(".pub-service-item.active")
+                    generateResult(currentService.id)
+                    // switch (currentService.id) {
+                    //     case "gads":
+                    //         getNumberOfViews()
+                    //         break;
+                    //     case "ledOutDoor":
+                    //         getNumberOfDaysForOutDoorLed('ledOutdoor')
+                    //         break;
+                    //     case "ledAuchan":
+                    //         getNumberOfDaysForOutDoorLed('ledAuchan')
+                    //         break;
+                    //     case "sms":
+                    //         getNumberOfSMS()
+                    //         break;
+                    //     case "radio":
+                    //         getNumberDaysForRadio()
+                    //         break;
+                    //     case "push-vocal":
+                    //         getNumberOfCall()
+                    //         break;
 
-            userBudget.addEventListener('input', function (event) {
-                let activeService = document.querySelector(".pub-service.active")
-                switch (activeService.id) {
-                    case "gads":
-                        getNumberOfViews()
-                        break;
-                    case "ledOutDoor":
-                        getLedNumberOfDays('ledOutdoor')
-                        break;
-                    case "ledAuchan":
-                        getLedNumberOfDays('ledAuchan')
-                        break;
-                    case "sms":
-                        getNumberOfSMS()
-                        break;
-                    case "radio":
-                        getRadioNumberDays()
-                        break;
-                    case "push-vocal":
-                        getNumberOfCall()
-                        break;
-
-                    default:
-                        break;
-                }
+                    //     default:
+                    //         break;
+                    // }
+                })
             })
 
             function getNumberOfViews() {
+                let userBudget = document.getElementById('user-gads-budget')
                 let viewsCounter = document.getElementById('views-counter')
                 viewsCounter.textContent = `${(userBudget.value * 10000).toLocaleString("fr-FR")}`
             }
 
-            function getLedNumberOfDays(ledType) {
-
+            function getNumberOfDaysForOutDoorLed(ledType) {
+                let userBudget;
 
                 let sitesCounter, unitPrice;
                 switch (ledType) {
                     case 'ledOutDoor':
                         unitPrice = 10
                         sitesCounter = [...ledSites].filter(site => site.checked == true).length
+                        userBudget = document.getElementById('user-ledOutDoor-budget')
                         break;
                     case 'ledAuchan':
                         unitPrice = 17
                         sitesCounter = [...auchanLedSites].filter(site => site.checked == true).length
+                        userBudget = document.getElementById('user-ledAuchan-budget')
                         break;
                     default:
                         console.log("default case ");
@@ -1016,10 +654,11 @@
                 daysCounter.textContent = `${numberOfDays}`
             }
 
-            function getRadioNumberDays(radioType = "radios-locales") {
-                let radioCounter = document.getElementById('radio-days-counter')
+            function getNumberDaysForRadio(radioType = "radios-locales") {
+                let radioSpotCounter = document.getElementById('spot-counter')
+                let userBudget = document.getElementById('user-radio-budget')
                 if (userBudget.value <= 0) {
-                    radioCounter.textContent = `0`
+                    radioSpotCounter.textContent = `0`
                 }
                 let unitPrice;
                 switch (radioType) {
@@ -1037,17 +676,19 @@
                         break;
                 }
 
-                radioCounter.textContent = `${Math.floor(userBudget.value / unitPrice).toLocaleString("fr-FR")}`
+                radioSpotCounter.textContent = `${Math.floor(userBudget.value / unitPrice).toLocaleString("fr-FR")}`
 
             }
 
             function getNumberOfSMS() {
+                let userBudget = document.getElementById('user-sms-budget')
                 let smsCounter = document.getElementById('sms-counter')
                 let numberOfSMS = Math.floor(userBudget.value / 0.008)
                 smsCounter.textContent = `${numberOfSMS}`
             }
 
             function getNumberOfCall() {
+                let userBudget = document.getElementById('user-push-vocal-budget')
                 let callCounter = document.getElementById('call-counter')
                 let numberOfCall = Math.floor(userBudget.value / 0.035)
                 callCounter.textContent = `${numberOfCall} `
@@ -1075,16 +716,15 @@
                 switch (serviceId) {
                     case "gads":
                         getNumberOfViews()
-                        ledOutDoorSitesContainer.classList.add('d-none')
                         document.querySelector('.views-counter-element').classList.remove('d-none')
                         break;
                     case "ledOutDoor":
-                        getLedNumberOfDays('ledOutDoor')
+                        getNumberOfDaysForOutDoorLed('ledOutDoor')
                         ledOutDoorSitesContainer.classList.remove('d-none')
                         document.querySelector('.days-counter-element').classList.remove('d-none')
                         break;
                     case "ledAuchan":
-                        getLedNumberOfDays('ledAuchan')
+                        getNumberOfDaysForOutDoorLed('ledAuchan')
                         auchanSitesContainer.classList.remove('d-none')
                         document.querySelector('.days-counter-element').classList.remove('d-none')
                         break;
@@ -1093,9 +733,9 @@
                         document.querySelector('.sms-counter-element').classList.remove('d-none')
                         break;
                     case "radio":
-                        getRadioNumberDays()
+                        getNumberDaysForRadio()
                         radioTypesContainer.classList.remove('d-none')
-                        document.querySelector('.radio-counter-element').classList.remove('d-none')
+                        document.querySelector('.spot-counter-element').classList.remove('d-none')
                         break;
                     case "push-vocal":
                         getNumberOfCall()
