@@ -67,7 +67,7 @@
 
         <!--  -->
         <div class="w-full flex  min-h-screen">
-            <div class="w-3/4 bg-slate-100">
+            <div class="w-3/4 bg-slate-100 m-5 rounded-lg shadow-sm">
                 <article class="grid grid-cols-3 lg:grid-cols-6 grid-flow-dense gap-12 lg:gap-10 mt-5 mx-10 lg:mx-20">
                     <article class="relative rounded-xl overflow-hidden shadow-sm" id="gads">
                         <img src="./src/img/3D/google-min-without-text.png" class=" object-contain"
@@ -99,9 +99,9 @@
 
                 </article>
 
-                <div class=" p-10 flex flex-col justify-center items-center">
-                    <div class="mx-auto relative"
-                        x-data="{ activeSlide: 1, slides: [{ id:1, image: 'google-min.png' }, { id:2, image: 'led auchan-min.png' }, { id:3, image: 'sms-min.png' }, { id:4, image: 'radio-min.png' }, { id: 5, image: 'push-min.png' }] }">
+                <div class="w-full p-10 flex">
+                    <div class="w1/3 relative"
+                        x-data="{ activeSlide: 1, slides: [{ id:1, image: 'google-min.png', title: 'gads' }, { id:2, image: 'led auchan-min.png', title: 'ledAuchan' }, { id:3, image: 'sms-min.png', title: 'sms' }, { id:4, image: 'radio-min.png', title: 'radio' }, { id: 5, image: 'push-min.png', title: 'push-vocal' }, { id:6, image: 'led-min.png', title: 'ledOutDoor' }] }">
                         <!-- Slides -->
                         <template x-for="slide in slides" :key="slide.id">
                             <div x-show="activeSlide === slide.id"
@@ -111,33 +111,36 @@
                                     <span class="">/</span>
                                     <span class="w-12 text-center" x-text="slides.length"></span>
                                 </p>
-                                <article class="cursor-pointer pub-service-item  overflow-hidden" id="ledOutDoor">
+                                <article class="cursor-pointer pub-service-item"
+                                    :class="{'active': activeSlide === slide.id}" :id="slide.title">
                                     <img :src="'./src/img/3D/'+slide.image" class=" rounded-xl object-contain"
-                                        alt="Let Outdoor">
+                                        :alt="slide.title">
 
                                     <div class="mb-2 relative flex  w-full items-center">
                                         <div class="mr-2">
                                             <div class="mb-3 pt-0">
                                                 <input placeholder="votre Budget" type="text"
-                                                    class="border-blueGray-300 px-3 py-2 text-sm  w-full placeholder-blueGray-200 text-blueGray-700 relative bg-white rounded-md outline-none focus:ring-1 ring-inset  border border-solid transition duration-200 "
+                                                    class="border-blueGray-300 px-3 py-2 text-sm  w-full placeholder-blueGray-200 text-black relative bg-white rounded-md outline-none focus:ring-1 ring-inset  border border-solid transition duration-200 "
                                                     :class="{
                                                         'focus:ring-yellow-400 focus:border-yellow-400': 1 === slide.id ,
                                                         'focus:ring-red-600 focus:border-red-600': 2 === slide.id ,
                                                         'focus:ring-green-600 focus:border-green-600': 3 === slide.id ,
                                                         'focus:ring-teal-500 focus:border-teal-500': 4 === slide.id ,
-                                                        'focus:ring-violet-600 focus:border-violet-600': 5 === slide.id 
+                                                        'focus:ring-violet-600 focus:border-violet-600': 5 === slide.id ,
+                                                         'focus:ring-cyan-400 focus:border-cyan-500': 6 === slide.id 
                                                     }">
                                             </div>
                                         </div>
                                         <div class="mb-0">
                                             <button
-                                                class="inline-block outline-none focus:outline-none align-middle transition-all duration-150 ease-in-out uppercase border border-solid font-bold last:mr-0 mr-2  text-white hover:scale-105 text-sm px-6 py-2 shadow hover:shadow-lg rounded-md"
+                                                class="inline-block outline-none focus:outline-none align-middle transition-all duration-150 ease-in-out uppercase border border-solid font-bold  text-white hover:scale-105 text-sm px-6 py-2 shadow hover:shadow-lg rounded-md"
                                                 :class="{ 
                                                     'bg-yellow-400 border-yellow-500': 1 === slide.id ,
                                                     'bg-red-600 border-red-700': 2 === slide.id ,
                                                     'bg-green-600 border-green-700': 3 === slide.id ,
                                                     'bg-teal-500 border-teal-600': 4 === slide.id ,
-                                                    'bg-violet-600 border-violet-700': 5 === slide.id 
+                                                    'bg-violet-600 border-violet-700': 5 === slide.id ,
+                                                    'bg-cyan-400 border-cyan-500': 6 === slide.id 
                                             }">
                                                 Ajouter
                                             </button>
@@ -149,15 +152,15 @@
 
                         <!-- Prev/Next Arrows -->
                         <div class="absolute flex top-1/2 z-30 -translate-y-1/2">
-                            <button
-                                class="bg-white text-blue-800 border border-solid border-blue-800 hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 -ml-6"
+                            <button id=""
+                                class="arrow-btn bg-white text-blue-800 border border-solid border-blue-800 hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 -ml-6"
                                 x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
                                 &#8592;
                             </button>
                         </div>
                         <div class="absolute flex top-1/2 z-30 -translate-y-1/2 right-0">
                             <button
-                                class="bg-white text-blue-800 border border-solid border-blue-800 hover:text-orange-500 font-bold hover:shadow rounded-full w-12 h-12 -mr-6"
+                                class="arrow-btn bg-white text-blue-800 border border-solid border-blue-800 hover:text-orange-500 font-bold hover:shadow rounded-full w-12 h-12 -mr-6"
                                 x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
                                 &#8594;
                             </button>
@@ -176,12 +179,205 @@
                             </template>
                         </div>
                     </div>
+                    <div class="w-2/3 flex flex-col justify-between">
+                        <!-- RESULTAT -->
+                        <div class="w-full px-20 md:mx-auto text-gray-500 self-end justify-self-start">
+                            <div class=" w-full flex items-end justify-end  text-blue-800">
+                                <div class="views-counter-element counter-item">
+                                    <span class="font-bold text-7xl" id="views-counter">1 000 000</span>
+                                    <span class="text-5xl">vue(s)</span>
+                                </div>
+                                <div class="days-counter-element counter-item d-none">
+                                    <span class="font-bold text-7xl" id="days-counter">0</span>
+                                    <span class="text-5xl">jour(s)</span>
+                                </div>
+                                <div class="sms-counter-element counter-item d-none">
+                                    <span class="font-bold text-7xl" id="sms-counter">8375</span>
+                                    <span class="text-5xl">sms</span>
+                                </div>
+                                <div class="radio-counter-element counter-item d-none">
+                                    <span class="font-bold text-7xl" id="radio-counter">1000</span>
+                                    <span class="text-5xl">spot(s)</span>
+                                </div>
+                                <div class="call-counter-element counter-item d-none">
+                                    <span class="font-bold text-7xl" id="call-counter">1000</span>
+                                    <span class="text-5xl">push vocaux</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END RESULTAT -->
+
+                        <!-- SITES OUTDDOOR -->
+                        <div class=" md:mx-auto text-gray-500 d-none" id="ledOutDoorSitesContainer">
+                            <h2 class="font-bold text-3xl text-blue-800">Les sites</h2>
+                            <p class="text-gray-500">Selectionnez les sites dont vous souhaitez faire passez votre pub
+                            </p>
+
+                            <div
+                                class="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-dense gap-5 md:gap-10 ">
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="place-independance">
+                                        <input
+                                            class="led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
+                                            type="checkbox" value="place-independance" id="place-independance">
+                                        Place del'indépendance
+                                    </label>
+                                </div>
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="patte-d-oie">
+                                        <input
+                                            class="led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
+                                            type="checkbox" value="patte-d-oie" id="patte-d-oie">
+                                        Patte d’oie
+                                    </label>
+                                </div>
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="grand-theatre">
+                                        <input
+                                            class="led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
+                                            type="checkbox" value="grand-theatre" id="grand-theatre">
+                                        Grand théâtre
+                                    </label>
+                                </div>
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="relais">
+                                        <input
+                                            class="led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
+                                            type="checkbox" value="relais" id="relais">
+                                        Relais
+                                    </label>
+                                </div>
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="horizon">
+                                        <input
+                                            class="led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
+                                            type="checkbox" value="horizon" id="horizon">
+                                        Horizon
+                                    </label>
+                                </div>
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="almadies">
+                                        <input
+                                            class="led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
+                                            type="checkbox" value="" id="almadies">
+                                        Almadies
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END SITES OUTDDOOR -->
+
+                        <!-- SITES AUCHAN -->
+                        <div class=" md:mx-auto d-none" id="auchanLedSitesContainer">
+                            <h2 class="font-bold text-3xl text-blue-800">Les magasins</h2>
+                            <p class="text-gray-500">Selectionnez les magasins Auchan dont vous souhaitez faire passez
+                                votre pub</p>
+
+                            <div
+                                class="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-dense gap-5 md:gap-10 ">
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="mermoz">
+                                        <input
+                                            class="auchan-led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
+                                            type="checkbox" value="mermoz" id="mermoz">
+                                        Mermoz
+                                    </label>
+                                </div>
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="sacre-cœur">
+                                        <input
+                                            class="auchan-led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
+                                            type="checkbox" value=" sacre-cœur" id=" sacre-cœur">
+                                        Sacre-cœur
+                                    </label>
+                                </div>
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="gibraltar">
+                                        <input
+                                            class="auchan-led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
+                                            type="checkbox" value="gibraltar" id="gibraltar">
+                                        Gibraltar
+                                    </label>
+                                </div>
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="yoff">
+                                        <input
+                                            class="auchan-led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
+                                            type="checkbox" value="yoff" id="yoff">
+                                        Yoff
+                                    </label>
+                                </div>
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="mairie-ville">
+                                        <input
+                                            class="auchan-led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
+                                            type="checkbox" value="mairie-ville" id="mairie-ville">
+                                        Mairie ville
+                                    </label>
+                                </div>
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="auchan-almadies">
+                                        <input
+                                            class="auchan-led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
+                                            type="checkbox" value="auchan-almadies" id="auchan-almadies">
+                                        Almadies
+                                    </label>
+                                </div>
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="fann-residence">
+                                        <input
+                                            class="auchan-led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
+                                            type="checkbox" value="fann-residence" id="fann-residence">
+                                        Fann résidence
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END SITES AUCHAN -->
+
+                        <!-- RADIO -->
+                        <div class=" md:mx-auto text-gray-500 d-none" id="radioTypesContainer">
+                            <h2 class="font-bold text-3xl text-blue-800">Les Radios</h2>
+                            <p class="text-gray-500">Selectionnez le type radio dont vous souhaitez faire diffusé votre
+                                pub</p>
+
+                            <div
+                                class="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-dense gap-5 md:gap-10 ">
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="radios-locales">
+                                        <input
+                                            class="radio-type appearance-none h-5 w-5 border border-solid border-gray-300 rounded-full bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white"
+                                            type="radio" name="radio" value="radios-locales" id="radios-locales"
+                                            checked>
+                                        Radios Locales
+                                    </label>
+                                </div>
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="radios-panaf">
+                                        <input
+                                            class="radio-type appearance-none h-5 w-5 border border-solid border-gray-300 rounded-full bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white "
+                                            type="radio" name="radio" value="radios-panaf" id="radios-panaf">
+                                        Radios Panaf
+                                    </label>
+                                </div>
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="radios-auchan">
+                                        <input
+                                            class="radio-type appearance-none h-5 w-5 border border-solid border-gray-300 rounded-full bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white"
+                                            type="radio" name="radio" value="radios-auchan" id="radios-auchan">
+                                        Radios Auchan
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END RADIO -->
+                    </div>
                 </div>
             </div>
             <!-- Cercle -->
-            <div class="w-1/4">
+            <div class="w-1/4  m-5 rounded-lg border border-dashed border-gray-400 shadow-sm">
                 <div class="rounded-lg overflow-hidden">
-                    <div class="py-3 px-5 bg-transparent">Doughnut chart</div>
+                    <div class="py-3 px-5 bg-transparent text-center">Resultat</div>
                     <canvas class="p-10" id="chartDoughnut"></canvas>
                 </div>
 
@@ -191,7 +387,7 @@
                 <!-- Chart doughnut -->
                 <script>
                     const dataDoughnut = {
-                        labels: ["JavaScript", "Python", "Ruby"],
+                        labels: ["Gads", "LED", "SMS"],
                         datasets: [
                             {
                                 label: "My First Dataset",
@@ -282,7 +478,7 @@
         </div>
         <!--  -->
 
-        <section class="w-full">
+        <section class="w-full mb-20">
             <div class="w-full md:w-3/4 mt-20 px-20 md:mx-auto ">
                 <h2 class="font-bold text-5xl text-blue-800">Votre Campagne publicitaire</h2>
                 <p class="text-gray-500">Choisissez le type de campagne dont vous souhaitez faire</p>
@@ -430,7 +626,7 @@
                             <input
                                 class="led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
                                 type="checkbox" value="place-independance" id="place-independance">
-                            Place del'indépendance
+                            Place de l'indépendance
                         </label>
                     </div>
                     <div class="border border-solid border-blue-800 rounded-md">
@@ -657,7 +853,7 @@
         <!-- PRODUCT DETAILS -->
         <!-- TABLE -->
         <!-- TABLE -->
-        <div class="w-full md:w-3/4 mx-auto shadow-sm overflow-hidden my-8">
+        <div class="w-full md:w-3/4 mx-auto shadow-sm overflow-hidden my-8 d-none">
             <table class="border-collapse w-full text-sm rounded-2xl bg-[#7EA5D345]">
                 <thead>
                     <tr>
@@ -706,7 +902,17 @@
 
 
         window.onload = function () {
-
+            let arrowBtns = document.querySelectorAll('.arrow-btn')
+            
+            arrowBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    setTimeout(function (params) {
+                        let currentService = document.querySelector('.pub-service-item.active')
+                        console.log(currentService);
+                        generateResult(currentService.id)
+                    }, 100)
+                })
+            })
             let pubServicesBloc = document.querySelectorAll('.pub-service');
             pubServicesBloc.forEach(pubServiceBloc => {
                 pubServiceBloc.addEventListener('click', function (event) {
@@ -723,48 +929,7 @@
                     this.classList.add('border-gray-400')
                     this.classList.add('border-blue-800')
 
-                    let ledOutDoorSitesContainer = document.getElementById('ledOutDoorSitesContainer')
-                    let auchanSitesContainer = document.getElementById('auchanLedSitesContainer')
-                    let radioTypesContainer = document.getElementById('radioTypesContainer')
-
-                    ledOutDoorSitesContainer.classList.add('d-none')
-                    auchanSitesContainer.classList.add('d-none')
-                    radioTypesContainer.classList.add('d-none')
-
-                    hideAllCounterElements()
-
-                    switch (this.id) {
-                        case "gads":
-                            getNumberOfViews()
-                            ledOutDoorSitesContainer.classList.add('d-none')
-                            document.querySelector('.views-counter-element').classList.remove('d-none')
-                            break;
-                        case "ledOutDoor":
-                            getLedNumberOfDays('ledOutDoor')
-                            ledOutDoorSitesContainer.classList.remove('d-none')
-                            document.querySelector('.days-counter-element').classList.remove('d-none')
-                            break;
-                        case "ledAuchan":
-                            getLedNumberOfDays('ledAuchan')
-                            auchanSitesContainer.classList.remove('d-none')
-                            document.querySelector('.days-counter-element').classList.remove('d-none')
-                            break;
-                        case "sms":
-                            getNumberOfSMS()
-                            document.querySelector('.sms-counter-element').classList.remove('d-none')
-                            break;
-                        case "radio":
-                            getRadioNumberDays()
-                            radioTypesContainer.classList.remove('d-none')
-                            document.querySelector('.radio-counter-element').classList.remove('d-none')
-                            break;
-                        case "push-vocal":
-                            getNumberOfCall()
-                            document.querySelector('.call-counter-element').classList.remove('d-none')
-                            break;
-                        default:
-                            break;
-                    }
+                    generateResult(this.id)
                 });
             })
 
@@ -895,6 +1060,51 @@
             function hideAllCounterElements() {
                 let counterItems = document.querySelectorAll('.counter-item')
                 counterItems.forEach(item => item.classList.add('d-none'))
+            }
+
+            function generateResult(serviceId) {
+                hideAllCounterElements()
+                let ledOutDoorSitesContainer = document.getElementById('ledOutDoorSitesContainer')
+                let auchanSitesContainer = document.getElementById('auchanLedSitesContainer')
+                let radioTypesContainer = document.getElementById('radioTypesContainer')
+
+                ledOutDoorSitesContainer.classList.add('d-none')
+                auchanSitesContainer.classList.add('d-none')
+                radioTypesContainer.classList.add('d-none')
+
+                switch (serviceId) {
+                    case "gads":
+                        getNumberOfViews()
+                        ledOutDoorSitesContainer.classList.add('d-none')
+                        document.querySelector('.views-counter-element').classList.remove('d-none')
+                        break;
+                    case "ledOutDoor":
+                        getLedNumberOfDays('ledOutDoor')
+                        ledOutDoorSitesContainer.classList.remove('d-none')
+                        document.querySelector('.days-counter-element').classList.remove('d-none')
+                        break;
+                    case "ledAuchan":
+                        getLedNumberOfDays('ledAuchan')
+                        auchanSitesContainer.classList.remove('d-none')
+                        document.querySelector('.days-counter-element').classList.remove('d-none')
+                        break;
+                    case "sms":
+                        getNumberOfSMS()
+                        document.querySelector('.sms-counter-element').classList.remove('d-none')
+                        break;
+                    case "radio":
+                        getRadioNumberDays()
+                        radioTypesContainer.classList.remove('d-none')
+                        document.querySelector('.radio-counter-element').classList.remove('d-none')
+                        break;
+                    case "push-vocal":
+                        getNumberOfCall()
+                        document.querySelector('.call-counter-element').classList.remove('d-none')
+                        break;
+                    default:
+                        break;
+                }
+
             }
         }
     </script>
