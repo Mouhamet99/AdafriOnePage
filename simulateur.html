@@ -72,29 +72,47 @@
                     <article class="relative rounded-xl overflow-hidden shadow-sm" id="gads">
                         <img src="./src/img/3D/google-min-without-text.png" class=" object-contain"
                             alt="publicité google ads">
-                        <h1 class="absolute z-50 bottom-0 text-2xl text-white font-bold mx-5">$100</h1>
+                        <h1 class="absolute z-50 bottom-0 text-2xl text-white font-bold mx-5">
+                            <span>$</span>
+                            <span id="total-gads-budget">0</span>
+                        </h1>
                     </article>
                     <article class="relative rounded-xl overflow-hidden shadow-sm" id="ledOutDoor">
                         <img src="./src/img/3D/led-min-without-text.png" class="object-contain" alt="Let Outdoor">
-                        <h1 class="absolute z-50 bottom-0 text-2xl text-white font-bold mx-5">$0</h1>
+                        <h1 class="absolute z-50 bottom-0 text-2xl text-white font-bold mx-5">
+                            <span>$</span>
+                            <span id="total-ledOutDoor-budget">0</span>
+                        </h1>
                     </article>
                     <article class="relative rounded-xl overflow-hidden shadow-sm  " id="ledAuchan">
                         <img src="./src/img/favicon-auchan.ico"
                             class="absolute right-0 bottom-0 mb-2 mr-2 w-4 object-contain" alt="logo auchan">
                         <img src="./src/img/3D/led auchan-min-without-text.png" class="object-contain" alt="LED Auchan">
-                        <h1 class="absolute z-50 bottom-0 text-2xl text-white font-bold mx-5">$0</h1>
+                        <h1 class="absolute z-50 bottom-0 text-2xl text-white font-bold mx-5">
+                            <span>$</span>
+                            <span id="total-ledAuchan-budget">0</span>
+                        </h1>
                     </article>
                     <article class="relative rounded-xl overflow-hidden shadow-sm  " id="sms"><img
                             src="./src/img/3D/sms-min-without-text.png" class="object-contain" alt="SMS">
-                        <h1 class="absolute z-50 bottom-0 text-2xl text-white font-bold mx-5">$0</h1>
+                        <h1 class="absolute z-50 bottom-0 text-2xl text-white font-bold mx-5">
+                            <span>$</span>
+                            <span id="total-sms-budget">0</span>
+                        </h1>
                     </article>
                     <article class="relative rounded-xl overflow-hidden shadow-sm  " id="radio"><img
                             src="./src/img/3D/radio-min-without-text.png" class="object-contain" alt="radio">
-                        <h1 class="absolute z-50 bottom-0 text-2xl text-white font-bold mx-5">$0</h1>
+                        <h1 class="absolute z-50 bottom-0 text-2xl text-white font-bold mx-5">
+                            <span>$</span>
+                            <span id="total-radio-budget">0</span>
+                        </h1>
                     </article>
                     <article class="relative rounded-xl overflow-hidden shadow-sm  " id="push-vocal"><img
                             src="./src/img/3D/push-min-without-text.png" class="object-contain" alt="push-vocal">
-                        <h1 class="absolute z-50 bottom-0 text-2xl text-white font-bold mx-5">$0</h1>
+                        <h1 class="absolute z-50 bottom-0 text-2xl text-white font-bold mx-5">
+                            <span>$</span>
+                            <span id="total-push-vocal-budget">0</span>
+                        </h1>
                     </article>
 
                 </article>
@@ -139,7 +157,7 @@
                                         </div>
                                         <div class="mb-0">
                                             <button
-                                                class="inline-block outline-none focus:outline-none align-middle transition-all duration-150 ease-in-out uppercase border border-solid font-bold  text-white hover:scale-105 text-sm px-6 py-2 shadow hover:shadow-lg rounded-md"
+                                                class="add-to-budget-btn inline-block outline-none focus:outline-none align-middle transition-all duration-150 ease-in-out uppercase border border-solid font-bold  text-white hover:scale-105 text-sm px-6 py-2 shadow hover:shadow-lg rounded-md"
                                                 :class="{ 
                                                     'bg-yellow-400 border-yellow-500': 1 === slide.id ,
                                                     'bg-red-600 border-red-700': 2 === slide.id ,
@@ -147,7 +165,9 @@
                                                     'bg-teal-500 border-teal-600': 4 === slide.id ,
                                                     'bg-violet-600 border-violet-700': 5 === slide.id ,
                                                     'bg-cyan-400 border-cyan-500': 6 === slide.id 
-                                            }">
+                                            }" :data-budget-id="'total-'+slide.title+'-budget'"
+                                                :data-budget-amount="'user-'+slide.title+'-budget'"
+                                                :id="slide.title+'-add-to-budget-btn'">
                                                 Ajouter
                                             </button>
                                         </div>
@@ -484,7 +504,7 @@
         <!--  -->
 
 
-      
+
         <!-- TABLE -->
         <!-- TABLE -->
         <div class="w-full md:w-3/4 mx-auto shadow-sm overflow-hidden my-8 d-none">
@@ -537,7 +557,6 @@
 
         window.onload = function () {
             let arrowBtns = document.querySelectorAll('.arrow-btn')
-
             arrowBtns.forEach(btn => {
                 btn.addEventListener('click', function () {
                     setTimeout(function (params) {
@@ -546,6 +565,18 @@
                     }, 100)
                 })
             })
+            
+            let addToBudgetBtns = document.querySelectorAll('.add-to-budget-btn')
+            addToBudgetBtns.forEach(button => {
+                button.addEventListener('click', function () {
+                    let budgetAmountElement = document.getElementById(`${this.dataset.budgetAmount}`)     
+                    let totalbudgetElement = document.getElementById(`${this.dataset.budgetId}`)  
+                    
+                    totalbudgetElement.textContent = +totalbudgetElement.textContent +   +budgetAmountElement.value             
+                })
+            })
+
+
             let pubServicesBloc = document.querySelectorAll('.pub-service');
             pubServicesBloc.forEach(pubServiceBloc => {
                 pubServiceBloc.addEventListener('click', function (event) {
@@ -571,45 +602,23 @@
             let auchanLedSites = document.querySelectorAll('.auchan-led-sites')
 
             ledSites.forEach((siteCheckbox) => siteCheckbox.addEventListener('change', function (e) {
-                    getNumberOfDaysForOutDoorLed('ledOutDoor')
+                getNumberOfDaysForOutDoorLed('ledOutDoor')
             }))
 
             auchanLedSites.forEach((siteCheckbox) => siteCheckbox.addEventListener('change', function (e) {
-                    getNumberOfDaysForOutDoorLed('ledAuchan')
+                getNumberOfDaysForOutDoorLed('ledAuchan')
             }))
 
             let radioTypes = document.querySelectorAll('.radio-type')
             radioTypes.forEach((radioType) => radioType.addEventListener('change', function (e) {
-                    getSpotNumberForRadio(radioType.id)
+                getSpotNumberForRadio(radioType.id)
             }))
+
             let userBudgets = document.querySelectorAll('.user-budget')
             userBudgets.forEach(userBudget => {
                 userBudget.addEventListener('input', function (event) {
                     let currentService = document.querySelector(".pub-service-item.active")
                     generateResult(currentService.id)
-                    // switch (currentService.id) {
-                    //     case "gads":
-                    //         getNumberOfViews()
-                    //         break;
-                    //     case "ledOutDoor":
-                    //         getNumberOfDaysForOutDoorLed('ledOutdoor')
-                    //         break;
-                    //     case "ledAuchan":
-                    //         getNumberOfDaysForOutDoorLed('ledAuchan')
-                    //         break;
-                    //     case "sms":
-                    //         getNumberOfSMS()
-                    //         break;
-                    //     case "radio":
-                    //         getSpotNumberForRadio()
-                    //         break;
-                    //     case "push-vocal":
-                    //         getNumberOfCall()
-                    //         break;
-
-                    //     default:
-                    //         break;
-                    // }
                 })
             })
 
@@ -744,7 +753,6 @@
     </script>
 
 
-    <!-- <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.9.5/dist/alpine.js"></script> -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer></script>
 
 
