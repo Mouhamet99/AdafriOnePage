@@ -33,6 +33,9 @@
     <link rel="stylesheet" href="./src/css/style.css">
 
     <meta name="google-site-verification" content="QmvElgdBlVA6iTVnoygA2VvuWFhEcVnlwvs9IhBUpoo" />
+    <!-- TAILWIND CDN-->
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 <style>
     .pub-service {
@@ -61,42 +64,257 @@
 
     <!-- End Google Tag Manager (noscript) -->
     <main>
+
+        <!--  -->
+        <div class="w-full flex  min-h-screen">
+            <div class="w-3/4 bg-slate-100">
+                <article class="grid grid-cols-3 lg:grid-cols-6 grid-flow-dense gap-12 lg:gap-10 mt-5 mx-10 lg:mx-20">
+                    <article class="relative rounded-xl overflow-hidden shadow-sm" id="gads">
+                        <img src="./src/img/3D/google-min-without-text.png" class=" object-contain"
+                            alt="publicité google ads">
+                        <h1 class="absolute z-50 bottom-0 text-2xl text-white font-bold mx-5">$100</h1>
+                    </article>
+                    <article class="relative rounded-xl overflow-hidden shadow-sm" id="ledOutDoor">
+                        <img src="./src/img/3D/led-min-without-text.png" class="object-contain" alt="Let Outdoor">
+                        <h1 class="absolute z-50 bottom-0 text-2xl text-white font-bold mx-5">$0</h1>
+                    </article>
+                    <article class="relative rounded-xl overflow-hidden shadow-sm  " id="ledAuchan">
+                        <img src="./src/img/favicon-auchan.ico"
+                            class="absolute right-0 bottom-0 mb-2 mr-2 w-4 object-contain" alt="logo auchan">
+                        <img src="./src/img/3D/led auchan-min-without-text.png" class="object-contain" alt="LED Auchan">
+                        <h1 class="absolute z-50 bottom-0 text-2xl text-white font-bold mx-5">$0</h1>
+                    </article>
+                    <article class="relative rounded-xl overflow-hidden shadow-sm  " id="sms"><img
+                            src="./src/img/3D/sms-min-without-text.png" class="object-contain" alt="SMS">
+                        <h1 class="absolute z-50 bottom-0 text-2xl text-white font-bold mx-5">$0</h1>
+                    </article>
+                    <article class="relative rounded-xl overflow-hidden shadow-sm  " id="radio"><img
+                            src="./src/img/3D/radio-min-without-text.png" class="object-contain" alt="radio">
+                        <h1 class="absolute z-50 bottom-0 text-2xl text-white font-bold mx-5">$0</h1>
+                    </article>
+                    <article class="relative rounded-xl overflow-hidden shadow-sm  " id="push-vocal"><img
+                            src="./src/img/3D/push-min-without-text.png" class="object-contain" alt="push-vocal">
+                        <h1 class="absolute z-50 bottom-0 text-2xl text-white font-bold mx-5">$0</h1>
+                    </article>
+
+                </article>
+
+                <div class=" p-10 flex flex-col justify-center items-center">
+                    <div class="mx-auto relative"
+                        x-data="{ activeSlide: 1, slides: [{ id:1, image: 'google-min.png' }, { id:2, image: 'led auchan-min.png' }, { id:3, image: 'sms-min.png' }, { id:4, image: 'radio-min.png' }, { id: 5, image: 'push-min.png' }] }">
+                        <!-- Slides -->
+                        <template x-for="slide in slides" :key="slide.id">
+                            <div x-show="activeSlide === slide.id"
+                                class="max-w-sm p-10 font-bold text-5xl min-h-64 flex items-center border border-dashed border-blue-800 text-white rounded-lg flex-col">
+                                <p class="text-blue-800 text-base">
+                                    <span class="w-12 text-center" x-text="slide.id"></span>
+                                    <span class="">/</span>
+                                    <span class="w-12 text-center" x-text="slides.length"></span>
+                                </p>
+                                <article class="cursor-pointer pub-service-item  overflow-hidden" id="ledOutDoor">
+                                    <img :src="'./src/img/3D/'+slide.image" class=" rounded-xl object-contain"
+                                        alt="Let Outdoor">
+
+                                    <div class="mb-2 relative flex  w-full items-center">
+                                        <div class="mr-2">
+                                            <div class="mb-3 pt-0">
+                                                <input placeholder="votre Budget" type="text"
+                                                    class="border-blueGray-300 px-3 py-2 text-sm  w-full placeholder-blueGray-200 text-blueGray-700 relative bg-white rounded-md outline-none focus:ring-1 ring-inset  border border-solid transition duration-200 "
+                                                    :class="{
+                                                        'focus:ring-yellow-400 focus:border-yellow-400': 1 === slide.id ,
+                                                        'focus:ring-red-600 focus:border-red-600': 2 === slide.id ,
+                                                        'focus:ring-green-600 focus:border-green-600': 3 === slide.id ,
+                                                        'focus:ring-teal-500 focus:border-teal-500': 4 === slide.id ,
+                                                        'focus:ring-violet-600 focus:border-violet-600': 5 === slide.id 
+                                                    }">
+                                            </div>
+                                        </div>
+                                        <div class="mb-0">
+                                            <button
+                                                class="inline-block outline-none focus:outline-none align-middle transition-all duration-150 ease-in-out uppercase border border-solid font-bold last:mr-0 mr-2  text-white hover:scale-105 text-sm px-6 py-2 shadow hover:shadow-lg rounded-md"
+                                                :class="{ 
+                                                    'bg-yellow-400 border-yellow-500': 1 === slide.id ,
+                                                    'bg-red-600 border-red-700': 2 === slide.id ,
+                                                    'bg-green-600 border-green-700': 3 === slide.id ,
+                                                    'bg-teal-500 border-teal-600': 4 === slide.id ,
+                                                    'bg-violet-600 border-violet-700': 5 === slide.id 
+                                            }">
+                                                Ajouter
+                                            </button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </template>
+
+                        <!-- Prev/Next Arrows -->
+                        <div class="absolute flex top-1/2 z-30 -translate-y-1/2">
+                            <button
+                                class="bg-white text-blue-800 border border-solid border-blue-800 hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 -ml-6"
+                                x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
+                                &#8592;
+                            </button>
+                        </div>
+                        <div class="absolute flex top-1/2 z-30 -translate-y-1/2 right-0">
+                            <button
+                                class="bg-white text-blue-800 border border-solid border-blue-800 hover:text-orange-500 font-bold hover:shadow rounded-full w-12 h-12 -mr-6"
+                                x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
+                                &#8594;
+                            </button>
+                        </div>
+
+
+                        <!-- Buttons -->
+                        <div class="absolute w-full flex items-center justify-center px-4">
+                            <template x-for="slide in slides" :key="slide.id">
+                                <button
+                                    class="flex-1 w-4 h-2 mt-4 mx-2 mb-0 rounded-full overflow-hidden transition-colors duration-200 ease-out hover:bg-blue-800 hover:shadow-lg"
+                                    :class="{ 
+                                        'bg-blue-800': activeSlide === slide.id ,
+                                        'border border-solid border-blue-800': activeSlide !== slide.id
+                            }" x-on:click="activeSlide = slide.id"></button>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Cercle -->
+            <div class="w-1/4">
+                <div class="rounded-lg overflow-hidden">
+                    <div class="py-3 px-5 bg-transparent">Doughnut chart</div>
+                    <canvas class="p-10" id="chartDoughnut"></canvas>
+                </div>
+
+                <!-- Required chart.js -->
+                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+                <!-- Chart doughnut -->
+                <script>
+                    const dataDoughnut = {
+                        labels: ["JavaScript", "Python", "Ruby"],
+                        datasets: [
+                            {
+                                label: "My First Dataset",
+                                data: [300, 50, 100],
+                                backgroundColor: [
+                                    "rgb(133, 105, 241)",
+                                    "rgb(164, 101, 241)",
+                                    "rgb(101, 143, 241)",
+                                ],
+                                hoverOffset: 4,
+                            },
+                        ],
+                    };
+
+                    const configDoughnut = {
+                        type: "doughnut",
+                        data: dataDoughnut,
+                        options: {},
+                    };
+
+                    var chartBar = new Chart(
+                        document.getElementById("chartDoughnut"),
+                        configDoughnut
+                    );
+                </script>
+
+                <!-- v2 -->
+                <svg width="160" height="160" class="mx-auto">
+                    <g stroke="red" x="0" y="0">
+                        <circle cx="80" cy="80" r="70" stroke="black" fill="#222" stroke-width="14"
+                            transform="rotate(-90, 80, 80)"></circle>
+                        <circle cx="80" cy="80" r="70" stroke="#ff004e" fill="transparent " stroke-width="10"
+                            stroke-dasharray="440" stroke-dashoffset="440" transform="rotate(-90, 80, 80)"></circle>
+                    </g>
+                </svg>
+                <!-- v2 -->
+                <!-- v3 -->
+                <div class="mx-auto flex justify-center">
+                    <div id="chart_div" style="width: 400px; height: 120px;"></div>
+                </div>
+
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <script type="text/javascript">
+                    google.charts.load('current', { 'packages': ['gauge'] });
+                    google.charts.setOnLoadCallback(drawChart);
+
+                    function drawChart() {
+
+                        var data = google.visualization.arrayToDataTable([
+                            ['Label', 'Value'],
+                            ['Memory', 80],
+                            ['CPU', 55],
+                            ['Network', 68]
+                        ]);
+
+                        var options = {
+                            width: 400, height: 120,
+                            redFrom: 90, redTo: 100,
+                            yellowFrom: 75, yellowTo: 90,
+                            minorTicks: 5
+                        };
+
+                        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+
+                        chart.draw(data, options);
+
+                        setInterval(function () {
+                            data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
+                            chart.draw(data, options);
+                        }, 13000);
+                        setInterval(function () {
+                            data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
+                            chart.draw(data, options);
+                        }, 5000);
+                        setInterval(function () {
+                            data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
+                            chart.draw(data, options);
+                        }, 26000);
+                    }
+                </script>
+                <!-- v3 -->
+
+
+            </div>
+
+
+            <!-- Cercle -->
+        </div>
+        <!--  -->
+
         <section class="w-full">
             <div class="w-full md:w-3/4 mt-20 px-20 md:mx-auto ">
-                <h2 class="font-bold text-3xl text-blue-800">Votre Campagne publicitaire</h2>
+                <h2 class="font-bold text-5xl text-blue-800">Votre Campagne publicitaire</h2>
                 <p class="text-gray-500">Choisissez le type de campagne dont vous souhaitez faire</p>
-                <article class="grid grid-cols-3 md:grid-cols-3 grid-flow-dense gap-5 md:gap-10 mt-5">
-                    <article class="active border border-1 border-blue-800 border-dashed cursor-pointer hover:shadow-md pub-service rounded-md shadow-sm" id="gads">
+                <article class="grid grid-cols-3 md:grid-cols-6 grid-flow-dense gap-5 md:gap-5 mt-5">
+                    <article
+                        class="active border border-1 border-blue-800 border-dashed cursor-pointer hover:shadow-md pub-service rounded-xl shadow-sm"
+                        id="gads">
                         <img src="./src/img/3D/google-min.png" class=" object-contain" alt="publicité google ads">
                     </article>
-                    <article
-                        class="cursor-pointer pub-service rounded-md shadow-sm border border-1 border-dashed border-gray-400 hover:shadow-md"
+                    <article class="cursor-pointer pub-service rounded-xl overflow-hidden shadow-sm  hover:shadow-lg"
                         id="ledOutDoor">
                         <img src="./src/img/3D/led-min.png" class="object-contain" alt="Let Outdoor">
                     </article>
                     <article
-                        class="relative cursor-pointer pub-service rounded-md shadow-sm border border-1 border-dashed border-gray-400 hover:shadow-md "
+                        class="relative cursor-pointer pub-service rounded-xl overflow-hidden shadow-sm  hover:shadow-lg "
                         id="ledAuchan">
                         <img src="./src/img/favicon-auchan.ico"
                             class="absolute right-0 bottom-0 mb-2 mr-2 w-4 object-contain" alt="logo auchan">
                         <img src="./src/img/3D/led auchan-min.png" class="object-contain" alt="LED Auchan">
                     </article>
-                    <article
-                        class="cursor-pointer pub-service rounded-md shadow-sm border border-1 border-dashed border-gray-400 hover:shadow-md "
+                    <article class="cursor-pointer pub-service rounded-xl overflow-hidden shadow-sm  hover:shadow-lg "
                         id="sms"><img src="./src/img/3D/sms-min.png" class="object-contain" alt="SMS">
                     </article>
-                    <article
-                        class="cursor-pointer pub-service rounded-md shadow-sm border border-1 border-dashed border-gray-400 hover:shadow-md "
+                    <article class="cursor-pointer pub-service rounded-xl overflow-hidden shadow-sm  hover:shadow-lg "
                         id="radio"><img src="./src/img/3D/radio-min.png" class="object-contain" alt="radio">
                     </article>
-                    <article
-                        class="cursor-pointer pub-service rounded-md shadow-sm border border-1 border-dashed border-gray-400 hover:shadow-md "
-                        id="push-vocal"><img src="./src/img/3D/push-min.png" class="object-contain"
-                            alt="push-vocal">
+                    <article class="cursor-pointer pub-service rounded-xl overflow-hidden shadow-sm  hover:shadow-lg "
+                        id="push-vocal"><img src="./src/img/3D/push-min.png" class="object-contain" alt="push-vocal">
                     </article>
                 </article>
             </div>
-            <div class="w-full md:w-3/4 mt-20 px-20 md:mx-auto ">
+            <div class="w-full md:w-3/4 mt-20 px-20 md:mx-auto d-none">
                 <h2 class="font-bold text-3xl text-blue-800">Votre Campagne publicitaire</h2>
                 <p class="text-gray-500">Choisissez le type de campagne dont vous souhaitez faire</p>
                 <article class="grid grid-cols-3 md:grid-cols-6 grid-flow-dense gap-5 md:gap-10 mt-5">
@@ -399,7 +617,7 @@
         </section>
         <!-- PRDDUCT DETAILS -->
         <section
-            class="min-h-[100px] w-11/12 p-5 md:w-3/5 mx-auto mt-10 d-flex items-start border border-dashed border-gray-300 shadow-sm bg-slate-100"
+            class="d-none min-h-[100px] w-11/12 p-5 md:w-3/5 mx-auto mt-10 d-flex items-start border border-dashed border-gray-300 shadow-sm bg-slate-100"
             id="result">
             <div class="w-full md:w-2/5 mx-auto">
                 <div class="views-counter-element counter-item">
@@ -443,47 +661,41 @@
             <table class="border-collapse w-full text-sm rounded-2xl bg-[#7EA5D345]">
                 <thead>
                     <tr>
-                        <th
-                            class="border-bottom p-4 pl-8 pb-3 text-slate-500  text-left font-bold">
+                        <th class="border-bottom p-4 pl-8 pb-3 text-slate-500  text-left font-bold">
                             Song</th>
-                        <th
-                            class="border-bottom p-4 pb-3 text-slate-500  text-left font-bold">
+                        <th class="border-bottom p-4 pb-3 text-slate-500  text-left font-bold">
                             Artist</th>
-                        <th
-                            class="border-bottom p-4 pr-8 pb-3 text-slate-500  text-left font-bold">
-                            Year</th>
+                        <th class="border-bottom p-4 pr-8 pb-3 text-slate-500  text-left font-bold">
+                            Year
+                        </th>
                     </tr>
                 </thead>
                 <tbody class="bg-white ">
                     <tr>
-                        <td
-                            class="border-bottom border-slate-100  p-4 pl-8 text-slate-500 ">
-                            The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-                        <td class="border-bottom border-slate-100  p-4 text-slate-500 ">
-                            Malcolm Lockyer</td>
-                        <td
-                            class="border-bottom border-slate-100  p-4 pr-8 text-slate-500 ">
-                            1961</td>
+                        <td class="border-bottom border-slate-100  p-4 pl-8 text-slate-500 ">
+                            Résolution & dimension </td>
+                        <td class="border-bottom border-slate-100  p-4 text-slate-500 text-end ">
+                            1280x720</td>
                     </tr>
                     <tr>
-                        <td
-                            class="border-bottom border-slate-100  p-4 pl-8 text-slate-500 ">
-                            Witchy Woman</td>
-                        <td class="border-bottom border-slate-100  p-4 text-slate-500 ">
-                            The Eagles</td>
-                        <td
-                            class="border-bottom border-slate-100  p-4 pr-8 text-slate-500 ">
-                            1972</td>
+                        <td class="border-bottom border-slate-100  p-4 pl-8 text-slate-500 ">
+                            Durée de la vidéo</td>
+                        <td class="border-bottom border-slate-100  p-4 text-slate-500 text-end ">
+                            10s
+                        </td>
+
+                    <tr>
+                        <td class="border-bottom border-slate-200  p-4 pl-8 text-slate-500 ">
+                            Prix</td>
+                        <td class="border-bottom border-slate-200  p-4 text-slate-500 text-end ">
+                            $10/jr</td>
                     </tr>
                     <tr>
-                        <td
-                            class="border-bottom border-slate-200  p-4 pl-8 text-slate-500 ">
-                            Shining Star</td>
-                        <td class="border-bottom border-slate-200  p-4 text-slate-500 ">
-                            Earth, Wind, and Fire</td>
-                        <td
-                            class="border-bottom border-slate-200  p-4 pr-8 text-slate-500 ">
-                            1975</td>
+                        <td class="border-bottom border-slate-200  p-4 pl-8 text-slate-500 ">
+                            Plages horaires</td>
+                        <td class="border-bottom border-slate-200  p-4 text-slate-500 text-end ">
+                            8H-12H / 16H-20H</td>
+
                     </tr>
                 </tbody>
             </table>
@@ -688,8 +900,13 @@
     </script>
 
 
+    <!-- <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.9.5/dist/alpine.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer></script>
+
 
 
 </body>
+
+
 
 </html>
