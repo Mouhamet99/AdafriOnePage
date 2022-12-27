@@ -58,6 +58,7 @@
     }
 </style>
 
+
 <body class="w-full">
 
     <!-- Google Tag Manager (noscript) -->
@@ -68,55 +69,6 @@
         <!--  -->
         <div class="w-full flex  min-h-screen">
             <div class="w-3/4 bg-slate-100 m-5 rounded-lg shadow-sm">
-                <article class="grid grid-cols-3 lg:grid-cols-6 grid-flow-dense gap-12 lg:gap-10 mt-5 mx-10 lg:mx-20">
-                    <article class="relative rounded-xl overflow-hidden shadow-sm" id="gads">
-                        <img src="./src/img/3D/google-min-without-text.png" class=" object-contain"
-                            alt="publicité google ads">
-                        <h1 class="absolute z-50 bottom-0 text-2xl text-white font-bold mx-5">
-                            <span>$</span>
-                            <span id="total-gads-budget">0</span>
-                        </h1>
-                    </article>
-                    <article class="relative rounded-xl overflow-hidden shadow-sm" id="ledOutDoor">
-                        <img src="./src/img/3D/led-min-without-text.png" class="object-contain" alt="Let Outdoor">
-                        <h1 class="absolute z-50 bottom-0 text-2xl text-white font-bold mx-5">
-                            <span>$</span>
-                            <span id="total-ledOutDoor-budget">0</span>
-                        </h1>
-                    </article>
-                    <article class="relative rounded-xl overflow-hidden shadow-sm  " id="ledAuchan">
-                        <img src="./src/img/favicon-auchan.ico"
-                            class="absolute right-0 bottom-0 mb-2 mr-2 w-4 object-contain" alt="logo auchan">
-                        <img src="./src/img/3D/led auchan-min-without-text.png" class="object-contain" alt="LED Auchan">
-                        <h1 class="absolute z-50 bottom-0 text-2xl text-white font-bold mx-5">
-                            <span>$</span>
-                            <span id="total-ledAuchan-budget">0</span>
-                        </h1>
-                    </article>
-                    <article class="relative rounded-xl overflow-hidden shadow-sm  " id="sms"><img
-                            src="./src/img/3D/sms-min-without-text.png" class="object-contain" alt="SMS">
-                        <h1 class="absolute z-50 bottom-0 text-2xl text-white font-bold mx-5">
-                            <span>$</span>
-                            <span id="total-sms-budget">0</span>
-                        </h1>
-                    </article>
-                    <article class="relative rounded-xl overflow-hidden shadow-sm  " id="radio"><img
-                            src="./src/img/3D/radio-min-without-text.png" class="object-contain" alt="radio">
-                        <h1 class="absolute z-50 bottom-0 text-2xl text-white font-bold mx-5">
-                            <span>$</span>
-                            <span id="total-radio-budget">0</span>
-                        </h1>
-                    </article>
-                    <article class="relative rounded-xl overflow-hidden shadow-sm  " id="push-vocal"><img
-                            src="./src/img/3D/push-min-without-text.png" class="object-contain" alt="push-vocal">
-                        <h1 class="absolute z-50 bottom-0 text-2xl text-white font-bold mx-5">
-                            <span>$</span>
-                            <span id="total-push-vocal-budget">0</span>
-                        </h1>
-                    </article>
-
-                </article>
-
                 <div class="w-full p-10 flex">
                     <div class="w1/3 relative"
                         x-data="{ activeSlide: 1, slides: [{ id:1, image: 'google-min.png', title: 'gads' }, { id:2, image: 'led auchan-min.png', title: 'ledAuchan' }, { id:3, image: 'sms-min.png', title: 'sms' }, { id:4, image: 'radio-min.png', title: 'radio' }, { id: 5, image: 'push-min.png', title: 'push-vocal' }, { id:6, image: 'led-min.png', title: 'ledOutDoor' }] }">
@@ -178,14 +130,14 @@
 
                         <!-- Prev/Next Arrows -->
                         <div class="absolute flex top-1/2 z-30 -translate-y-1/2">
-                            <button id=""
+                            <button id="left-arrow-btn"
                                 class="arrow-btn bg-white text-blue-800 hover:font-extrabold font-bold hover:shadow-lg rounded-full w-12 h-12 -ml-6"
                                 x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
                                 &#8592;
                             </button>
                         </div>
                         <div class="absolute flex top-1/2 z-30 -translate-y-1/2 right-0">
-                            <button
+                            <button id="right-arrow-btn"
                                 class="arrow-btn bg-white text-blue-800 hover:font-extra-bold hover:shadow rounded-full w-12 h-12 -mr-6"
                                 x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
                                 &#8594;
@@ -401,100 +353,19 @@
                 </div>
             </div>
             <!-- Cercle -->
-            <div class="w-1/4  d-none m-5 rounded-lg border border-dashed border-gray-400 shadow-sm" id="result">
-                <div class="rounded-lg overflow-hidden">
-                    <div class="py-3 px-5 bg-transparent text-center">Resultat</div>
-                    <canvas class="p-10" id="chartDoughnut"></canvas>
+            <div class="w-1/4 m-5 rounded-lg border border-dashed border-gray-400 shadow-sm" id="result">
+                <div class="py-3 px-5 bg-transparent text-center">Resultat</div>
+                <div class="font-medium text-2xl text-blue-800 block text-center">
+                    <span>Budget: </span>
+                    <span id="total-budget">$0</span>
+                </div>
+                <!-- v1 -->
+                <div class="chart-container w-full flex justify-center items-center">
+                    <div id="chart_div"></div>
                 </div>
 
-                <!-- Required chart.js -->
-                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                <!-- End v1 -->
 
-                <!-- Chart doughnut -->
-                <script>
-                    const dataDoughnut = {
-                        labels: ["Gads", "LED", "SMS"],
-                        datasets: [
-                            {
-                                label: "My First Dataset",
-                                data: [300, 50, 100],
-                                backgroundColor: [
-                                    "rgb(133, 105, 241)",
-                                    "rgb(164, 101, 241)",
-                                    "rgb(101, 143, 241)",
-                                ],
-                                hoverOffset: 4,
-                            },
-                        ],
-                    };
-
-                    const configDoughnut = {
-                        type: "doughnut",
-                        data: dataDoughnut,
-                        options: {},
-                    };
-
-                    var chartBar = new Chart(
-                        document.getElementById("chartDoughnut"),
-                        configDoughnut
-                    );
-                </script>
-
-                <!-- v2 -->
-                <svg width="160" height="160" class="mx-auto">
-                    <g stroke="red" x="0" y="0">
-                        <circle cx="80" cy="80" r="70" stroke="black" fill="#222" stroke-width="14"
-                            transform="rotate(-90, 80, 80)"></circle>
-                        <circle cx="80" cy="80" r="70" stroke="#ff004e" fill="transparent " stroke-width="10"
-                            stroke-dasharray="440" stroke-dashoffset="440" transform="rotate(-90, 80, 80)"></circle>
-                    </g>
-                </svg>
-                <!-- v2 -->
-                <!-- v3 -->
-                <div class="mx-auto flex justify-center">
-                    <div id="chart_div" style="width: 400px; height: 120px;"></div>
-                </div>
-
-                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-                <script type="text/javascript">
-                    google.charts.load('current', { 'packages': ['gauge'] });
-                    google.charts.setOnLoadCallback(drawChart);
-
-                    function drawChart() {
-
-                        var data = google.visualization.arrayToDataTable([
-                            ['Label', 'Value'],
-                            ['Vues', 80],
-                            ['Vues', 55],
-                            ['Vues', 68]
-                        ]);
-
-                        var options = {
-                            width: 400, height: 120,
-                            redFrom: 90, redTo: 100,
-                            yellowFrom: 75, yellowTo: 90,
-                            minorTicks: 5
-                        };
-
-                        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
-
-                        chart.draw(data, options);
-
-                        setInterval(function () {
-                            data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
-                            chart.draw(data, options);
-                        }, 13000);
-                        setInterval(function () {
-                            data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
-                            chart.draw(data, options);
-                        }, 5000);
-                        setInterval(function () {
-                            data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
-                            chart.draw(data, options);
-                        }, 26000);
-                    }
-                </script>
-                <!-- v3 -->
 
 
             </div>
@@ -552,29 +423,31 @@
         </div>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
     <script type="text/javascript">
-
-
         window.onload = function () {
             let arrowBtns = document.querySelectorAll('.arrow-btn')
             arrowBtns.forEach(btn => {
                 btn.addEventListener('click', function () {
-                    setTimeout(function (params) {
+                    setTimeout(function () {
                         let currentService = document.querySelector('.pub-service-item.active')
                         generateResult(currentService.id)
                     }, 100)
                 })
             })
-            
-            let addToBudgetBtns = document.querySelectorAll('.add-to-budget-btn')
-            addToBudgetBtns.forEach(button => {
-                button.addEventListener('click', function () {
-                    let budgetAmountElement = document.getElementById(`${this.dataset.budgetAmount}`)     
-                    let totalbudgetElement = document.getElementById(`${this.dataset.budgetId}`)  
-                    
-                    totalbudgetElement.textContent = +totalbudgetElement.textContent +   +budgetAmountElement.value             
-                })
-            })
+
+            // Handle Keydown
+            document.addEventListener('keydown', function (event) {
+                if (event.code === 'ArrowLeft') {
+                    document.getElementById('left-arrow-btn').click();
+                } else if (event.code === 'ArrowRight') {
+                    document.getElementById('right-arrow-btn').click();
+                }
+            });
+
+
 
 
             let pubServicesBloc = document.querySelectorAll('.pub-service');
@@ -749,11 +622,48 @@
                 }
 
             }
+            // Google Chart Script
+            var budget = 0
+            google.charts.load('current', { 'packages': ['gauge'] });
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                data = google.visualization.arrayToDataTable([
+                    ['Label', 'Value'],
+                    ['Budget', budget]
+                ]);
+
+                var options = {
+                    width: "100%", height: "100%",
+                    redFrom: 0, redTo: 300,
+                    yellowFrom: 300, yellowTo: 1000,
+                    greenFrom: 1000, greenTo: 3000,
+                    minorTicks: 10,
+                    max: 3000
+                };
+
+                chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+                chart.draw(data, options);
+
+                let addToBudgetBtns = document.querySelectorAll('.add-to-budget-btn')
+                addToBudgetBtns.forEach(button => {
+                    button.addEventListener('click', function () {
+                        let budgetAmountElement = document.getElementById(`${this.dataset.budgetAmount}`)
+                        let totalbudgetElement = document.getElementById('total-budget')
+                        budget += +budgetAmountElement.value
+                        totalbudgetElement.textContent = `$${budget}`
+                        var newData = google.visualization.arrayToDataTable([
+                            ['Label', 'Value'],
+                            ['Budget', budget]
+                        ]);
+
+                        chart.draw(newData, options);
+                    })
+                })
+            }
+
         }
     </script>
 
-
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer></script>
 
 
 
