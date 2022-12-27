@@ -1,0 +1,118 @@
+.body {
+        margin: 0;
+        font-family: 'Roboto';
+        font-size: 16px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        height: 100vh;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+}
+
+.carousel {
+        padding: 20px;
+        -webkit-perspective: 600px;
+        perspective: 600px;
+        /* overflow: hidden; */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+}
+
+.carousel>* {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+}
+
+.carousel figure {
+        margin: 0;
+        width: 500px;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        -webkit-transition: -webkit-transform 0.5s;
+        transition: -webkit-transform 0.5s;
+        transition: transform 0.5s;
+        transition: transform 0.5s, -webkit-transform 0.5s;
+        -webkit-transform-origin: 50% 50% -482.84271px;
+        transform-origin: 50% 50% -482.84271px;
+}
+
+.carousel figure .slide {
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 0 25px;
+        opacity: 0.9;
+}
+
+.carousel figure .slide:not(:first-of-type) {
+        position: absolute;
+        left: 0;
+        top: 0;
+        -webkit-transform-origin: 50% 50% -482.84271px;
+        transform-origin: 50% 50% -482.84271px;
+}
+
+.carousel figure .slide:nth-child(2) {
+        -webkit-transform: rotateY(1.0472rad);
+        transform: rotateY(1.0472rad);
+}
+
+.carousel figure .slide:nth-child(3) {
+        -webkit-transform: rotateY(2.0944rad);
+        transform: rotateY(2.0944rad);
+}
+
+.carousel figure .slide:nth-child(4) {
+        -webkit-transform: rotateY(3.14159rad);
+        transform: rotateY(3.14159rad);
+}
+
+.carousel figure .slide:nth-child(5) {
+        -webkit-transform: rotateY(4.18879rad);
+        transform: rotateY(4.18879rad);
+}
+
+.carousel figure .slide:nth-child(6) {
+        -webkit-transform: rotateY(5.23599rad);
+        transform: rotateY(5.23599rad);
+}
+
+.carousel nav {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        margin: 20px 0 0;
+}
+
+.carousel nav button {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        margin: 0 5px;
+        cursor: pointer;
+        color: #333;
+        background: none;
+        border: 1px solid;
+        letter-spacing: 1px;
+        padding: 5px 10px;
+}
+
+/*# sourceMappingURL=carousel.css.map */
