@@ -123,7 +123,7 @@
                         <!-- Slides -->
                         <template x-for="slide in slides" :key="slide.id">
                             <div x-show="activeSlide === slide.id"
-                                class="max-w-sm p-10 font-bold text-5xl min-h-64 flex items-center border border-dashed border-blue-800 text-white rounded-lg flex-col">
+                                class="max-w-sm p-10 font-bold text-5xl min-h-64 flex items-center text-white rounded-lg flex-col">
                                 <p class="text-blue-800 text-base">
                                     <span class="w-12 text-center" x-text="slide.id"></span>
                                     <span class="">/</span>
@@ -179,14 +179,14 @@
                         <!-- Prev/Next Arrows -->
                         <div class="absolute flex top-1/2 z-30 -translate-y-1/2">
                             <button id=""
-                                class="arrow-btn bg-white text-blue-800 border border-solid border-blue-800 hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 -ml-6"
+                                class="arrow-btn bg-white text-blue-800 hover:font-extrabold font-bold hover:shadow-lg rounded-full w-12 h-12 -ml-6"
                                 x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
                                 &#8592;
                             </button>
                         </div>
                         <div class="absolute flex top-1/2 z-30 -translate-y-1/2 right-0">
                             <button
-                                class="arrow-btn bg-white text-blue-800 border border-solid border-blue-800 hover:text-orange-500 font-bold hover:shadow rounded-full w-12 h-12 -mr-6"
+                                class="arrow-btn bg-white text-blue-800 hover:font-extra-bold hover:shadow rounded-full w-12 h-12 -mr-6"
                                 x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
                                 &#8594;
                             </button>
