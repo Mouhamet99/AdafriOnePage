@@ -20,6 +20,7 @@ $theta: 2 * 3.141592653589793 / $n;
 $apothem: 482.842712474619px;
 
 .carousel {
+	position: relative;
 	padding: 20px;
 
 	perspective: $viewer-distance;
@@ -33,15 +34,14 @@ $apothem: 482.842712474619px;
 	}
 	
 	>figure {
+		position: relative;
 		margin: 0;
-		
 		width: $item-width;
 		transform-style: preserve-3d;
 		transition: transform 0.5s;
 		transform-origin: 50% 50% (-$apothem);
 		transform:rotateY(#{-$theta}rad);
 
-		
 		>.slide {
 			width: 100%;
 			box-sizing: border-box;
@@ -63,11 +63,15 @@ $apothem: 482.842712474619px;
 			}
 			
 			@for $i from 2 through $n {
+				
 				&:nth-child(#{$i}) {
 					transform: rotateY(#{($i - 1) * $theta}rad);
 				}
 			}
 			
+			&:nth-child(1),&:nth-child(2) {
+				position: relative;
+			}
 			
 		}
 	}

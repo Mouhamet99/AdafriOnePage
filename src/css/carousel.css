@@ -16,6 +16,7 @@
 }
 
 .carousel {
+  position: relative;
   padding: 20px;
   -webkit-perspective: 500px;
           perspective: 500px;
@@ -38,6 +39,7 @@
 }
 
 .carousel > figure {
+  position: relative;
   margin: 0;
   width: 400px;
   -webkit-transform-style: preserve-3d;
@@ -106,6 +108,10 @@
 .carousel > figure > .slide:nth-child(9) {
   -webkit-transform: rotateY(5.58505rad);
           transform: rotateY(5.58505rad);
+}
+
+.carousel > figure > .slide:nth-child(1), .carousel > figure > .slide:nth-child(2) {
+  position: relative;
 }
 
 .carousel nav {

@@ -68,23 +68,21 @@
         <div class="w-full flex flex-col-reverse md:flex-row min-h-screen">
             <div class="w-full md:w-3/4 lg:w-3/4 bg-slate-100 md:m-5 rounded-lg shadow-sm">
                 <div class="w-full p-10 body">
-                    <div class="carousel"
-                    x-data="{
-                        activeSlide: 1,
-                        slides: [
-                            { id:1, image: 'pubs-card.png', title: 'gads' },
-                            { id:2, image: 'led-card.png', title: 'ledAuchan' },
-                            { id:3, image: 'sms-card.png', title: 'sms' }, 
-                            { id:4, image: 'radio-card.png', title: 'radio' },
-                            { id: 5, image: 'push-card.png', title: 'push-vocal' },
-                            { id:6, image: 'led-card.png', title: 'ledOutDoor' }, 
-                            { id:7, image: 'ussd-card.png', title: 'usdd' },
-                            { id:8, image: 'ussd-card.png', title: 'pub-tv' },
-                            { id:9, image: 'ussd-card.png', title: 'whatsapp-chatbot' }
-                        ]
-                    }"
-                    >
-                        <figure>
+                    <div class="carousel">
+                        <figure   x-data="{
+                            activeSlide: 1,
+                            slides: [
+                                { id:1, image: 'pubs-card.png', title: 'gads' },
+                                { id:2, image: 'led-card.png', title: 'ledAuchan' },
+                                { id:3, image: 'sms-card.png', title: 'sms' }, 
+                                { id:4, image: 'radio-card.png', title: 'radio' },
+                                { id: 5, image: 'push-card.png', title: 'push-vocal' },
+                                { id:6, image: 'led-card.png', title: 'ledOutDoor' }, 
+                                { id:7, image: 'ussd-card.png', title: 'usdd' },
+                                { id:8, image: 'ussd-card.png', title: 'pub-tv' },
+                                { id:9, image: 'ussd-card.png', title: 'whatsapp-chatbot' }
+                            ]
+                        }">
                             <template x-for="slide in slides" :key="slide.id">
                                 <div class="slide">
                                     <img class="scale-100 slide-item transform duration-100 hover:scale-105"
