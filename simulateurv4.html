@@ -67,24 +67,55 @@
         <!-- V4 -->
         <div class="w-full flex flex-col-reverse md:flex-row min-h-screen">
             <div class="w-full md:w-3/4 lg:w-3/4 bg-slate-100 md:m-5 rounded-lg shadow-sm">
+                <!-- RESULTAT -->
+                <div class="w-full mt-16  md:mx-auto text-gray-500 self-end justify-self-start">
+                    <div class="w-full flex items-end justify-center text-blue-800">
+                        <div class="views-counter-element counter-item">
+                            <span class="font-bold text-4xl md:text-5xl lg:text-7xl" id="views-counter">1 000 000</span>
+                            <span class="text-2xl md:text-5xl">vue(s)</span>
+                        </div>
+                        <div class="days-counter-element counter-item d-none">
+                            <span class="font-bold text-4xl md:text-5xl lg:text-7xl" id="days-counter">0</span>
+                            <span class="text-2xl md:text-5xl">jour(s)</span>
+                        </div>
+                        <div class="sms-counter-element counter-item d-none">
+                            <span class="font-bold text-4xl md:text-5xl lg:text-7xl" id="sms-counter">8375</span>
+                            <span class="text-2xl md:text-5xl">sms</span>
+                        </div>
+                        <div class="spot-counter-element counter-item d-none">
+                            <span class="font-bold text-4xl md:text-5xl lg:text-7xl" id="spot-counter">1000</span>
+                            <span class="text-2xl md:text-5xl">spot(s)</span>
+                        </div>
+                        <div class="call-counter-element counter-item d-none">
+                            <span class="font-bold text-4xl md:text-5xl lg:text-7xl" id="call-counter">1000</span>
+                            <span class="text-2xl md:text-5xl">push vocaux</span>
+                        </div>
+                        <div class="bot-counter-element counter-item d-none">
+                            <span class="font-bold text-4xl md:text-5xl lg:text-7xl" id="bot-counter">1000</span>
+                            <span class="text-2xl md:text-5xl">Bot WhatsApp</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- END RESULTAT -->
                 <div class="w-full p-10 body">
-                    <div class="carousel">
-                        <figure   x-data="{
-                            activeSlide: 1,
-                            slides: [
-                                { id:1, image: 'pubs-card.png', title: 'gads' },
-                                { id:2, image: 'led-card.png', title: 'ledAuchan' },
-                                { id:3, image: 'sms-card.png', title: 'sms' }, 
-                                { id:4, image: 'radio-card.png', title: 'radio' },
-                                { id: 5, image: 'push-card.png', title: 'push-vocal' },
-                                { id:6, image: 'led-card.png', title: 'ledOutDoor' }, 
-                                { id:7, image: 'ussd-card.png', title: 'usdd' },
-                                { id:8, image: 'ussd-card.png', title: 'pub-tv' },
-                                { id:9, image: 'ussd-card.png', title: 'whatsapp-chatbot' }
-                            ]
-                        }">
+                    <div class="carousel" x-data="{
+                        activeSlide: 1,
+                        slides: [
+                            { id:1, image: 'pubs-card.png', title: 'gads' },
+                            { id:2, image: 'led-card.png', title: 'ledAuchan' },
+                            { id:3, image: 'sms-card.png', title: 'sms' }, 
+                            { id:4, image: 'radio-card.png', title: 'radio' },
+                            { id: 5, image: 'push-card.png', title: 'push-vocal' },
+                            { id:6, image: 'led-card.png', title: 'ledOutDoor' }, 
+                            { id:7, image: 'ussd-card.png', title: 'usdd' },
+                            { id:8, image: 'tv-card.png', title: 'pub-tv' },
+                            { id:9, image: 'whatsapp-chatbot-card.png', title: 'whatsapp-chatbot' }
+                        ]
+                    }">
+                        <figure>
                             <template x-for="slide in slides" :key="slide.id">
-                                <div class="slide">
+                                <div class="slide pub-service-item" :class="{'active': activeSlide === slide.id}"
+                                    :id="slide.title">
                                     <img class="scale-100 slide-item transform duration-100 hover:scale-105"
                                         :src="'./src/img/card/' + slide.image" :alt="slide.title" />
                                 </div>
@@ -95,7 +126,7 @@
                                 <div class="relative text-2xl">
                                     <input
                                         class="user-budget text-sm font-bold appearance border-2 border-solid pl-10 border-gray-300 hover:border-blue-800 transition-colors rounded-md w-full py-2 px-3 text-blue-800 leading-tight focus:outline-none focus:ring-blue-600 focus:border-blue-600 focus:shadow-outline"
-                                        type="number" min="0" value="100"  />
+                                        type="number" min="0" value="100" />
                                     <div class="absolute left-0 inset-y-0 flex items-center">
                                         <span
                                             class="h-fit w-6 ml-3 font-bold text-2xl text-blue-800 hover:text-blue-700">
@@ -107,47 +138,24 @@
                             <div class="mb-0">
                                 <button title="Ajouter à mon budget"
                                     class="add-to-budget-btn inline-block outline-none focus:outline-none align-middle transition-all duration-150 ease-in-out uppercase border border-solid font-bold text-white hover:scale-105 text-sm px-6 py-2 shadow hover:shadow-lg rounded-md bg-blue-800 border-blue-700"
-                                  data-budget-id="'total-'+slide.title+'-budget'"
-                                  data-budget-amount="'user-'+slide.title+'-budget'"
-                                id="slide.title+'-add-to-budget-btn'">
+                                    data-budget-id="'total-'+slide.title+'-budget'"
+                                    data-budget-amount="'user-'+slide.title+'-budget'"
+                                    id="slide.title+'-add-to-budget-btn'">
                                     Ajouter
                                 </button>
                             </div>
                         </div>
                         <nav>
-                            <button class="nav prev">Prev</button>
-                            <button class="nav next">Next</button>
+                            <button id="left-arrow-btn"
+                                class="arrow-btn nav prev text-blue-800 border border-solid border-1 border-blue-800 transform hover:scale-105"
+                                x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1;console.log({activeSlide})">&#8592;</button>
+                            <button id="right-arrow-btn"
+                                class="arrow-btn nav next text-blue-800 border border-solid border-1 border-blue-800 transform hover:scale-105"
+                                x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1;console.log({activeSlide})">&#8594;</button>
                         </nav>
                     </div>
                 </div>
                 <div class="w-full md:w-2/3 mx-auto my-5 flex flex-col justify-between">
-                    <!-- RESULTAT -->
-                    <div class="w-full my-16 lg:px-20 md:mx-auto text-gray-500 self-end justify-self-start">
-                        <div class="w-full flex items-end justify-center text-blue-800">
-                            <div class="views-counter-element counter-item">
-                                <span class="font-bold text-4xl md:text-5xl lg:text-7xl"
-                                    id="views-counter">1 000 000</span>
-                                <span class="text-2xl md:text-5xl">vue(s)</span>
-                            </div>
-                            <div class="days-counter-element counter-item d-none">
-                                <span class="font-bold text-4xl md:text-5xl lg:text-7xl" id="days-counter">0</span>
-                                <span class="text-2xl md:text-5xl">jour(s)</span>
-                            </div>
-                            <div class="sms-counter-element counter-item d-none">
-                                <span class="font-bold text-4xl md:text-5xl lg:text-7xl" id="sms-counter">8375</span>
-                                <span class="text-2xl md:text-5xl">sms</span>
-                            </div>
-                            <div class="spot-counter-element counter-item d-none">
-                                <span class="font-bold text-4xl md:text-5xl lg:text-7xl" id="spot-counter">1000</span>
-                                <span class="text-2xl md:text-5xl">spot(s)</span>
-                            </div>
-                            <div class="call-counter-element counter-item d-none">
-                                <span class="font-bold text-4xl md:text-5xl lg:text-7xl" id="call-counter">1000</span>
-                                <span class="text-2xl md:text-5xl">push vocaux</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END RESULTAT -->
 
                     <!-- SITES OUTDDOOR -->
                     <div class="md:mx-auto text-gray-500 d-none" id="ledOutDoorSitesContainer">
@@ -328,7 +336,7 @@
                 </div>
             </div>
             <!-- Cercle -->
-            <div class="border border-dashed border-gray-400 lg:w-1/4 md:m-5 md:w-1/4 p-5 rounded-lg shadow-sm w-full"
+            <div class="w-full md:w-1/4 lg:w-1/4 md:m-5 p-5 rounded-lg border border-dashed border-gray-400 shadow-sm"
                 id="result">
                 <!-- <div class="py-3 px-5 bg-transparent text-center">Resultat</div> -->
                 <div class="font-medium text-2xl text-blue-800 block text-center my-5">
@@ -336,7 +344,9 @@
                     <span id="total-budget">$0</span>
                 </div>
                 <!-- v1 -->
-                <div class="chart-container w-full flex justify-center items-center min-h-[200px]"></div>
+                <div class="chart-container w-full flex justify-center items-center min-h-[200px]">
+                    <div id="chart_div"></div>
+                </div>
 
                 <!-- End v1 -->
             </div>
@@ -407,21 +417,7 @@
                             </div>
                         </template>
 
-                        <!-- Prev/Next Arrows -->
-                        <div class="absolute flex top-1/2 z-30 -translate-y-1/2">
-                            <button id="left-arrow-btn"
-                                class="arrow-btn bg-white text-blue-800 hover:font-extrabold font-bold hover:shadow-lg rounded-full w-12 h-12 -ml-6"
-                                x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
-                                &#8592;
-                            </button>
-                        </div>
-                        <div class="absolute flex top-1/2 z-30 -translate-y-1/2 right-0">
-                            <button id="right-arrow-btn"
-                                class="arrow-btn bg-white text-blue-800 hover:font-extra-bold font-bold hover:shadow rounded-full w-12 h-12 -mr-6"
-                                x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
-                                &#8594;
-                            </button>
-                        </div>
+
 
                         <!-- Buttons -->
                         <div class="absolute w-full flex items-center justify-center px-4">
@@ -728,13 +724,37 @@
 
     <script type="text/javascript">
         window.onload = function () {
+            //**********
+            //Carousel
+            //**********
+            var carousel = document.querySelector(".carousel"),
+                figure = carousel.querySelector("figure"),
+                nav = carousel.querySelector("nav"),
+                numImages = figure.childElementCount - 1,
+                theta = (2 * Math.PI) / numImages,
+                currImage = 1;
+
+            function handleRotation(e) {
+                e.stopPropagation();
+
+                var t = e.target;
+                if (t.tagName.toUpperCase() != "BUTTON") return;
+
+                if (t.classList.contains("next")) {
+                    currImage++;
+                }  else if (t.classList.contains("prev")) {
+                    currImage--;
+                }
+
+                figure.style.transform = `rotateY(${currImage * -theta}rad)`;
+            }
             let arrowBtns = document.querySelectorAll(".arrow-btn");
             arrowBtns.forEach((btn) => {
-                btn.addEventListener("click", function () {
+                btn.addEventListener("click", function (e) {
                     setTimeout(function () {
-                        let currentService = document.querySelector(
-                            ".pub-service-item.active"
-                        );
+                        handleRotation(e)
+                        let currentService = document.querySelector(".pub-service-item.active");
+                        console.log({idService: currentService.id});
                         generateResult(currentService.id);
                     }, 100);
                 });
@@ -1019,32 +1039,6 @@
                     });
                 });
             }
-
-            //**********
-            //  Carousel
-            var carousel = document.querySelector(".carousel"),
-                figure = carousel.querySelector("figure"),
-                nav = carousel.querySelector("nav"),
-                numImages = figure.childElementCount - 1,
-                theta = (2 * Math.PI) / numImages,
-                currImage = 0;
-            nav.addEventListener("click", onClick, true);
-
-            function onClick(e) {
-                e.stopPropagation();
-
-                var t = e.target;
-                if (t.tagName.toUpperCase() != "BUTTON") return;
-
-                if (t.classList.contains("next")) {
-                    currImage++;
-                } else {
-                    currImage--;
-                }
-
-                figure.style.transform = `rotateY(${currImage * -theta}rad)`;
-            }
-            // End Carousel
         };
     </script>
 </body>
