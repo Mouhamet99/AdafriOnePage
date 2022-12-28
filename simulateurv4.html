@@ -138,9 +138,7 @@
                             <div class="mb-0">
                                 <button title="Ajouter à mon budget"
                                     class="add-to-budget-btn inline-block outline-none focus:outline-none align-middle transition-all duration-150 ease-in-out uppercase border border-solid font-bold text-white hover:scale-105 text-sm px-6 py-2 shadow hover:shadow-lg rounded-md bg-blue-800 border-blue-700"
-                                    data-budget-id="'total-'+slide.title+'-budget'"
-                                    data-budget-amount="'user-'+slide.title+'-budget'"
-                                    id="slide.title+'-add-to-budget-btn'">
+                                    >
                                     Ajouter
                                 </button>
                             </div>
@@ -742,7 +740,7 @@
 
                 if (t.classList.contains("next")) {
                     currImage++;
-                }  else if (t.classList.contains("prev")) {
+                } else if (t.classList.contains("prev")) {
                     currImage--;
                 }
 
@@ -754,7 +752,7 @@
                     setTimeout(function () {
                         handleRotation(e)
                         let currentService = document.querySelector(".pub-service-item.active");
-                        console.log({idService: currentService.id});
+                        console.log({ idService: currentService.id });
                         generateResult(currentService.id);
                     }, 100);
                 });
@@ -811,19 +809,13 @@
                 })
             );
 
-            let userBudgets = document.querySelectorAll(".user-budget");
-            userBudgets.forEach((userBudget) => {
-                userBudget.addEventListener("input", function (event) {
-                    let currentService = document.querySelector(
-                        ".pub-service-item.active"
-                    );
-                    generateResult(currentService.id);
-                });
+            let userBudget = document.querySelector(".user-budget");
+            userBudget.addEventListener("input", function (event) {
+                let currentService = document.querySelector(".pub-service-item.active");
+                generateResult(currentService.id);
             });
 
             function getNumberOfViews() {
-                let userBudget =
-                    document.getElementById("user-gads-budget");
                 let viewsCounter = document.getElementById("views-counter");
                 viewsCounter.textContent = `${(
                     userBudget.value * 10000
@@ -831,7 +823,6 @@
             }
 
             function getNumberOfDaysForOutDoorLed(ledType) {
-                let userBudget;
 
                 let sitesCounter, unitPrice;
                 switch (ledType) {
@@ -840,18 +831,12 @@
                         sitesCounter = [...ledSites].filter(
                             (site) => site.checked == true
                         ).length;
-                        userBudget = document.getElementById(
-                            "user-ledOutDoor-budget"
-                        );
                         break;
                     case "ledAuchan":
                         unitPrice = 17;
                         sitesCounter = [...auchanLedSites].filter(
                             (site) => site.checked == true
                         ).length;
-                        userBudget = document.getElementById(
-                            "user-ledAuchan-budget"
-                        );
                         break;
                     default:
                         console.log("default case ");
@@ -872,8 +857,6 @@
             function getSpotNumberForRadio(radioType = "radios-locales") {
                 let radioSpotCounter =
                     document.getElementById("spot-counter");
-                let userBudget =
-                    document.getElementById("user-radio-budget");
                 if (userBudget.value <= 0) {
                     radioSpotCounter.textContent = `0`;
                 }
@@ -899,16 +882,12 @@
             }
 
             function getNumberOfSMS() {
-                let userBudget = document.getElementById("user-sms-budget");
                 let smsCounter = document.getElementById("sms-counter");
                 let numberOfSMS = Math.floor(userBudget.value / 0.008);
                 smsCounter.textContent = `${numberOfSMS}`;
             }
 
             function getNumberOfCall() {
-                let userBudget = document.getElementById(
-                    "user-push-vocal-budget"
-                );
                 let callCounter = document.getElementById("call-counter");
                 let numberOfCall = Math.floor(userBudget.value / 0.035);
                 callCounter.textContent = `${numberOfCall} `;
@@ -1017,26 +996,20 @@
                 );
                 chart.draw(data, options);
 
-                let addToBudgetBtns =
-                    document.querySelectorAll(".add-to-budget-btn");
-                addToBudgetBtns.forEach((button) => {
-                    button.addEventListener("click", function () {
-                        let budgetAmountElement = document.getElementById(
-                            `${this.dataset.budgetAmount}`
-                        );
-                        let totalbudgetElement =
-                            document.getElementById("total-budget");
-                        budget += +budgetAmountElement.value;
-                        totalbudgetElement.textContent = `$${budget}`;
-                        var newData = google.visualization.arrayToDataTable(
-                            [
-                                ["Label", "Value"],
-                                ["Budget", budget],
-                            ]
-                        );
+                let addToBudgetBtn = document.querySelector(".add-to-budget-btn");
+                addToBudgetBtn.addEventListener("click", function () {
+                    // let budgetAmountElement = document.getElementById(`${this.dataset.budgetAmount}`);
+                    let totalbudgetElement = document.getElementById("total-budget");
+                    budget += +userBudget.value;
+                    totalbudgetElement.textContent = `$${budget}`;
+                    var newData = google.visualization.arrayToDataTable(
+                        [
+                            ["Label", "Value"],
+                            ["Budget", budget],
+                        ]
+                    );
 
-                        chart.draw(newData, options);
-                    });
+                    chart.draw(newData, options);
                 });
             }
         };
