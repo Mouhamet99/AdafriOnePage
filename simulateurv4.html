@@ -68,36 +68,36 @@
         <div class="w-full flex flex-col-reverse md:flex-row min-h-screen">
             <div class="w-full md:w-3/4 lg:w-3/4 bg-slate-100 md:m-5 rounded-lg shadow-sm">
                 <!-- RESULTAT -->
-                <div class="w-full mt-16  md:mx-auto text-gray-500 self-end justify-self-start">
+                <div class="w-full mt-16  md:mx-auto text-gray-500 self-end justify-self-start min-h-[60px]">
                     <div class="w-full flex items-end justify-center text-blue-800">
-                        <div class="views-counter-element counter-item">
+                        <div class="views-counter-element counter-item bg-white rounded-2xl px-10 py-4">
                             <span class="font-bold text-4xl md:text-5xl lg:text-7xl" id="views-counter">1 000 000</span>
                             <span class="text-2xl md:text-5xl">vue(s)</span>
                         </div>
-                        <div class="days-counter-element counter-item d-none">
+                        <div class="days-counter-element counter-item d-none bg-white rounded-2xl px-10 py-4">
                             <span class="font-bold text-4xl md:text-5xl lg:text-7xl" id="days-counter">0</span>
                             <span class="text-2xl md:text-5xl">jour(s)</span>
                         </div>
-                        <div class="sms-counter-element counter-item d-none">
+                        <div class="sms-counter-element counter-item d-none bg-white rounded-2xl px-10 py-4">
                             <span class="font-bold text-4xl md:text-5xl lg:text-7xl" id="sms-counter">8375</span>
                             <span class="text-2xl md:text-5xl">sms</span>
                         </div>
-                        <div class="spot-counter-element counter-item d-none">
+                        <div class="spot-counter-element counter-item d-none bg-white rounded-2xl px-10 py-4">
                             <span class="font-bold text-4xl md:text-5xl lg:text-7xl" id="spot-counter">1000</span>
                             <span class="text-2xl md:text-5xl">spot(s)</span>
                         </div>
-                        <div class="call-counter-element counter-item d-none">
+                        <div class="call-counter-element counter-item d-none bg-white rounded-2xl px-10 py-4">
                             <span class="font-bold text-4xl md:text-5xl lg:text-7xl" id="call-counter">1000</span>
                             <span class="text-2xl md:text-5xl">push vocaux</span>
                         </div>
-                        <div class="bot-counter-element counter-item d-none">
+                        <div class="bot-counter-element counter-item d-none bg-white rounded-2xl px-10 py-4">
                             <span class="font-bold text-4xl md:text-5xl lg:text-7xl" id="bot-counter">1000</span>
-                            <span class="text-2xl md:text-5xl">Bot WhatsApp</span>
+                            <span class="text-2xl md:text-5xl">bot(s) WhatsApp</span>
                         </div>
                     </div>
                 </div>
                 <!-- END RESULTAT -->
-                <div class="w-full p-10 body">
+                <div class="w-full carousel-container">
                     <div class="carousel" x-data="{
                         activeSlide: 1,
                         slides: [
@@ -137,8 +137,7 @@
                             </div>
                             <div class="mb-0">
                                 <button title="Ajouter à mon budget"
-                                    class="add-to-budget-btn inline-block outline-none focus:outline-none align-middle transition-all duration-150 ease-in-out uppercase border border-solid font-bold text-white hover:scale-105 text-sm px-6 py-2 shadow hover:shadow-lg rounded-md bg-blue-800 border-blue-700"
-                                    >
+                                    class="add-to-budget-btn inline-block outline-none focus:outline-none align-middle transition-all duration-150 ease-in-out uppercase border border-solid font-bold text-white hover:scale-105 text-sm px-6 py-2 shadow hover:shadow-lg rounded-md bg-blue-800 border-blue-700">
                                     Ajouter
                                 </button>
                             </div>
@@ -153,7 +152,7 @@
                         </nav>
                     </div>
                 </div>
-                <div class="w-full md:w-2/3 mx-auto my-5 flex flex-col justify-between">
+                <div class="w-full md:w-11/12 mx-auto mt-5 mb-10 flex flex-col justify-between min-h-[120px]">
 
                     <!-- SITES OUTDDOOR -->
                     <div class="md:mx-auto text-gray-500 d-none" id="ledOutDoorSitesContainer">
@@ -166,7 +165,7 @@
                         </p>
 
                         <div
-                            class="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-dense gap-5 md:gap-10">
+                            class="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 grid-flow-dense gap-5 md:gap-10">
                             <div class="border border-solid border-blue-800 rounded-md">
                                 <label class="block p-3 text-gray-500" for="place-independance">
                                     <input
@@ -220,7 +219,7 @@
                     <!-- END SITES OUTDDOOR -->
 
                     <!-- SITES AUCHAN -->
-                    <div class="md:mx-auto d-none" id="auchanLedSitesContainer">
+                    <div class="md:mx-auto md:w-11/12 d-none" id="auchanLedSitesContainer">
                         <h2 class="font-bold text-3xl text-blue-800">
                             Les magasins
                         </h2>
@@ -230,7 +229,7 @@
                         </p>
 
                         <div
-                            class="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-dense gap-5 md:gap-10">
+                            class="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 grid-flow-dense gap-5 md:gap-10">
                             <div class="border border-solid border-blue-800 rounded-md">
                                 <label class="block p-3 text-gray-500" for="mermoz">
                                     <input
@@ -292,7 +291,7 @@
                     <!-- END SITES AUCHAN -->
 
                     <!-- RADIO -->
-                    <div class="md:mx-auto text-gray-500 d-none" id="radioTypesContainer">
+                    <div class="md:mx-auto md:w-11/12 text-gray-500 d-none" id="radioTypesContainer">
                         <h2 class="font-bold text-3xl text-blue-800">
                             Les Radios
                         </h2>
@@ -331,6 +330,98 @@
                         </div>
                     </div>
                     <!-- END RADIO -->
+
+                    <!-- BOT WHATSAPP -->
+                    <div class="md:mx-auto md:w-11/12 d-none" id="botPlansContainer">
+                        <h2 class="font-bold text-3xl text-blue-800">
+                            Les Plans
+                        </h2>
+                        <p class="text-gray-500">
+                            Selectionnez le plan de votre choix
+                        </p>
+
+                        <div
+                            class="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-dense gap-5 md:gap-10">
+                            <div class="border border-solid border-blue-800 rounded-md">
+                                <label class="block p-3 text-gray-500 font-bold" for="plan-gratuit">
+                                    <input
+                                        class="bot-plan appearance-none h-5 w-5 border border-solid border-gray-300 rounded-full bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
+                                        type="radio" name="whatsapp-bot-plan" value="plan-gratuit" id="plan-gratuit"
+                                        checked="" />
+                                    Plan Gratuit
+                                </label>
+                                <ul class="flex-1 space-y-4">
+                                    <li class="relative">
+                                        <span class="relative block ml-10 text-base font-medium text-slate-500 ">1 bot inclus</span>
+                                    </li>
+
+                                    <li class="relative">
+                                        <span class="relative block ml-10 text-base font-medium text-slate-500 ">100 interactions (message)</span>
+                                    </li>
+
+                                    <li class="relative">
+                                        <span class="relative block ml-10 text-base font-medium text-slate-500 ">
+                                            7 jours d'essai gratuit
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="border border-solid border-blue-800 rounded-md">
+                                <label class="block p-3 text-gray-500 font-bold" for="plan-business">
+                                    <input
+                                        class="bot-plan appearance-none h-5 w-5 border border-solid border-gray-300 rounded-full bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
+                                        type="radio" name="whatsapp-bot-plan" value="plan-business"
+                                        id="plan-business" />
+                                    Plan Business
+                                </label>
+                                <ul class="flex-1 space-y-4">
+                                    <li class="relative">
+                                        <span class="relative block ml-10 text-base font-medium text-slate-500 ">
+                                            1 bot inclus
+                                        </span>
+                                    </li>
+
+                                    <li class="relative">
+                                        <span class="relative block ml-10 text-base font-medium text-slate-500 ">
+                                            0 limite sur la construction du chemin
+                                        </span>
+                                    </li>
+
+                                    <li class="relative">
+                                        <span class="relative block ml-10 text-base font-medium text-slate-500 ">
+                                            1000 interactions (messages)
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="border border-solid border-blue-800 rounded-md">
+                                <label class="block p-3 text-gray-500 font-bold" for="plan-partenaire">
+                                    <input
+                                        class="bot-plan appearance-none h-5 w-5 border border-solid border-gray-300 rounded-full bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
+                                        type="radio" name="whatsapp-bot-plan" value="plan-partenaire"
+                                        id="plan-partenaire" />
+                                    Plan Partenaire
+                                </label>
+                                <ul class="flex-1 space-y-4">
+                                    <li class="relative">
+                                        <span class="relative block ml-10 text-base font-medium text-slate-500 ">
+                                            avantages Plan Business inclus
+                                        </span>
+                                    </li>
+
+                                    <li class="relative">
+                                        <span class="relative block ml-10 text-base font-medium text-slate-500 ">
+                                            Support prioritaire
+                                        </span>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- END BOT WHATSAPP -->
+
                 </div>
             </div>
             <!-- Gauge -->
@@ -447,6 +538,13 @@
                 })
             );
 
+            let botPlans = document.querySelectorAll(".bot-plan");
+            botPlans.forEach((botPlan) =>
+                botPlan.addEventListener("change", function (e) {
+                    getNumberOfBots(botPlan.id);
+                })
+            );
+
             let userBudget = document.querySelector(".user-budget");
             userBudget.addEventListener("input", function (event) {
                 let currentService = document.querySelector(".pub-service-item.active");
@@ -531,6 +629,29 @@
                 callCounter.textContent = `${numberOfCall} `;
             }
 
+            function getNumberOfBots(botPlan = "plan-gratuit") {
+                let botCounter = document.getElementById("bot-counter");
+                if (userBudget.value <= 0) {
+                    botCounter.textContent = `0`;
+                }
+                let unitPrice;
+                switch (botPlan) {
+                    case "plan-gratuit":
+                        unitPrice = 1;
+                        break;
+                    case "plan-business":
+                        unitPrice = 50;
+                        break;
+                    case "plan-partenaire":
+                        unitPrice = 100;
+                        break;
+                    default:
+                        console.log("unkown plan");
+                        break;
+                }
+                botCounter.textContent = `${Math.floor(userBudget.value / unitPrice).toLocaleString("fr-FR")}`;
+            }
+
             function formatMoney(number) {
                 return number.toLocaleString("en-US", {
                     style: "currency",
@@ -557,10 +678,12 @@
                 let radioTypesContainer = document.getElementById(
                     "radioTypesContainer"
                 );
+                let botPlansContainer = document.getElementById('botPlansContainer')
 
                 ledOutDoorSitesContainer.classList.add("d-none");
                 auchanSitesContainer.classList.add("d-none");
                 radioTypesContainer.classList.add("d-none");
+                botPlansContainer.classList.add("d-none");
 
                 switch (serviceId) {
                     case "gads":
@@ -602,10 +725,18 @@
                             .querySelector(".call-counter-element")
                             .classList.remove("d-none");
                         break;
+                    case "whatsapp-chatbot":
+                        getNumberOfBots();
+                        botPlansContainer.classList.remove("d-none");
+                        document
+                            .querySelector(".bot-counter-element")
+                            .classList.remove("d-none");
+                        break;
                     default:
                         break;
                 }
             }
+            //*******************
             // Google Chart Script
             var budget = 0;
             google.charts.load("current", { packages: ["gauge"] });

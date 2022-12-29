@@ -812,6 +812,18 @@ html body {
   min-height: '200px';
 }
 
+.min-h-\[100px\] {
+  min-height: 100px;
+}
+
+.min-h-\[60px\] {
+  min-height: 60px;
+}
+
+.min-h-\[400px\] {
+  min-height: 400px;
+}
+
 .w-full {
   width: 100%;
 }
@@ -2099,6 +2111,10 @@ html body {
 
   .md\:w-3\/4 {
     width: 75%;
+  }
+
+  .md\:w-11\/12 {
+    width: 91.666667%;
   }
 
   .md\:grid-cols-2 {
