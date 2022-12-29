@@ -251,6 +251,7 @@ window.onload = function () {
                 break;
         }
     }
+    
     // Google Chart Script
     var budget = 0;
     google.charts.load("current", { packages: ["gauge"] });

@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulateur | Adafri</title>
+    <meta name="robots" content="index, follow, max-video-preview:-1, max-snippet:-1, max-image-preview:large">
+
+    <link rel="icon" href="./src/img/cropped-Icone-32x32.png" sizes="32x32">
+    <link rel="icon" href="./src/img/cropped-Icone-192x192.png" sizes="192x192">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <meta name="description"
+        content="Outil de publicité sur l'Afrique.Prenez le contrôle de plusieurs régies publicitaire facilement sur une seule plateforme, et communiquez sur toute l'Afrique.">
+
+    <!-- Animate CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./dist/output.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+
+    <meta name="google-site-verification" content="QmvElgdBlVA6iTVnoygA2VvuWFhEcVnlwvs9IhBUpoo" />
+    <!-- TAILWIND CDN-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carousel-->
+    <link rel="stylesheet" href="./src/css/carousel.css">
+
+</head>
+<style>
+    .pub-service {
+        position: relative;
+    }
+
+    .pub-service::after {
+        content: "";
+        width: 1.5rem;
+        height: 1.5rem;
+        top: 10px;
+        right: 14px;
+        position: absolute;
+        border-radius: 100%;
+        border: 2px solid #e2e2e2;
+    }
+
+    .pub-service.active::after {
+        background-color: #1e40af;
+    }
+</style>
+
+
+<body class="w-full">
+
+    <!-- Google Tag Manager (noscript) -->
+
+    <!-- End Google Tag Manager (noscript) -->
+    <main>
+
+
+        <!--  V3-->
+        <div class="w-full flex flex-col-reverse md:flex-row  min-h-screen">
+            <div class="w-full md:w-3/4 lg:w-3/4 bg-slate-100 md:m-5 rounded-lg shadow-sm">
+                <div class="w-full p-10 flex flex-col md:flex-row">
+                    <div class="w-full md:w-1/3 relative"
+                        x-data="{ activeSlide: 1, slides: [{ id:1, image: 'google-min.png', title: 'gads' }, { id:2, image: 'led auchan-min.png', title: 'ledAuchan' }, { id:3, image: 'sms-min.png', title: 'sms' }, { id:4, image: 'radio-min.png', title: 'radio' }, { id: 5, image: 'push-min.png', title: 'push-vocal' }, { id:6, image: 'led-min.png', title: 'ledOutDoor' }] }">
+                        <!-- Slides -->
+                        <template x-for="slide in slides" :key="slide.id">
+                            <div x-show="activeSlide === slide.id"
+                                class="max-w-sm mx-auto p-10 font-bold text-5xl min-h-64 flex items-center text-white rounded-lg flex-col">
+                                <p class="text-blue-800 text-base">
+                                    <span class="w-12 text-center" x-text="slide.id"></span>
+                                    <span class="">/</span>
+                                    <span class="w-12 text-center" x-text="slides.length"></span>
+                                </p>
+                                <article class="cursor-pointer pub-service-item"
+                                    :class="{'active': activeSlide === slide.id}" :id="slide.title">
+                                    <img :src="'./src/img/3D/'+slide.image" class=" rounded-xl object-contain"
+                                        :alt="slide.title">
+
+                                    <div class="mb-2 relative flex  w-full items-center">
+                                        <div class="mr-2">
+                                            <div class="relative text-2xl">
+                                                <input
+                                                    class="user-budget text-sm font-bold appearance border-2 border-solid pl-10 border-gray-300 hover:border-blue-800 transition-colors rounded-md w-full py-2 px-3 text-blue-800 leading-tight focus:outline-none focus:ring-blue-600 focus:border-blue-600 focus:shadow-outline"
+                                                    type="number" min="0" value="100" :class="{
+                                                    'focus:ring-yellow-400 focus:border-yellow-400': 1 === slide.id ,
+                                                    'focus:ring-red-600 focus:border-red-600': 2 === slide.id ,
+                                                    'focus:ring-green-600 focus:border-green-600': 3 === slide.id ,
+                                                    'focus:ring-teal-500 focus:border-teal-500': 4 === slide.id ,
+                                                    'focus:ring-violet-600 focus:border-violet-600': 5 === slide.id ,
+                                                     'focus:ring-cyan-400 focus:border-cyan-500': 6 === slide.id 
+                                                }" :id="'user-'+slide.title+'-budget'">
+                                                <div class="absolute left-0 inset-y-0 flex items-center">
+                                                    <span
+                                                        class="h-fit w-6 ml-3 font-bold text-2xl text-blue-800 hover:text-blue-700">
+                                                        $
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-0">
+                                            <button title="Ajouter à mon budget"
+                                                class="add-to-budget-btn inline-block outline-none focus:outline-none align-middle transition-all duration-150 ease-in-out uppercase border border-solid font-bold  text-white hover:scale-105 text-sm px-6 py-2 shadow hover:shadow-lg rounded-md"
+                                                :class="{ 
+                                                    'bg-yellow-400 border-yellow-500': 1 === slide.id ,
+                                                    'bg-red-600 border-red-700': 2 === slide.id ,
+                                                    'bg-green-600 border-green-700': 3 === slide.id ,
+                                                    'bg-teal-500 border-teal-600': 4 === slide.id ,
+                                                    'bg-violet-600 border-violet-700': 5 === slide.id ,
+                                                    'bg-cyan-400 border-cyan-500': 6 === slide.id 
+                                            }" :data-budget-id="'total-'+slide.title+'-budget'"
+                                                :data-budget-amount="'user-'+slide.title+'-budget'"
+                                                :id="slide.title+'-add-to-budget-btn'">
+                                                Ajouter
+                                            </button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </template>
+
+                        <!-- Prev/Next Arrows -->
+                        <div class="absolute flex top-1/2 z-30 -translate-y-1/2">
+                            <button id="left-arrow-btn"
+                                class="arrow-btn bg-white text-blue-800 hover:font-extrabold font-bold  hover:shadow-lg rounded-full w-12 h-12 -ml-6"
+                                x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
+                                &#8592;
+                            </button>
+                        </div>
+                        <div class="absolute flex top-1/2 z-30 -translate-y-1/2 right-0">
+                            <button id="right-arrow-btn"
+                                class="arrow-btn bg-white text-blue-800 hover:font-extra-bold font-bold  hover:shadow rounded-full w-12 h-12 -mr-6"
+                                x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
+                                &#8594;
+                            </button>
+                        </div>
+
+
+                        <!-- Buttons -->
+                        <div class="absolute w-full flex items-center justify-center px-4">
+                            <template x-for="slide in slides" :key="slide.id">
+                                <button
+                                    class="flex-1 w-4 h-2 mt-4 mx-2 mb-0 rounded-full overflow-hidden transition-colors duration-200 ease-out hover:bg-blue-800 hover:shadow-lg"
+                                    :class="{ 
+                                        'bg-blue-800': activeSlide === slide.id ,
+                                        'border border-solid border-blue-800': activeSlide !== slide.id
+                            }" x-on:click="activeSlide = slide.id"></button>
+                            </template>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2/3 flex flex-col justify-between">
+                        <!-- RESULTAT -->
+                        <div class="w-full my-16 lg:px-20 md:mx-auto text-gray-500 self-end justify-self-start">
+                            <div class=" w-full flex items-end justify-end  text-blue-800">
+                                <div class="views-counter-element counter-item">
+                                    <span class="font-bold text-4xl md:text-5xl lg:text-7xl"
+                                        id="views-counter">1 000 000</span>
+                                    <span class="text-2xl md:text-5xl">vue(s)</span>
+                                </div>
+                                <div class="days-counter-element counter-item d-none">
+                                    <span class="font-bold text-4xl md:text-5xl lg:text-7xl" id="days-counter">0</span>
+                                    <span class="text-2xl md:text-5xl">jour(s)</span>
+                                </div>
+                                <div class="sms-counter-element counter-item d-none">
+                                    <span class="font-bold text-4xl md:text-5xl lg:text-7xl"
+                                        id="sms-counter">8375</span>
+                                    <span class="text-2xl md:text-5xl">sms</span>
+                                </div>
+                                <div class="spot-counter-element counter-item d-none">
+                                    <span class="font-bold text-4xl md:text-5xl lg:text-7xl"
+                                        id="spot-counter">1000</span>
+                                    <span class="text-2xl md:text-5xl">spot(s)</span>
+                                </div>
+                                <div class="call-counter-element counter-item d-none">
+                                    <span class="font-bold text-4xl md:text-5xl lg:text-7xl"
+                                        id="call-counter">1000</span>
+                                    <span class="text-2xl md:text-5xl">push vocaux</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END RESULTAT -->
+
+                        <!-- SITES OUTDDOOR -->
+                        <div class=" md:mx-auto text-gray-500 d-none" id="ledOutDoorSitesContainer">
+                            <h2 class="font-bold text-3xl text-blue-800">Les sites</h2>
+                            <p class="text-gray-500">Selectionnez les sites dont vous souhaitez faire passez votre pub
+                            </p>
+
+                            <div
+                                class="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-dense gap-5 md:gap-10 ">
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="place-independance">
+                                        <input
+                                            class="led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
+                                            type="checkbox" value="place-independance" id="place-independance" checked>
+                                        Place de l'indépendance
+                                    </label>
+                                </div>
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="patte-d-oie">
+                                        <input
+                                            class="led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
+                                            type="checkbox" value="patte-d-oie" id="patte-d-oie">
+                                        Patte d’oie
+                                    </label>
+                                </div>
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="grand-theatre">
+                                        <input
+                                            class="led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
+                                            type="checkbox" value="grand-theatre" id="grand-theatre">
+                                        Grand théâtre
+                                    </label>
+                                </div>
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="relais">
+                                        <input
+                                            class="led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
+                                            type="checkbox" value="relais" id="relais">
+                                        Relais
+                                    </label>
+                                </div>
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="horizon">
+                                        <input
+                                            class="led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
+                                            type="checkbox" value="horizon" id="horizon">
+                                        Horizon
+                                    </label>
+                                </div>
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="almadies">
+                                        <input
+                                            class="led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
+                                            type="checkbox" value="" id="almadies">
+                                        Almadies
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END SITES OUTDDOOR -->
+
+                        <!-- SITES AUCHAN -->
+                        <div class=" md:mx-auto d-none" id="auchanLedSitesContainer">
+                            <h2 class="font-bold text-3xl text-blue-800">Les magasins</h2>
+                            <p class="text-gray-500">Selectionnez les magasins Auchan dont vous souhaitez faire passez
+                                votre pub</p>
+
+                            <div
+                                class="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-dense gap-5 md:gap-10 ">
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="mermoz">
+                                        <input
+                                            class="auchan-led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
+                                            type="checkbox" value="mermoz" id="mermoz" checked>
+                                        Mermoz
+                                    </label>
+                                </div>
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="sacre-cœur">
+                                        <input
+                                            class="auchan-led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
+                                            type="checkbox" value=" sacre-cœur" id=" sacre-cœur">
+                                        Sacre-cœur
+                                    </label>
+                                </div>
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="gibraltar">
+                                        <input
+                                            class="auchan-led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
+                                            type="checkbox" value="gibraltar" id="gibraltar">
+                                        Gibraltar
+                                    </label>
+                                </div>
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="yoff">
+                                        <input
+                                            class="auchan-led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
+                                            type="checkbox" value="yoff" id="yoff">
+                                        Yoff
+                                    </label>
+                                </div>
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="mairie-ville">
+                                        <input
+                                            class="auchan-led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
+                                            type="checkbox" value="mairie-ville" id="mairie-ville">
+                                        Mairie ville
+                                    </label>
+                                </div>
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="auchan-almadies">
+                                        <input
+                                            class="auchan-led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
+                                            type="checkbox" value="auchan-almadies" id="auchan-almadies">
+                                        Almadies
+                                    </label>
+                                </div>
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="fann-residence">
+                                        <input
+                                            class="auchan-led-sites appearance-none h-5 w-5 border border-solid border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white after:rounded-full"
+                                            type="checkbox" value="fann-residence" id="fann-residence">
+                                        Fann résidence
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END SITES AUCHAN -->
+
+                        <!-- RADIO -->
+                        <div class=" md:mx-auto text-gray-500 d-none" id="radioTypesContainer">
+                            <h2 class="font-bold text-3xl text-blue-800">Les Radios</h2>
+                            <p class="text-gray-500">Selectionnez le type radio dont vous souhaitez faire diffusé votre
+                                pub</p>
+
+                            <div
+                                class="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-dense gap-5 md:gap-10 ">
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="radios-locales">
+                                        <input
+                                            class="radio-type appearance-none h-5 w-5 border border-solid border-gray-300 rounded-full bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white"
+                                            type="radio" name="radio" value="radios-locales" id="radios-locales"
+                                            checked>
+                                        Radios Locales
+                                    </label>
+                                </div>
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="radios-panaf">
+                                        <input
+                                            class="radio-type appearance-none h-5 w-5 border border-solid border-gray-300 rounded-full bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white "
+                                            type="radio" name="radio" value="radios-panaf" id="radios-panaf">
+                                        Radios Panaf
+                                    </label>
+                                </div>
+                                <div class="border border-solid border-blue-800 rounded-md">
+                                    <label class="block p-3 text-gray-500" for="radios-auchan">
+                                        <input
+                                            class="radio-type appearance-none h-5 w-5 border border-solid border-gray-300 rounded-full bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer flex justify-center after:text-sm checked:after:content-['✔'] after:text-white"
+                                            type="radio" name="radio" value="radios-auchan" id="radios-auchan">
+                                        Radios Auchan
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END RADIO -->
+                    </div>
+                </div>
+            </div>
+            <!-- Cercle -->
+            <div class="w-full md:w-1/4 lg:w-1/4 md:m-5 p-5 rounded-lg border border-dashed border-gray-400 shadow-sm"
+                id="result">
+                <!-- <div class="py-3 px-5 bg-transparent text-center">Resultat</div> -->
+                <div class="font-medium text-2xl text-blue-800 block text-center my-5">
+                    <span>Budget: </span>
+                    <span id="total-budget">$0</span>
+                </div>
+                <!-- v1 -->
+                <div class="chart-container w-full flex justify-center items-center min-h-[200px]">
+                    <div id="chart_div"></div>
+                </div>
+
+                <!-- End v1 -->
+
+
+
+            </div>
+
+            <!-- Cercle -->
+        </div>
+        <!--  -->
+
+
+
+        <!-- TABLE -->
+        <!-- TABLE -->
+        <div class="w-full md:w-3/4 mx-auto shadow-sm overflow-hidden my-8 d-none">
+            <table class="border-collapse w-full text-sm rounded-2xl bg-[#7EA5D345]">
+                <thead>
+                    <tr>
+                        <th class="border-bottom p-4 pl-8 pb-3 text-slate-500  text-left font-bold">
+                            Song</th>
+                        <th class="border-bottom p-4 pb-3 text-slate-500  text-left font-bold">
+                            Artist</th>
+                        <th class="border-bottom p-4 pr-8 pb-3 text-slate-500  text-left font-bold">
+                            Year
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white ">
+                    <tr>
+                        <td class="border-bottom border-slate-100  p-4 pl-8 text-slate-500 ">
+                            Résolution & dimension </td>
+                        <td class="border-bottom border-slate-100  p-4 text-slate-500 text-end ">
+                            1280x720</td>
+                    </tr>
+                    <tr>
+                        <td class="border-bottom border-slate-100  p-4 pl-8 text-slate-500 ">
+                            Durée de la vidéo</td>
+                        <td class="border-bottom border-slate-100  p-4 text-slate-500 text-end ">
+                            10s
+                        </td>
+
+                    <tr>
+                        <td class="border-bottom border-slate-200  p-4 pl-8 text-slate-500 ">
+                            Prix</td>
+                        <td class="border-bottom border-slate-200  p-4 text-slate-500 text-end ">
+                            $10/jr</td>
+                    </tr>
+                    <tr>
+                        <td class="border-bottom border-slate-200  p-4 pl-8 text-slate-500 ">
+                            Plages horaires</td>
+                        <td class="border-bottom border-slate-200  p-4 text-slate-500 text-end ">
+                            8H-12H / 16H-20H</td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            let arrowBtns = document.querySelectorAll('.arrow-btn')
+            arrowBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    setTimeout(function () {
+                        let currentService = document.querySelector('.pub-service-item.active')
+                        generateResult(currentService.id)
+                    }, 100)
+                })
+            })
+
+            // Handle Keydown
+            document.addEventListener('keydown', function (event) {
+                if (event.code === 'ArrowLeft') {
+                    document.getElementById('left-arrow-btn').click();
+                } else if (event.code === 'ArrowRight') {
+                    document.getElementById('right-arrow-btn').click();
+                }
+            });
+
+
+
+
+            let pubServicesBloc = document.querySelectorAll('.pub-service');
+            pubServicesBloc.forEach(pubServiceBloc => {
+                pubServiceBloc.addEventListener('click', function (event) {
+
+                    pubServicesBloc.forEach(item => {
+                        item.classList.remove('bg-slate-100')
+                        item.classList.remove('border-blue-800')
+                        item.classList.add('border-gray-400')
+                        item.classList.remove('active')
+                    });
+
+                    this.classList.add('bg-slate-100')
+                    this.classList.add('active')
+                    this.classList.add('border-gray-400')
+                    this.classList.add('border-blue-800')
+
+                    generateResult(this.id)
+                });
+            })
+
+
+            let ledSites = document.querySelectorAll('.led-sites')
+            let auchanLedSites = document.querySelectorAll('.auchan-led-sites')
+
+            ledSites.forEach((siteCheckbox) => siteCheckbox.addEventListener('change', function (e) {
+                getNumberOfDaysForOutDoorLed('ledOutDoor')
+            }))
+
+            auchanLedSites.forEach((siteCheckbox) => siteCheckbox.addEventListener('change', function (e) {
+                getNumberOfDaysForOutDoorLed('ledAuchan')
+            }))
+
+            let radioTypes = document.querySelectorAll('.radio-type')
+            radioTypes.forEach((radioType) => radioType.addEventListener('change', function (e) {
+                getSpotNumberForRadio(radioType.id)
+            }))
+
+            let userBudgets = document.querySelectorAll('.user-budget')
+            userBudgets.forEach(userBudget => {
+                userBudget.addEventListener('input', function (event) {
+                    let currentService = document.querySelector(".pub-service-item.active")
+                    generateResult(currentService.id)
+                })
+            })
+
+            function getNumberOfViews() {
+                let userBudget = document.getElementById('user-gads-budget')
+                let viewsCounter = document.getElementById('views-counter')
+                viewsCounter.textContent = `${(userBudget.value * 10000).toLocaleString("fr-FR")}`
+            }
+
+            function getNumberOfDaysForOutDoorLed(ledType) {
+                let userBudget;
+
+                let sitesCounter, unitPrice;
+                switch (ledType) {
+                    case 'ledOutDoor':
+                        unitPrice = 10
+                        sitesCounter = [...ledSites].filter(site => site.checked == true).length
+                        userBudget = document.getElementById('user-ledOutDoor-budget')
+                        break;
+                    case 'ledAuchan':
+                        unitPrice = 17
+                        sitesCounter = [...auchanLedSites].filter(site => site.checked == true).length
+                        userBudget = document.getElementById('user-ledAuchan-budget')
+                        break;
+                    default:
+                        console.log("default case ");
+                        break;
+                }
+
+                let numberOfDays = 0
+                if (sitesCounter > 0) {
+                    numberOfDays = Math.floor(userBudget.value / (unitPrice * sitesCounter))
+                }
+
+                let daysCounter = document.getElementById('days-counter')
+                daysCounter.textContent = `${numberOfDays}`
+            }
+
+            function getSpotNumberForRadio(radioType = "radios-locales") {
+                let radioSpotCounter = document.getElementById('spot-counter')
+                let userBudget = document.getElementById('user-radio-budget')
+                if (userBudget.value <= 0) {
+                    radioSpotCounter.textContent = `0`
+                }
+                let unitPrice;
+                switch (radioType) {
+                    case "radios-panaf":
+                        unitPrice = 40
+                        break;
+                    case "radios-locales":
+                        unitPrice = 21
+                        break;
+                    case "radios-auchan":
+                        unitPrice = 17
+                        break;
+                    default:
+                        console.log("unkown radio type");
+                        break;
+                }
+
+                radioSpotCounter.textContent = `${Math.floor(userBudget.value / unitPrice).toLocaleString("fr-FR")}`
+
+            }
+
+            function getNumberOfSMS() {
+                let userBudget = document.getElementById('user-sms-budget')
+                let smsCounter = document.getElementById('sms-counter')
+                let numberOfSMS = Math.floor(userBudget.value / 0.008)
+                smsCounter.textContent = `${numberOfSMS}`
+            }
+
+            function getNumberOfCall() {
+                let userBudget = document.getElementById('user-push-vocal-budget')
+                let callCounter = document.getElementById('call-counter')
+                let numberOfCall = Math.floor(userBudget.value / 0.035)
+                callCounter.textContent = `${numberOfCall} `
+            }
+
+            function formatMoney(number) {
+                return number.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+            }
+
+            function hideAllCounterElements() {
+                let counterItems = document.querySelectorAll('.counter-item')
+                counterItems.forEach(item => item.classList.add('d-none'))
+            }
+
+            function generateResult(serviceId) {
+                hideAllCounterElements()
+                let ledOutDoorSitesContainer = document.getElementById('ledOutDoorSitesContainer')
+                let auchanSitesContainer = document.getElementById('auchanLedSitesContainer')
+                let radioTypesContainer = document.getElementById('radioTypesContainer')
+
+                ledOutDoorSitesContainer.classList.add('d-none')
+                auchanSitesContainer.classList.add('d-none')
+                radioTypesContainer.classList.add('d-none')
+
+                switch (serviceId) {
+                    case "gads":
+                        getNumberOfViews()
+                        document.querySelector('.views-counter-element').classList.remove('d-none')
+                        break;
+                    case "ledOutDoor":
+                        getNumberOfDaysForOutDoorLed('ledOutDoor')
+                        ledOutDoorSitesContainer.classList.remove('d-none')
+                        document.querySelector('.days-counter-element').classList.remove('d-none')
+                        break;
+                    case "ledAuchan":
+                        getNumberOfDaysForOutDoorLed('ledAuchan')
+                        auchanSitesContainer.classList.remove('d-none')
+                        document.querySelector('.days-counter-element').classList.remove('d-none')
+                        break;
+                    case "sms":
+                        getNumberOfSMS()
+                        document.querySelector('.sms-counter-element').classList.remove('d-none')
+                        break;
+                    case "radio":
+                        getSpotNumberForRadio()
+                        radioTypesContainer.classList.remove('d-none')
+                        document.querySelector('.spot-counter-element').classList.remove('d-none')
+                        break;
+                    case "push-vocal":
+                        getNumberOfCall()
+                        document.querySelector('.call-counter-element').classList.remove('d-none')
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+            // Google Chart Script
+            var budget = 0
+            google.charts.load('current', { 'packages': ['gauge'] });
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                data = google.visualization.arrayToDataTable([
+                    ['Label', 'Value'],
+                    ['Budget', budget]
+                ]);
+
+                var options = {
+                    width: "100%", height: "100%",
+                    redFrom: 0, redTo: 300,
+                    yellowFrom: 300, yellowTo: 1000,
+                    greenFrom: 1000, greenTo: 3000,
+                    minorTicks: 10,
+                    max: 3000
+                };
+
+                chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+                chart.draw(data, options);
+
+                let addToBudgetBtns = document.querySelectorAll('.add-to-budget-btn')
+                addToBudgetBtns.forEach(button => {
+                    button.addEventListener('click', function () {
+                        let budgetAmountElement = document.getElementById(`${this.dataset.budgetAmount}`)
+                        let totalbudgetElement = document.getElementById('total-budget')
+                        budget += +budgetAmountElement.value
+                        totalbudgetElement.textContent = `$${budget}`
+                        var newData = google.visualization.arrayToDataTable([
+                            ['Label', 'Value'],
+                            ['Budget', budget]
+                        ]);
+
+                        chart.draw(newData, options);
+                    })
+                })
+            }
+
+        }
+    </script>
+    <!-- Carousel -->
+    <script>
+        var
+            carousel = document.querySelector('.carousel'),
+            figure = carousel.querySelector('figure'),
+            nav = carousel.querySelector('nav'),
+            numImages = figure.childElementCount,
+            theta = 2 * Math.PI / numImages,
+            currImage = 0
+            ;
+
+        nav.addEventListener('click', onClick, true);
+
+        function onClick(e) {
+            e.stopPropagation();
+
+            var t = e.target;
+            if (t.tagName.toUpperCase() != 'BUTTON')
+                return;
+
+            if (t.classList.contains('next')) {
+                currImage++;
+            }
+            else {
+                currImage--;
+            }
+
+            figure.style.transform = `rotateY(${currImage * -theta}rad)`;
+        }
+
+    </script>
+    <!-- End Carousel -->
+
+
+
+
+</body>
+
+
+
+</html>
