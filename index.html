@@ -106,6 +106,29 @@
             <img class="w-full md:w-1/3 object-contain animate__animated animate__fadeInUp" width="252" height="317"
                 src="./src/img/WelcomeToAdafri.png" alt="Bienvenue à adafri">
         </section>
+        <section class="my-5">
+            <div class="carousel">
+                <figure >
+                    <img src="src/img/card/whatsapp-chatbot-card.png" alt="">
+                    <img src="src/img/card/sms-card.png" alt="">
+                    <img src="src/img/card/radio-card.png" alt="">
+                    <img src="src/img/card/led-card.png" alt="">
+                    <img src="src/img/card/push-card.png" alt="">
+                    <img src="src/img/card/pubs-card.png" alt="">
+                    <img src="src/img/card/tv-card.png" alt="">
+                    <img src="src/img/card/ussd-card.png" alt="">
+                </figure>
+                <br><br>
+                <nav>
+                    <button
+                        class="hover:scale-105 nav prev border-blue-900 text-center text-blue-900 font-bold bg-white text-lg hover:shadow-sm transform duration-100 px-4 py-2 my-4 rounded-lg">
+                    &#8592;
+                </button>
+                    <button
+                        class="hover:scale-105 nav next border-blue-900 text-center text-blue-900 font-bold bg-white text-lg hover:shadow-sm transform duration-100 px-4 py-2 my-4 rounded-lg">&#8594;</button>
+                </nav>
+            </div>
+        </section>
         <section id="our-clients" class="w-full text-center py-10">
             <h1 class="font-semi-bold text-4xl md:text-5xl text-blue-800 font-bold px-10  text-center w-3/4 mx-auto">
                 Un outil automatisé qui aident les agences, les community managers, et des entreprises
@@ -113,7 +136,7 @@
             <div
                 class="w-11/12 md:w-9/12 flex flex-col md:flex-row justify-center items-center mx-auto my-10 md:space-x-10">
                 <div class="flex flex-col items-center justify-center mx-4">
-                    <p class="font-bold text-9xl text-blue-900 ">+500</p>
+                    <p class="font-bold text-9xl text-blue-900 ">506</p>
                     <p class=" text-slate-500 text-4xl capitalize">annonceurs actifs</p>
                 </div>
                 <div class="md:w-1/2">
@@ -137,8 +160,7 @@
                     class="text-white text-xl bg-emerald-500 font-semibold px-6 py-3 rounded-lg hover:bg-emerald-400 hover:scale-110 transform duration-100"
                     title="">Commencez maintenant</a>
             </div>
-            <img class="w-3/5 object-contain mx-auto" src="./src/img/NosProduitsEtServices.png"
-                alt="Nos produits et services">
+          
         </section>
         <h2 class="font-bold text-5xl text-center text-blue-900 mt-10 sm:mt-20">
             Lancez votre pub, payez
@@ -424,6 +446,35 @@
             chatbotBloc.classList.add("service-desc-right")
             chatbotBloc.classList.add("stroke-right-top")
 
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js"></script>
+    <script>
+        var
+            carousel = document.querySelector('.carousel'),
+            figure = carousel.querySelector('figure'),
+            nav = carousel.querySelector('nav'),
+            numImages = figure.childElementCount,
+            theta = 2 * Math.PI / numImages,
+            currImage = 0;
+           
+
+        nav.addEventListener('click', onClick, true);
+
+        function onClick(e) {
+            e.stopPropagation();
+
+            var t = e.target;
+            if (t.tagName.toUpperCase() != 'BUTTON')
+                return;
+
+            if (t.classList.contains('next')) {
+                currImage++;
+            } else {
+                currImage--;
+            }
+
+            figure.style.transform = `rotateY(${currImage * -theta}rad)`;
         }
     </script>
 </body>
